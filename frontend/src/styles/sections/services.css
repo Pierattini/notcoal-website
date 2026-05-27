@@ -259,11 +259,13 @@
 .serviceRow {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1.1fr;
 
-  align-items: stretch;
+  align-items: center;
 
-  gap: 0;
+  gap: 50px;
+
+  padding-left: 3%;
 
   background: #f3f0ea;
 }
@@ -293,18 +295,30 @@
 }
 
 .serviceVisual {
+  position: relative;
+
   width: 100%;
-  height: 100%;
+
   min-height: 760px;
+
+  height: 100%;
+
   overflow: hidden;
+
+  border-radius: 0px;
 }
 
 .serviceImg {
+  object-fit: cover;
+
   width: 100%;
   height: 100%;
-  min-height: 760px;
-  object-fit: cover;
-  display: block;
+
+  position: absolute;
+
+  inset: 0;
+
+  transition: transform .4s ease;
 }
 
 .serviceVisual:hover .serviceImg {
