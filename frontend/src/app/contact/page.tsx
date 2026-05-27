@@ -1,4 +1,8 @@
+import { useState } from 'react';
 export default function ContactPage() {
+  const [nombre, setNombre] = useState('');
+  const [email, setEmail] = useState('');
+  const [mensaje, setMensaje] = useState('');
   return (
     <main className="contactPage">
 
@@ -42,22 +46,45 @@ export default function ContactPage() {
         <form className="contactPageForm">
 
           <input
-            type="text"
-            placeholder="Nombre"
-          />
+  type="text"
+  placeholder="Nombre"
+  value={nombre}
+  onChange={(e) => setNombre(e.target.value)}
+/>
 
           <input
-            type="email"
-            placeholder="Correo"
-          />
+  type="email"
+  placeholder="Correo"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+/>
 
           <textarea
-            placeholder="Mensaje"
-          />
+  placeholder="Mensaje"
+  value={mensaje}
+  onChange={(e) => setMensaje(e.target.value)}
+/>
 
-          <button>
-            Enviar Consulta
-          </button>
+          <button
+  type="submit"
+  disabled={
+    !nombre ||
+    !email ||
+    !mensaje
+  }
+  className={`
+    contactSubmitButton
+    ${
+      !nombre ||
+      !email ||
+      !mensaje
+        ? 'disabledButton'
+        : ''
+    }
+  `}
+>
+  Enviar Consulta
+</button>
 
         </form>
 
