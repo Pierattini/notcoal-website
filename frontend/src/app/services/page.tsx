@@ -225,8 +225,8 @@ export default function ServicesPage() {
   style={{ minHeight: "760px" }}
 >
     <Image
-    src="/services/solar.jpg"
-    alt="solar"
+    src="/services/consulting.jpg"
+    alt="consulting"
     fill
     className="serviceImg"
   />
