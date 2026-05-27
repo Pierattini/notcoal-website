@@ -222,8 +222,8 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-    src="/services/solar.jpg"
-    alt="solar"
+    src="/services/hola.jpg"
+    alt="hola"
     fill
     className="serviceImg"
   />
