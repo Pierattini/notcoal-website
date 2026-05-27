@@ -258,15 +258,9 @@
 
 .serviceRow {
   display: grid;
-
   grid-template-columns: 0.9fr 1.1fr;
-
-  align-items: center;
-
   gap: 50px;
-
   padding-left: 3%;
-
   background: #f3f0ea;
 }
 
