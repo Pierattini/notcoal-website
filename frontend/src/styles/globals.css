@@ -1,0 +1,54 @@
+@import "./base/variables.css";
+@import "./base/animations.css";
+
+@import "./layout/navbar.css";
+@import "./layout/hero.css";
+@import "./layout/footer.css";
+@import "./layout/mobile-menu.css";
+
+@import "./sections/projects.css";
+@import "./sections/company.css";
+@import "./sections/home.css";
+@import "./sections/contact.css";
+@import "./sections/services.css";
+
+@import "./responsive/responsive.css";
+
+html {
+  font-size: 12px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
+  zoom: 0.75;
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

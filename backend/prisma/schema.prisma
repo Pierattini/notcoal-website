@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Lead {
+  id             String   @id @default(cuid())
+  name           String
+  email          String
+  phone          String?
+  company        String?
+  message        String
+  meetingDate    DateTime?
+  meetingSlot    String?
+  createdAt      DateTime @default(now())
+}
+
+model Availability {
+  id        String   @id @default(cuid())
+  day       String
+  startHour String
+  endHour   String
+  active    Boolean  @default(true)
+}
+
+model Project {
+  id            String   @id @default(cuid())
+  title         String
+  description   String
+  featured      Boolean  @default(false)
+
+  imageUrl      String?
+
+  createdAt     DateTime @default(now())
+
+  // FUTURO
+  // category
+  // gallery
+  // videos
+  // SEO
+  // analytics
+  // tags
+  // client
+  // location
+  // power
+}

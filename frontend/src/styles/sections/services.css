@@ -1,0 +1,707 @@
+.servicesPage,
+.projectsPage,
+.contactPage {
+  background: #08111f;
+  color: white;
+  min-height: 100vh;
+}
+
+.servicesHero {
+  position: relative;
+  overflow: visible;
+
+  padding: 220px 7% 220px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(3,7,18,0.72),
+      rgba(3,7,18,0.82)
+    ),
+    url("/banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.projectsHero,
+.contactHero {
+  padding: 180px 7% 120px;
+  text-align: center;
+}
+
+.servicesHero h1,
+.projectsHero h1,
+.contactHero h1 {
+  font-size: clamp(54px, 6vw, 92px);
+  margin: 24px auto;
+}
+
+.servicesHero p,
+.contactHero p {
+  color: #b6c2d1;
+  font-size: 20px;
+}
+
+.processSection {
+  margin-top: -320px;
+  padding: 0 7% 140px;
+}
+
+.processSection h2 {
+  font-size: 52px;
+  margin-bottom: 50px;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 24px;
+}
+
+.processCard {
+  padding: 38px;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34,197,94,0.10),
+      rgba(14,165,233,0.08)
+    );
+}
+
+.processCard strong {
+  display: block;
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.processCard span {
+  font-size: 20px;
+}
+
+.projectsFilters {
+  padding: 0 7% 60px;
+
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.projectsFilters button {
+  height: 52px;
+  padding: 0 26px;
+
+  border-radius: 999px;
+
+  border: none;
+
+  background: rgba(255,255,255,0.06);
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.projectsGridPage {
+  padding: 0 7% 140px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.projectPageCard {
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  height: 520px;
+}
+
+.projectPageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectPageOverlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 34px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0,0,0,0.7)
+    );
+}
+
+.projectPageOverlay h3 {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.projectPageOverlay span {
+  color: #22c55e;
+  font-size: 26px;
+}
+
+.contactPageLayout {
+  padding: 0 7% 140px;
+
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contactInfoCard {
+  padding: 34px;
+  border-radius: 28px;
+
+  background:
+    rgba(255,255,255,0.04);
+}
+
+.contactInfoCard strong {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+
+.contactInfoCard span {
+  color: #b6c2d1;
+}
+
+.contactPageForm {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contactPageForm input,
+.contactPageForm textarea {
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 22px;
+
+  padding: 22px;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.contactPageForm textarea {
+  min-height: 220px;
+  resize: none;
+}
+
+.contactPageForm button {
+  height: 64px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #16a34a
+    );
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+.servicesShowcase {
+
+  background: #f3f0ea;
+
+  padding: 120px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  width: 100%;
+}
+
+.serviceText {
+  padding-right: 20px;
+}
+
+.serviceRow {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: 50px;
+
+  padding-left: 3%;
+
+  background: #f3f0ea;
+}
+
+.serviceText h2 {
+  font-size: clamp(42px,4vw,64px);
+
+  line-height: 1.05;
+
+  margin: 18px 0 20px;
+
+  color: #111827;
+
+  max-width: 700px;
+}
+
+.serviceText p {
+  color: #4b5563;
+
+  line-height: 1.9;
+
+  font-size: 18px;
+
+  margin-bottom: 34px;
+
+  max-width: 620px;
+}
+
+.serviceVisual {
+  position: relative;
+
+  height: 760px;
+
+  overflow: hidden;
+
+  width: 100%;
+}
+
+.serviceImg {
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+
+  transition: transform .4s ease;
+}
+
+.serviceVisual:hover .serviceImg {
+  transform: scale(1.02);
+}
+.serviceRow.reverse {
+  padding-left: 0;
+  padding-right: 7%;
+}
+.miniTag {
+  color: #4ade80;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.servicesStats {
+  background: #f3f0ea;
+
+   padding: 40px 7% 0px;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 80px;
+}
+
+.servicesStats div {
+  text-align: center;
+}
+
+.servicesStats strong {
+  display: block;
+
+  font-size: 58px;
+  font-weight: 800;
+
+  margin-bottom: 10px;
+
+  color: #111827;
+}
+
+.servicesStats span {
+  color: #6b7280;
+}
+.serviceExpand {
+  display: flex;
+  flex-direction: column;
+
+  gap: 34px;
+
+  margin-top: 50px;
+}
+
+.serviceStep {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 16px;
+}
+
+.serviceStep:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.serviceStepHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(15,23,42,0.08);
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+.serviceStepNumber,
+.serviceStepHeader .serviceStepNumber {
+  font-size: 18px;
+  font-weight: 700;
+  color: #475569;
+  min-width: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceStepMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.serviceStepHeader .serviceStepTitle,
+.serviceText .serviceStepTitle {
+  font-size: 20px;
+  margin: 0;
+  color: #111827 !important;
+  line-height: 1.25;
+}
+
+.serviceStepHeader.open .serviceStepTitle {
+  color: #0f172a !important;
+}
+
+.serviceStepHeader .serviceStepShort,
+.serviceText .serviceStepShort {
+  margin: 0;
+  color: #6b7280 !important;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.serviceStepToggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.75);
+  transition: transform .32s cubic-bezier(.2,.9,.2,1), background .28s ease;
+}
+
+.serviceStepToggle:hover {
+  background: rgba(255,255,255,0.95);
+}
+
+.serviceStepToggle.rotated,
+.serviceStep.open .serviceStepToggle {
+  transform: rotate(45deg);
+}
+
+.serviceStepContent {
+  overflow: hidden;
+  transition: max-height .45s cubic-bezier(.2,.9,.2,1), opacity .28s ease, transform .28s ease;
+  max-height: 0px;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.serviceStepContentInner {
+  padding: 12px 0 18px 72px;
+  background: transparent;
+  border: none;
+}
+
+.serviceStepContentInner p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.9;
+}
+
+.serviceStep.open .serviceStepContent,
+.serviceStepHeader.open + .serviceStepContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ESTO DESACTIVA RTL
+.serviceRow.reverse {
+  direction: rtl;
+}
+*/
+/* ESTO DESACTIVA RTL
+.serviceRow.reverse .serviceText {
+  direction: ltr;
+}
+*/
+/* ESTO DESACTIVA RTL
+.serviceRow.reverse .serviceVisual {
+  direction: ltr;
+}
+*/
+.servicesHero::after {
+  content: "";
+
+  position: absolute;
+
+  left: -4%;
+  bottom: -12px;
+
+  width: 108%;
+  height: 360px;
+
+  background: #f3f0ea;
+
+  clip-path: polygon(
+    0% 72%,
+    3% 73%,
+    6% 74%,
+    9% 75%,
+    12% 76%,
+    15% 77%,
+    18% 78%,
+    21% 79%,
+    24% 80%,
+    27% 81%,
+    30% 82%,
+    33% 83%,
+    36% 84%,
+    39% 84.5%,
+    42% 85%,
+    45% 85.2%,
+    48% 85%,
+    51% 84.5%,
+    54% 83.5%,
+    57% 82%,
+    60% 80%,
+    63% 77.5%,
+    66% 74.5%,
+    69% 71%,
+    72% 67%,
+    75% 62.5%,
+    78% 58%,
+    81% 54%,
+    84% 50.5%,
+    87% 48%,
+    90% 46%,
+    93% 45%,
+    96% 44.5%,
+    100% 45%,
+    100% 100%,
+    0% 100%
+  );
+
+  z-index: 3;
+}
+
+.servicesHero > * {
+  position: relative;
+  z-index: 4;
+}
+.serviceRow.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+.consultoriaSection {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+/*
+.consultoriaSection .serviceText {
+  padding-left: 7.4%;
+}
+*/
+.consultoriaSection .serviceVisual {
+  grid-column: 1;
+  grid-row: 1;
+
+  overflow: hidden;
+}
+
+.consultoriaSection .serviceText h2 {
+  white-space: nowrap;
+}
+.consultoriaSection .serviceText {
+  grid-column: 2;
+
+  padding-left: 5%;
+}
+.consultoriaSection .serviceImg {
+  width: 101.5%;
+  margin-left: -1.5%;
+}
+@media (max-width: 768px) {
+
+  .serviceRow,
+  .serviceRow.reverse {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .serviceVisual {
+
+    height: 320px;
+  }
+
+  .serviceText {
+
+    padding: 40px 7%;
+  }
+
+  .serviceText h2 {
+
+    font-size: 42px;
+
+    line-height: 1;
+  }
+
+  .servicesStats {
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    padding: 40px 7%;
+  }
+
+  .consultoriaSection .serviceText {
+
+    padding-left: 7%;
+  }
+
+  .consultoriaSection .serviceText h2 {
+
+    white-space: normal;
+  }
+
+  .serviceExpand {
+
+    margin-top: 30px;
+  }
+
+  .serviceStep {
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .serviceStepHeader {
+    padding: 14px 18px;
+    gap: 14px;
+  }
+
+  .serviceStepNumber {
+    font-size: 28px;
+    min-width: 56px;
+  }
+
+  .serviceStepTitle {
+    font-size: 18px;
+  }
+
+  .serviceStepContentInner {
+    padding: 12px 18px 16px 72px;
+  }
+
+  .serviceStepToggle {
+    width: 38px;
+    height: 38px;
+  }
+  .serviceVisual {
+
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.serviceImg {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+.servicesShowcase {
+
+  overflow: hidden;
+}
+
+.serviceRow,
+.serviceRow.reverse {
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.serviceText,
+.serviceVisual {
+
+  width: 100%;
+
+  max-width: 100%;
+}
+
+.serviceExpand {
+
+  width: 100%;
+}
+}

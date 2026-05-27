@@ -1,0 +1,167 @@
+.companySection {
+  background: white;
+  padding: 160px 7%;
+  position: relative;
+  z-index: 2;
+}
+
+.companyContent {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 80px;
+  align-items: center;
+}
+.companyLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 560px;
+}
+
+.companyRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.companySection h2 {
+  color: #08111f;
+  font-size: clamp(40px, 5vw, 62px);
+  margin-bottom: 20px;
+}
+
+.companySection p {
+  color: #44526b;
+  line-height: 1.8;
+}
+
+.companySingleSection {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+  width: 100%;
+  margin-left: 0;
+  background: #f5f3ee;
+  overflow: hidden;
+  position: relative;
+}
+
+.companySingleContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 100px;
+  background: #f5f3ee;
+  max-width: 100%;
+  position: relative;
+  z-index: 4;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.companySingleContent::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -180px;
+  width: 260px;
+  height: 100%;
+  background: #f5f3ee;
+  border-radius: 50% 0 0 50%;
+  z-index: -1;
+}
+
+.companySingleContent > * {
+  position: relative;
+  z-index: 2;
+}
+
+.companySingleImage {
+  position: relative;
+  overflow: hidden;
+  min-height: 760px;
+  height: 100%;
+  width: 100%;
+}
+.companySingleImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.companySingleContent span {
+  color: #22c55e;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.companySingleContent h2 {
+  font-size: clamp(54px,5vw,84px);
+  line-height: 0.92;
+  letter-spacing: -4px;
+  margin: 24px 0 34px;
+  color: #020617;
+}
+
+.companySingleContent p {
+  font-size: 19px;
+  line-height: 1.9;
+  color: #334155;
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+.projectsSection {
+  padding: 0;
+  background: #f5f3ee;
+  overflow: hidden;
+}
+
+.companySingleImage img {
+  position: absolute;
+  inset: 0;
+}
+
+@media (max-width: 980px) {
+.companyContent {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.companyRight {
+  grid-template-columns: 1fr;
+}
+
+.companySingleSection {
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-left: 0;
+}
+
+.companySingleImage {
+  width: 100%;
+  margin-left: 0;
+  min-height: 340px;
+}
+
+.companySingleContent {
+    padding: 60px 7%;
+  }
+
+.companySingleContent h2 {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+.companySingleContent p {
+    font-size: 17px;
+  }
+}
+/* ======================================
+ STATEMENT BAND
+====================================== */
+.statementBand {
+  display: none;
+}

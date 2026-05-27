@@ -1,0 +1,140 @@
+/* =========================
+ MOBILE MENU
+========================= */
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+
+  background:
+    rgba(0,0,0,0.45);
+
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+
+  z-index: 998;
+}
+
+.mobileOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 18px;
+  right: -100%;
+
+  width: 260px;
+  max-width: 78%;
+
+  height: calc(100vh - 36px);
+
+  border-radius: 28px 0 0 28px;
+
+  background: rgba(5, 8, 22, 0.92);
+
+  backdrop-filter: blur(22px);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  padding: 95px 24px 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  overflow: hidden;
+
+  transition: right 0.35s ease;
+
+  z-index: 1000;
+
+  box-shadow:
+    -20px 0 60px rgba(0,0,0,0.45);
+}
+
+.mobileMenu.active {
+  right: 0;
+}
+
+.mobileMenu a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  padding: 18px 0;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.05);
+
+  transition: 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mobileMenu a svg {
+  color: #22c55e;
+
+  flex-shrink: 0;
+}
+
+.mobileMenu a:hover {
+  color: var(--primary);
+}
+
+.mobileMenu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -120px;
+  right: -120px;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34,197,94,0.14),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.mobileMenu::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -140px;
+  left: -120px;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(14,165,233,0.12),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}

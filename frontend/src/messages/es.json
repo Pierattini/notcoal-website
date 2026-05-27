@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "company": "Empresa",
+    "contact": "Contacto"
+  }
+}

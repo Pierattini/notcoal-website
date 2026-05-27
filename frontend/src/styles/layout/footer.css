@@ -1,0 +1,399 @@
+/* ======================================
+ FOOTER
+====================================== */
+
+.footer {
+
+  background: #050816;
+
+  padding: 70px 6% 30px;
+}
+
+.footerTop {
+
+  display: grid;
+
+  grid-template-columns:
+    1.3fr 1fr 1fr 1fr;
+
+  gap: 50px;
+
+  padding-bottom: 50px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.footer h4 {
+
+  color: white;
+
+  margin-bottom: 24px;
+}
+
+.footer a {
+
+  display: block;
+
+  color: #94a3b8;
+
+  text-decoration: none;
+
+  margin-bottom: 16px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+
+  width: fit-content;
+}
+
+.footer a:hover {
+
+  color: white;
+
+  transform: translateX(6px);
+}
+
+.footerBottom {
+
+  padding-top: 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #64748b;
+}
+.footerLogo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.footerLogoImage {
+
+  width: 58px;
+
+  height: 58px;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+}
+
+.footerBrandText strong {
+
+  display: block;
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.footerBrandText p {
+
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+.socialIcons {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 22px;
+}
+
+.socialIcon {
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  transition: 0.25s ease;
+}
+
+.socialIcon:hover {
+
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(255,255,255,0.18);
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+.footerIntro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 42px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 34px;
+}
+
+.footerBrand {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 320px;
+}
+
+.footerLogoBox {
+  width: 62px;
+  height: 62px;
+  border-radius: 24px;
+  background: rgba(14, 165, 233, 0.15);
+  color: #0ea5e9;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.footerBrandText strong {
+  display: block;
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.footerBrandText p {
+  max-width: 380px;
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.footerContactMini {
+  display: grid;
+  gap: 18px;
+  min-width: 240px;
+}
+
+.footerContactMini div {
+  display: grid;
+  gap: 6px;
+}
+
+.footerContactMini span {
+  color: #94a3b8;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.footerContactMini a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.footerContactMini a:hover {
+  color: #0ea5e9;
+}
+
+.footerSections {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 32px;
+  margin: 40px 0;
+}
+
+.footerColumn h4 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.footerColumn a {
+  display: block;
+  color: #94a3b8;
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footerColumn a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.contactColumn .socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 18px 0 12px;
+}
+
+.contactColumn .socialIcons a {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.contactColumn .socialIcons a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(14, 165, 233, 0.4);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.contactHint {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 240px;
+}
+
+.footerBottom {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  color: #64748b;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footerLinks a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footerLinks a:hover {
+  color: white;
+}
+
+@media screen and (max-width: 980px) {
+  .footerIntro {
+    display: grid;
+    gap: 28px;
+  }
+
+  .footerSections {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer {
+    padding: 50px 5% 30px;
+  }
+
+  .footerIntro,
+  .footerSections,
+  .footerBottom {
+    display: block;
+  }
+
+  .footerContactMini {
+    gap: 14px;
+  }
+
+  .footerSections {
+    gap: 22px;
+  }
+
+  .footerColumn {
+    width: 100%;
+  }
+
+  .footerBottom {
+    gap: 14px;
+  }
+}
+
+/* =========================
+ WHATSAPP
+========================= */
+
+
+.whatsappBubble {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  background: #25D366;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  box-shadow:
+    0 12px 30px rgba(37,211,102,0.35);
+
+  transition: 0.3s ease;
+}
+
+.whatsappBubble:hover {
+  transform: scale(1.08);
+}
+
+.whatsappBubble img {
+  width: 36px;
+  height: 36px;
+
+  object-fit: contain;
+
+  display: block;
+}
