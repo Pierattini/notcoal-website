@@ -220,7 +220,10 @@ export default function ServicesPage() {
 
   </div>
 
-  <div className="serviceVisual">
+  <div
+  className="serviceVisual"
+  style={{ minHeight: "760px" }}
+>
     <Image
     src="/services/solar.jpg"
     alt="solar"
