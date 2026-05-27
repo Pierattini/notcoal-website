@@ -226,11 +226,12 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-  src="/services/solar.jpg"
-  alt="Solar"
-  fill
-  className="serviceImg"
-/>
+    src="/services/solar.jpg"
+    alt="Solar"
+    width={1200}
+    height={900}
+    className="serviceImg"
+  />
   </div>
 
 </div>
