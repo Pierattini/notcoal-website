@@ -5,13 +5,11 @@ import Image from "next/image";
 
 function AccordionItem({
   index,
-  number,
   title,
   shortDesc,
   longDesc
 }: {
   index: number;
-  number: string;
   title: string;
   shortDesc?: string;
   longDesc: string;
@@ -44,7 +42,6 @@ function AccordionItem({
         onClick={() => setOpen((s) => !s)}
         className={`serviceStepHeader ${open ? "open" : ""}`}
       >
-        <span className="serviceStepNumber">{number}</span>
         <div className="serviceStepMeta">
           <h4 className="serviceStepTitle">{title}</h4>
           {shortDesc && (
@@ -214,7 +211,6 @@ export default function ServicesPage() {
         <AccordionItem
           key={idx}
           index={idx}
-          number={item.number}
           title={item.title}
           shortDesc={item.shortDesc}
           longDesc={item.longDesc}
@@ -268,7 +264,6 @@ export default function ServicesPage() {
         <AccordionItem
           key={idx}
           index={idx}
-          number={item.number}
           title={item.title}
           shortDesc={item.shortDesc}
           longDesc={item.longDesc}
@@ -304,7 +299,6 @@ export default function ServicesPage() {
         <AccordionItem
           key={idx}
           index={idx}
-          number={item.number}
           title={item.title}
           shortDesc={item.shortDesc}
           longDesc={item.longDesc}
