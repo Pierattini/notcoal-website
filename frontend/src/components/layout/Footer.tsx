@@ -4,7 +4,9 @@ export default function Footer() {
 
       <div className="footerIntro">
         <div className="footerBrand">
-          <div className="footerLogoBox">N</div>
+          <div className="footerLogoBox">
+            <img src="/logos/logo-square.png" alt="The Not Coal Company" className="footerLogoImage" />
+          </div>
           <div className="footerBrandText">
             <strong>The Not Coal Company</strong>
             <p>Energía sostenible para un futuro mejor</p>
@@ -72,15 +74,9 @@ export default function Footer() {
         </span>
 
         <div className="footerLinks">
-
-          <a href="#">
-            Privacidad
-          </a>
-
-          <a href="#">
-            Términos
-          </a>
-
+          <a href="/legal/privacidad">Privacidad</a>
+          <a href="/legal/terminos-condiciones">Términos</a>
+          <a href="/legal/cookies">Cookies</a>
         </div>
 
       </div>

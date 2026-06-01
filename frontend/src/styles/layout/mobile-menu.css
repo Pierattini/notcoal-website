@@ -6,8 +6,7 @@
   position: fixed;
   inset: 0;
 
-  background:
-    rgba(0,0,0,0.45);
+  background: rgba(51,51,51,0.45);
 
   backdrop-filter: blur(8px);
 
@@ -36,12 +35,11 @@
 
   border-radius: 28px 0 0 28px;
 
-  background: rgba(5, 8, 22, 0.92);
+  background: rgba(51,51,51, 0.92);
 
   backdrop-filter: blur(22px);
 
-  border:
-    1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(245,243,239,0.06);
 
   padding: 95px 24px 30px;
 
@@ -84,7 +82,7 @@
 }
 
 .mobileMenu a svg {
-  color: #22c55e;
+  color: var(--color-green);
 
   flex-shrink: 0;
 }
@@ -132,7 +130,7 @@
   background:
     radial-gradient(
       circle,
-      rgba(14,165,233,0.12),
+      rgba(29,82,72,0.12),
       transparent 70%
     );
 

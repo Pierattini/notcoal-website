@@ -17,13 +17,12 @@
 
   z-index: 999;
 
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(6px);
 
-  background:
-    rgba(5, 8, 22, 0.72);
+  background: var(--color-cream);
 
   border-bottom:
-    1px solid rgba(255,255,255,0.05);
+    1px solid rgba(51,51,51,0.06);
 
     transition:
   background 0.3s ease,
@@ -33,11 +32,9 @@
 
 .nav.scrolled {
 
-  background:
-    rgba(5, 8, 22, 0.92);
+  background: rgba(245,243,239,0.98);
 
-  box-shadow:
-    0 10px 35px rgba(0,0,0,0.28);
+  box-shadow: none;
 
   height: 74px;
 }
@@ -54,12 +51,6 @@
 
   border-radius: 14px;
 
-  background:
-    rgba(255,255,255,0.05);
-
-  border:
-    1px solid rgba(255,255,255,0.08);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,13 +58,13 @@
   font-size: 22px;
   font-weight: 700;
 
-  color: white;
+  color: var(--color-graphite);
 }
 
 .brand strong {
   font-size: 20px;
   font-weight: 700;
-  color: white;
+  color: var(--color-graphite);
 }
 
 .navLinks {
@@ -81,10 +72,10 @@
 }
 
 .navLinks a {
-  color: white;
+  color: var(--color-graphite);
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
 
   transition: 0.25s ease;
@@ -102,7 +93,7 @@
   width: 0%;
   height: 2px;
 
-  background: #22c55e;
+  background: var(--color-green);
 
   transition: width 0.3s ease;
 }
@@ -112,7 +103,7 @@
 }
 
 .navLinks a:hover {
-  color: var(--primary);
+  color: var(--color-green);
 }
 
 .navRight {
@@ -130,10 +121,9 @@
 
   border: none;
 
-  background:
-    rgba(255,255,255,0.05);
+  background: transparent;
 
-  color: white;
+  color: var(--color-graphite);
 
   display: flex;
 
@@ -151,11 +141,9 @@
 
   border-radius: 999px;
 
-  background:
-    rgba(255,255,255,0.05);
+  background: transparent;
 
-  border:
-    1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(51,51,51,0.06);
 
   backdrop-filter: blur(14px);
 }
@@ -171,11 +159,11 @@
 
   background: transparent;
 
-  color: rgba(255,255,255,0.72);
+  color: rgba(51,51,51,0.92);
 
   cursor: pointer;
 
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 
   transition:
@@ -185,18 +173,22 @@
 }
 
 .languageSwitcher button:hover {
-
-  color: white;
-
+  color: var(--color-graphite);
   transform: translateY(-1px);
 }
 
 .activeLang {
 
-  background: white !important;
+  background: var(--color-green) !important;
 
-  color: #08111f !important;
+  color: white !important;
 
   box-shadow:
-    0 4px 18px rgba(255,255,255,0.18);
+    0 6px 20px rgba(29,82,72,0.18);
+}
+
+.navbarLogo {
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
 }

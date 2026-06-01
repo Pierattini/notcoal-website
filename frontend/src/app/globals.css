@@ -1,1 +1,61 @@
+@font-face {
+  font-family: "Myanmar MN";
+  src: url("/fonts/myanmar-mn.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "../styles/globals.css";
+
+:root {
+  --font-family-base: "Myanmar MN", Inter, Arial, Helvetica, sans-serif;
+  --color-graphite: #333333;
+  --color-green: #1D5248;
+  --color-cream: #F5F3EF;
+
+  --background: var(--color-graphite);
+  --background-secondary: #292929;
+
+  --text-light: var(--color-cream);
+  --text-dark: var(--color-graphite);
+  --text-secondary: rgba(51,51,51,0.72);
+  --text-primary: var(--text-light);
+}
+
+html {
+  font-size: 12px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-family-base);
+  overflow-x: hidden;
+  zoom: 0.75;
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-graphite);
+}

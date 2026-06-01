@@ -4,7 +4,9 @@
 
 .footer {
 
-  background: #050816;
+  background: linear-gradient(180deg, rgba(51,51,51,0.96), var(--color-graphite));
+
+  border-top: 1px solid rgba(255,255,255,0.12);
 
   padding: 70px 6% 30px;
 }
@@ -21,7 +23,7 @@
   padding-bottom: 50px;
 
   border-bottom:
-    1px solid rgba(255,255,255,0.06);
+    1px solid rgba(255,255,255,0.12);
 }
 
 .footer h4 {
@@ -35,7 +37,7 @@
 
   display: block;
 
-  color: #94a3b8;
+  color: rgba(245,243,239,0.88);
 
   text-decoration: none;
 
@@ -63,7 +65,7 @@
 
   justify-content: space-between;
 
-  color: #64748b;
+  color: rgba(245,243,239,0.82);
 }
 .footerLogo {
 
@@ -100,11 +102,11 @@
 
 .footerBrandText p {
 
-  color: #94a3b8;
+  color: rgba(245,243,239,0.82);
 
   font-size: 16px;
 
-  line-height: 1.7;
+  line-height: 1.85;
 }
 .socialIcons {
 
@@ -124,11 +126,9 @@
 
   border-radius: 18px;
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(245,243,239,0.12);
 
-  background:
-    rgba(255,255,255,0.03);
+  background: rgba(245,243,239,0.05);
 
   display: flex;
 
@@ -144,11 +144,9 @@
 
   transform: translateY(-4px);
 
-  border-color:
-    rgba(255,255,255,0.18);
+  border-color: rgba(29,82,72,0.28);
 
-  background:
-    rgba(255,255,255,0.06);
+  background: rgba(29,82,72,0.18);
 }
 
 .footerIntro {
@@ -157,7 +155,7 @@
   align-items: flex-start;
   gap: 32px;
   margin-bottom: 42px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding-bottom: 34px;
 }
 
@@ -171,14 +169,18 @@
 .footerLogoBox {
   width: 62px;
   height: 62px;
-  border-radius: 24px;
-  background: rgba(14, 165, 233, 0.15);
-  color: #0ea5e9;
+  border-radius: 14px;
+  background: var(--color-cream);
   display: grid;
   place-items: center;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  padding: 6px;
+}
+
+.footerLogoBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .footerBrandText strong {
@@ -191,8 +193,8 @@
 
 .footerBrandText p {
   max-width: 380px;
-  color: #94a3b8;
-  line-height: 1.8;
+  color: rgba(245,243,239,0.82);
+  line-height: 1.85;
   font-size: 15px;
 }
 
@@ -208,8 +210,8 @@
 }
 
 .footerContactMini span {
-  color: #94a3b8;
-  font-size: 13px;
+  color: rgba(245,243,239,0.86);
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -218,12 +220,13 @@
   display: inline-block;
   color: white;
   text-decoration: none;
+  font-size: 15px;
   font-weight: 600;
   transition: color 0.25s ease;
 }
 
 .footerContactMini a:hover {
-  color: #0ea5e9;
+  color: var(--color-green);
 }
 
 .footerSections {
@@ -243,15 +246,24 @@
 
 .footerColumn a {
   display: block;
-  color: #94a3b8;
+  color: rgba(245,243,239,0.86);
   text-decoration: none;
   margin-bottom: 14px;
+  font-size: 15px;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .footerColumn a:hover {
   color: white;
   transform: translateX(4px);
+}
+
+.footer a:focus-visible,
+.footerColumn a:focus-visible,
+.footerContactMini a:focus-visible,
+.contactColumn .socialIcons a:focus-visible {
+  outline: 3px solid rgba(29,82,72,0.28);
+  outline-offset: 2px;
 }
 
 .contactColumn .socialIcons {
@@ -283,9 +295,9 @@
 }
 
 .contactHint {
-  font-size: 13px;
-  color: #94a3b8;
-  line-height: 1.7;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
   max-width: 240px;
 }
 
@@ -295,7 +307,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  color: #64748b;
+  color: var(--text-secondary);
   flex-wrap: wrap;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -307,7 +319,7 @@
 }
 
 .footerLinks a {
-  color: #94a3b8;
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.25s ease;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 import {
   Grid2x2,
@@ -19,6 +20,7 @@ export default function MobileMenu({
   open,
   onClose
 }: Props) {
+  const { t } = useLanguage();
 
   return (
     <>
@@ -33,33 +35,32 @@ export default function MobileMenu({
 
         <Link href="/" onClick={onClose}>
           <Home size={18} />
-          Inicio
+          {t.navbar.home}
         </Link>
-
+        <Link href="/company" onClick={onClose}>
+          <Building2 size={18} />
+          {t.navbar.company}
+        </Link>
         <Link href="/services" onClick={onClose}>
           <Grid2x2 size={18} />
-          Servicios
+          {t.navbar.services}
         </Link>
 
         <Link href="/projects" onClick={onClose}>
           <BriefcaseBusiness size={18} />
-          Proyectos
+          {t.navbar.projects}
         </Link>
-
-        <Link href="/company" onClick={onClose}>
-          <Building2 size={18} />
-          Empresa
-        </Link>
-
        {/* 
-<Link href="/contact" onClick={onClose}>
-  <Mail size={18} />
-  Contacto
-</Link>
-*/}
+    <Link href="/contact" onClick={onClose}>
+      <Mail size={18} />
+      {t.navbar.contact}
+    </Link>
+    */}
 
       </aside>
     </>
   );
-
 }
+
+// touch: ensure TypeScript/IDE picks up this file after recent file changes
+export {};

@@ -5,5 +5,37 @@
     "projects": "Projekte",
     "company": "Unternehmen",
     "contact": "Kontakt"
-  }
+  },
+"company": {
+  "hero": {
+    "badge": "Über Uns",
+    "title": "Engineering und Umsetzung für Utility-Scale PV- und BESS-Projekte",
+    "description": "Wir entwickeln und realisieren leistungsstarke erneuerbare Energieinfrastruktur in ganz Europa."
+  },
+
+  "intro": {
+    "badge": "WER WIR SIND",
+    "title": "Wir haben nicht bei null angefangen.",
+    "text1": "Vor The Not Coal Company waren wir bereits an einigen der wichtigsten Utility-Scale-Projekte Europas beteiligt und verwalteten Hunderte von MW in Deutschland, den Niederlanden, Polen, Griechenland und den nordischen Ländern.",
+    "text2": "Wir haben dort gearbeitet, wo Projekte komplex sind, Fristen eng sind und die Umsetzung wirklich zählt."
+  },
+
+  "statement": "Wir verwandeln komplexe Herausforderungen im Bereich erneuerbare Energien in finanzierbare, baubare und betriebsfähige Anlagen.",
+
+  "mission": {
+    "title": "MISSION",
+    "text": "Erneuerbare Energieinfrastruktur mit technischer Präzision, Geschwindigkeit und kommerzieller Vision umsetzen."
+  },
+
+  "vision": {
+    "title": "VISION",
+    "text": "Ein europäischer Maßstab für Utility-Scale PV- und BESS-Projekte werden."
+  },
+
+  "founder": {
+  "badge": "FOUNDER STORY",
+  "title": "Technische Führung mit echter Umsetzungsperspektive.",
+  "description": "Die Erfahrung hinter The Not Coal Company stammt aus jahrelanger Beteiligung an Utility-Scale-Projekten in verschiedenen europäischen Märkten, kombiniert Engineering, EPC-Koordination und strategische Entwicklung."
+}
+}
 }

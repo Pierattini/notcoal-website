@@ -29,7 +29,7 @@
 
   font-size: 54px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 }
 
 .companyNumbers small {
@@ -38,13 +38,13 @@
 
   margin-top: 10px;
 
-  color: #44526b;
+  color: var(--text-inverse);
 
-  font-size: 15px;
+  font-size: 16px;
 
   font-weight: 500;
 
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .companyRight {
@@ -59,7 +59,7 @@
 
 .miniCard {
 
-  background: white;
+  background: var(--color-cream);
 
   padding: 32px;
 
@@ -86,7 +86,7 @@
 
 .miniCard svg {
 
-  color: #0ea5e9;
+  color: var(--color-green);
 
   margin-bottom: 20px;
 }
@@ -97,11 +97,11 @@
 
   margin-bottom: 12px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 }
 .companyPage {
-  background: #f3f0ea;
-  color: #08111f;
+  background: var(--color-cream);
+  color: var(--color-graphite);
   overflow-x: hidden;
 }
 
@@ -114,8 +114,8 @@
 
   background:
     linear-gradient(
-      rgba(3,7,18,0.72),
-      rgba(3,7,18,0.82)
+      rgba(51,51,51,0.72),
+      rgba(51,51,51,0.82)
     ),
     url("/banner.jpg");
 
@@ -135,7 +135,7 @@
   width: 100%;
   height: 180px;
 
-  background: #f3f0ea;
+  background: var(--color-cream);
 
   clip-path: polygon(
     0% 72%,
@@ -207,7 +207,7 @@ font-size:
 
   margin: auto;
 
-  color: #d2dae6;
+  color: rgba(245,243,239,0.86);
 
   font-size: 22px;
 
@@ -235,7 +235,7 @@ font-size:
   width: 110%;
   height: 180px;
 
-  background: #f3f0ea;
+  background: var(--color-cream);
 
   border-bottom-left-radius: 50% 100%;
   border-bottom-right-radius: 50% 100%;
@@ -249,13 +249,13 @@ font-size:
 
   position: absolute;
 
-  bottom: -55px;
+  bottom: -58px;
   left: -5%;
 
   width: 110%;
   height: 180px;
 
-  background: #f3f0ea;
+  background: var(--color-cream);
 
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
@@ -289,8 +289,8 @@ font-size:
 }
 
 .companyStory small {
-  color: #22c55e;
-  font-size: 14px;
+  color: var(--color-green);
+  font-size: 15px;
   text-transform: uppercase;
 }
 
@@ -303,11 +303,11 @@ font-size:
 
   margin-top: 20px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 }
 
 .companyStory p {
-  color: #b6c2d1;
+  color: var(--text-inverse);
   line-height: 1.9;
   font-size: 18px;
 }
@@ -325,7 +325,7 @@ font-size:
 
   border-radius: 34px;
 
-  background: white;
+  background: var(--color-cream);
 
   border:
     1px solid rgba(15,23,42,0.04);
@@ -344,7 +344,7 @@ font-size:
 }
 
 .missionCard p {
-  color: #b6c2d1;
+  color: var(--text-inverse);
   line-height: 1.8;
 }
 
@@ -361,13 +361,13 @@ font-size:
 
 .timelineItem strong {
   font-size: 42px;
-  color: #22c55e;
+  color: var(--color-green);
   display: block;
   margin-bottom: 18px;
 }
 
 .timelineItem p {
-  color: #cbd5e1;
+  color: var(--text-inverse);
 }
 
 @media (max-width: 980px) {
@@ -415,7 +415,7 @@ font-size:
   background:
     radial-gradient(
       circle at top,
-      rgba(14,165,233,0.12),
+      rgba(29,82,72,0.12),
       transparent 55%
     );
 
@@ -437,7 +437,7 @@ font-size:
 
   overflow: hidden;
 
-  background: #f3f0ea;
+  background: var(--color-cream);
 
   padding: 0;
 }
@@ -468,8 +468,8 @@ font-size:
 }
 
 .companyIntroContent span {
-  color: #22c55e;
-  font-size: 14px;
+  color: var(--color-green);
+  font-size: 15px;
   letter-spacing: 2px;
   font-weight: 700;
 }
@@ -478,14 +478,14 @@ font-size:
   font-size: clamp(38px, 4vw, 64px);
   line-height: 0.95;
   margin: 24px 0 34px;
-  color: #08111f;
+  color: var(--color-graphite);
   letter-spacing: -4px;
 }
 
 .companyIntroContent p {
   font-size: 17px;
   line-height: 1.7;
-  color: #44526b;
+  color: var(--text-inverse);
   margin-bottom: 28px;
   max-width: 720px;
 }
@@ -560,9 +560,7 @@ font-size:
 }
 
 .valueCard {
-
-  position: relative;
-
+  color: var(--text-inverse);
   background:
     linear-gradient(
       180deg,
@@ -578,8 +576,7 @@ font-size:
 
   overflow: hidden;
 
-  border:
-    1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(245,243,239,0.5);
 
   box-shadow:
     0 20px 60px rgba(15,23,42,0.06);
@@ -626,7 +623,7 @@ font-size:
 
   font-weight: 700;
 
-  color: #22c55e;
+  color: var(--color-green);
 
   display: block;
 
@@ -641,12 +638,12 @@ font-size:
 
   margin-bottom: 20px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 }
 
 .valueCard p {
 
-  color: #44526b;
+  color: var(--text-secondary);
 
   line-height: 1.9;
 
@@ -685,8 +682,7 @@ font-size:
 
   border-radius: 44px 14px 44px 14px;
 
-  border:
-    1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(245,243,239,0.5);
 
   backdrop-filter: blur(10px);
 
@@ -700,9 +696,9 @@ font-size:
 
   margin-bottom: 18px;
 
-  color: #22c55e;
+  color: var(--color-green);
 
-  font-size: 13px;
+  font-size: 15px;
 
   font-weight: 700;
 
@@ -715,7 +711,7 @@ font-size:
 
   line-height: 1.3;
 
-  color: #08111f;
+  color: var(--color-graphite);
 
   font-weight: 700;
 }
@@ -763,9 +759,9 @@ font-size:
 
 .founderText small {
 
-  color: #22c55e;
+  color: var(--color-green);
 
-  font-size: 14px;
+  font-size: 15px;
 
   letter-spacing: 2px;
 
@@ -782,14 +778,14 @@ font-size:
   margin:
     24px 0 30px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 
   letter-spacing: -3px;
 }
 
 .founderText p {
 
-  color: #44526b;
+  color: var(--text-inverse);
 
   font-size: 19px;
 
@@ -837,26 +833,17 @@ font-size:
 ====================================== */
 
 .premiumGrid {
-
   padding: 0 0 120px;
-
   display: grid;
-
   grid-template-columns: 1.05fr 0.95fr;
-
   gap: 60px;
-
   align-items: center;
 }
 
 .premiumLeft {
-
   position: relative;
-
   overflow: hidden;
-
- border-radius: 0;
-
+  border-radius: 0;
   height: 680px;
 }
 .coverImage {
@@ -885,9 +872,9 @@ font-size:
 
 .premiumRight small {
 
-  color: #22c55e;
+  color: var(--color-green);
 
-  font-size: 14px;
+  font-size: 15px;
 
   font-weight: 700;
 
@@ -903,7 +890,7 @@ font-size:
 
   margin: 18px 0 24px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 
   letter-spacing: -3px;
 
@@ -916,7 +903,7 @@ font-size:
 
   line-height: 1.9;
 
-  color: #44526b;
+  color: var(--text-inverse);
 
   margin-bottom: 40px;
 }
@@ -946,12 +933,12 @@ font-size:
 
   margin-bottom: 10px;
 
-  color: #08111f;
+  color: var(--color-graphite);
 }
 
 .premiumNumbers span {
 
-  color: #64748b;
+  color: var(--text-inverse);
 
   font-size: 16px;
 }
@@ -983,19 +970,35 @@ font-size:
   object-fit: cover;
 }
 @media (max-width: 768px) {
-
-  .companyHero {
-
+.waveSection::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -5%;
+  width: 110%;
+  height: 80px;
+  background: var(--color-cream);
+  border-bottom-left-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+  z-index: 1;
+}
+.waveSection::after {
+  bottom: -25px;
+  left: -5%;
+  width: 110%;
+  height: 80px;
+  background: var(--color-cream);
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  z-index: 1;
+}
+.companyHero {
     padding: 120px 7% 80px;
   }
-
-  .companyHero h1 {
-
-    font-size: 42px;
-
-    line-height: 0.95;
-
-    letter-spacing: -2px;
+.companyHero h1 {
+  font-size: 42px;
+  line-height: 0.95;
+  letter-spacing: -2px;
   }
 
   .companyHero p {
@@ -1083,22 +1086,17 @@ font-size:
 
   .companyStatement {
 
-    padding: 120px 7% 70px;
+     padding: 160px 7% 140px;
   }
 
   .companyStatement h2 {
 
-    font-size: 34px;
+    font-size: 26px;
 
-    line-height: 1.2;
+  line-height: 1.15;
   }
 
-  .companyStatement::before {
-
-    height: 70px;
-
-    top: -70px;
-  }
+  
 
   .companyHero::after {
 
@@ -1109,8 +1107,7 @@ font-size:
 
     overflow-x: hidden;
   }
-  .companyStory,
-.companyIntro,
+.companyStory,
 .premiumGrid,
 .founderSection,
 .companyStatement,
@@ -1121,7 +1118,12 @@ font-size:
   padding-right: 7%;
 }
 
-.companyIntroContent,
+.companyIntroContent {
+
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
 .premiumRight,
 .founderText,
 .companyStory {

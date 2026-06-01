@@ -16,28 +16,34 @@ const projects = {
   Todos: [
     {
       category: "Solar PV",
-      title: "Parque Solar Valencia",
-      description:
-        "Proyecto utility-scale orientado a generación fotovoltaica de alto rendimiento y optimización operacional.",
+      title: "Nordic Solar One",
+      description: "Desarrollo utility-scale orientado a generación fotovoltaica.",
       power: "2.5 MW",
+      area: "500 ha",
+      country: "🇸🇪 Suecia",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     },
 
     {
       category: "EPC Delivery",
       title: "Madrid Energy Hub",
-      description:
-        "Infraestructura energética desarrollada bajo enfoque EPC y coordinación integral.",
-      power: "850 kW",
+      description: "Infraestructura energética desarrollada bajo enfoque EPC y coordinación integral.",
+      power: "500 MW",
+      area: "850 ha",
+      country: "🇪🇸 España",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     },
 
     {
       category: "BESS Infrastructure",
       title: "Barcelona Storage System",
-      description:
-        "Sistema avanzado de almacenamiento energético utility-scale.",
+      description: "Sistema avanzado de almacenamiento energético utility-scale.",
       power: "1.2 MW",
+      area: "850 ha",
+      country: "🇩🇪 Alemania",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     }
   ],
@@ -46,18 +52,22 @@ const projects = {
     {
       category: "Solar PV",
       title: "Nordic Solar One",
-      description:
-        "Desarrollo utility-scale orientado a generación fotovoltaica.",
+      description: "Desarrollo utility-scale orientado a generación fotovoltaica.",
       power: "2.5 MW",
+      area: "500 ha",
+      country: "🇵🇱 Polonia",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     },
 
     {
       category: "Solar PV",
       title: "Industrial Solar Platform",
-      description:
-        "Infraestructura PV diseñada para eficiencia energética de largo plazo.",
+      description: "Infraestructura PV diseñada para eficiencia energética de largo plazo.",
       power: "4.8 MW",
+      area: "720 ha",
+      country: "🇵🇱 Polonia",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     }
   ],
@@ -66,18 +76,22 @@ const projects = {
     {
       category: "BESS",
       title: "Smart Storage Grid",
-      description:
-        "Solución avanzada de almacenamiento energético utility-scale.",
+      description: "Solución avanzada de almacenamiento energético utility-scale.",
       power: "120 MWh",
+      area: "300 ha",
+      country: "🇩🇪 Alemania",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     },
 
     {
       category: "BESS",
       title: "Barcelona Storage System",
-      description:
-        "Integración técnica y estabilización energética para infraestructura crítica.",
+      description: "Integración técnica y estabilización energética para infraestructura crítica.",
       power: "1.2 MW",
+      area: "850 ha",
+      country: "🇪🇺 Europa",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     }
   ],
@@ -86,9 +100,11 @@ const projects = {
     {
       category: "EPC",
       title: "Industrial Energy Hub",
-      description:
-        "Infraestructura energética desarrollada bajo enfoque EPC.",
+      description: "Infraestructura energética desarrollada bajo enfoque EPC.",
       power: "850 kW",
+      area: "450 ha",
+      country: "Polonia",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     }
   ],
@@ -97,14 +113,15 @@ const projects = {
     {
       category: "Consultoría",
       title: "Technical Risk Strategy",
-      description:
-        "Consultoría enfocada en mitigación de riesgos técnicos y contractuales.",
+      description: "Consultoría enfocada en mitigación de riesgos técnicos y contractuales.",
       power: "Advisory",
+      area: "-",
+      country: "🇪🇺 Europa",
+      company: "The Not Coal Company",
       image: "/banner.jpg"
     }
   ]
 };
-
 export default function ProjectsPage() {
 
   const [activeCategory, setActiveCategory] =
@@ -439,7 +456,31 @@ export default function ProjectsPage() {
                 <p>
                   {project.description}
                 </p>
+<div className="projectStats">
 
+  <div className="statItem">
+    <strong>{project.power}</strong>
+    <span>Potencia</span>
+  </div>
+
+  <div className="statItem">
+    <strong>{project.area}</strong>
+    <span>Área</span>
+  </div>
+
+  <div className="statItem">
+  <strong>{project.country}</strong>
+  <span>País</span>
+</div>
+</div>
+
+<div className="projectPartner">
+
+  <span>Partner</span>
+
+  <strong>{project.company}</strong>
+
+</div>
               </div>
 
             </article>

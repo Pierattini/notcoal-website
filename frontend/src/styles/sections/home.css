@@ -1,5 +1,5 @@
 .companySection {
-  background: white;
+  background: var(--color-cream);
   padding: 160px 7%;
   position: relative;
   z-index: 2;
@@ -25,13 +25,13 @@
 }
 
 .companySection h2 {
-  color: #08111f;
+  color: var(--color-graphite);
   font-size: clamp(40px, 5vw, 62px);
   margin-bottom: 20px;
 }
 
 .companySection p {
-  color: #44526b;
+  color: var(--text-inverse);
   line-height: 1.8;
 }
 
@@ -41,7 +41,7 @@
   align-items: stretch;
   width: 100%;
   margin-left: 0;
-  background: #f5f3ee;
+  background: var(--color-cream);
   overflow: hidden;
   position: relative;
 }
@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 90px 100px;
-  background: #f5f3ee;
+  background: var(--color-cream);
   max-width: 100%;
   position: relative;
   z-index: 4;
@@ -66,7 +66,7 @@
   left: -180px;
   width: 260px;
   height: 100%;
-  background: #f5f3ee;
+  background: var(--color-cream);
   border-radius: 50% 0 0 50%;
   z-index: -1;
 }
@@ -91,8 +91,8 @@
 }
 
 .companySingleContent span {
-  color: #22c55e;
-  font-size: 14px;
+  color: var(--color-green);
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 3px;
 }
@@ -108,14 +108,14 @@
 .companySingleContent p {
   font-size: 19px;
   line-height: 1.9;
-  color: #334155;
+  color: var(--text-inverse);
   margin-bottom: 24px;
   max-width: 720px;
 }
 
 .projectsSection {
   padding: 0;
-  background: #f5f3ee;
+  background: var(--color-cream);
   overflow: hidden;
 }
 

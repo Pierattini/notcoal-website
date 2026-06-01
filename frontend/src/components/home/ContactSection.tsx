@@ -186,7 +186,7 @@ export default function ContactSection() {
 
           {mensajeExito && (
             <div style={{
-              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              background: 'var(--color-green)',
               color: 'white',
               padding: '16px 20px',
               borderRadius: '12px',
@@ -194,8 +194,8 @@ export default function ContactSection() {
               textAlign: 'center',
               fontSize: '14px',
               fontWeight: 500,
-              border: '1px solid rgba(16, 185, 129, 0.3)',
-              boxShadow: '0 4px 12px rgba(16, 185, 129, 0.15)'
+              border: '1px solid rgba(29,82,72,0.3)',
+              boxShadow: '0 4px 12px rgba(29,82,72,0.15)'
             }}>
               {mensajeExito}
             </div>
@@ -203,7 +203,7 @@ export default function ContactSection() {
 
           {mensajeError && (
             <div style={{
-              background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
+              background: 'rgba(255, 99, 99, 0.98)',
               color: 'white',
               padding: '16px 20px',
               borderRadius: '12px',
@@ -211,29 +211,29 @@ export default function ContactSection() {
               textAlign: 'center',
               fontSize: '14px',
               fontWeight: 500,
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              boxShadow: '0 4px 12px rgba(239, 68, 68, 0.15)'
+              border: '1px solid rgba(255, 99, 99, 0.3)',
+              boxShadow: '0 4px 12px rgba(255, 99, 99, 0.15)'
             }}>
               {mensajeError}
             </div>
           )}
 
           <div style={{
-            background: 'rgba(14, 165, 233, 0.1)',
+            background: 'rgba(29,82,72,0.1)',
             border: '1px solid rgba(14, 165, 233, 0.3)',
             borderRadius: '8px',
             padding: '12px 16px',
             marginBottom: '24px',
             fontSize: '13px',
-            color: '#a0aec0'
+            color: 'var(--text-secondary)'
           }}>
-            <span style={{ color: '#0ea5e9', fontWeight: 600 }}>*</span> Campos obligatorios
+            <span style={{ color: 'var(--color-green)', fontWeight: 600 }}>*</span> Campos obligatorios
           </div>
 
           <div className="formGrid">
 
             <div className="inputGroup">
-              <label><span style={{ color: '#ef4444', marginRight: '4px' }}>*</span>Nombre completo</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Nombre completo</label>
               <input
                 type="text"
                 name="nombre"
@@ -245,7 +245,7 @@ export default function ContactSection() {
             </div>
 
             <div className="inputGroup">
-              <label><span style={{ color: '#ef4444', marginRight: '4px' }}>*</span>Email</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Email</label>
               <input
                 type="email"
                 name="email"
@@ -257,7 +257,7 @@ export default function ContactSection() {
             </div>
 
             <div className="inputGroup">
-              <label><span style={{ color: '#ef4444', marginRight: '4px' }}>*</span>Teléfono</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Teléfono</label>
               <input
                 type="text"
                 name="telefono"
@@ -269,7 +269,7 @@ export default function ContactSection() {
             </div>
 
             <div className="inputGroup">
-              <label><span style={{ color: '#ef4444', marginRight: '4px' }}>*</span>Empresa</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Empresa</label>
               <input
                 type="text"
                 name="empresa"
@@ -283,7 +283,7 @@ export default function ContactSection() {
           </div>
 
           <div className="inputGroup">
-            <label><span style={{ color: '#ef4444', marginRight: '4px' }}>*</span>Mensaje</label>
+            <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Mensaje</label>
             <textarea
               name="mensaje"
               placeholder="Cuéntanos sobre tu proyecto..."
@@ -297,11 +297,11 @@ export default function ContactSection() {
             <label>Archivos e Imágenes (Opcional)</label>
             <div
               style={{
-                border: '2px dashed rgba(14, 165, 233, 0.5)',
+                border: '2px dashed rgba(29,82,72,0.5)',
                 borderRadius: '12px',
                 padding: '20px 16px',
                 textAlign: 'center',
-                background: 'rgba(14, 165, 233, 0.03)',
+                background: 'rgba(29,82,72,0.03)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 position: 'relative',
@@ -346,16 +346,16 @@ export default function ContactSection() {
                 <div style={{ fontSize: '24px', marginBottom: '8px' }}>📎</div>
                 {formData.archivos.length === 0 ? (
                   <>
-                    <p style={{ color: '#0ea5e9', fontWeight: 600, margin: '0 0 4px 0', fontSize: '13px' }}>
+                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 4px 0', fontSize: '13px' }}>
                       Arrastra archivos aquí o haz clic
                     </p>
-                    <small style={{ color: '#a0aec0', fontSize: '12px' }}>
+                    <small style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>
                       Imágenes, PDF, Word, Excel
                     </small>
                   </>
                 ) : (
                   <>
-                    <p style={{ color: '#22c55e', fontWeight: 600, margin: '0 0 8px 0', fontSize: '13px' }}>
+                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 8px 0', fontSize: '13px' }}>
                       ✓ {formData.archivos.length} archivo(s)
                     </p>
                     <div style={{ marginTop: '8px' }}>
@@ -367,7 +367,7 @@ export default function ContactSection() {
                             color: '#cbd5e1',
                             marginBottom: '4px',
                             padding: '6px 10px',
-                            background: 'rgba(255, 255, 255, 0.05)',
+                            background: 'rgba(245,243,239,0.05)',
                             borderRadius: '6px',
                             display: 'flex',
                             justifyContent: 'space-between',
@@ -388,7 +388,7 @@ export default function ContactSection() {
                             style={{
                               background: 'none',
                               border: 'none',
-                              color: '#ef4444',
+                              color: 'rgba(255, 99, 99, 1)',
                               cursor: 'pointer',
                               fontSize: '12px',
                               padding: '0 4px'
@@ -430,7 +430,7 @@ export default function ContactSection() {
       href="/politica-privacidad"
       target="_blank"
       style={{
-        color: '#0ea5e9',
+        color: 'var(--color-green)',
         textDecoration: 'underline'
       }}
     >

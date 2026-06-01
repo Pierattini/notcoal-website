@@ -1,5 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function CompanyPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="companyPage">
 
@@ -10,19 +16,15 @@ export default function CompanyPage() {
   <div className="companyHeroOverlay"></div>
 
   <span className="sectionBadge">
-    Sobre Nosotros
+    {t.company.hero.badge}
   </span>
 
   <h1>
-    Ingeniería y ejecución
-    para proyectos
-    utility-scale PV y BESS
+    {t.company.hero.title}
   </h1>
 
   <p>
-    Diseñamos, desarrollamos y ejecutamos
-    infraestructura energética renovable
-    de alto rendimiento en toda Europa.
+    {t.company.hero.description}
   </p>
 
 </section>
@@ -41,24 +43,18 @@ export default function CompanyPage() {
 
   <div className="companyIntroContent">
 
-    <span>QUIÉNES SOMOS</span>
+    <span>{t.company.intro.badge}</span>
 
     <h2>
-      No comenzamos desde cero.
+      {t.company.intro.title}
     </h2>
 
     <p>
-      Antes de The Not Coal Company, ya participábamos
-      en algunos de los proyectos utility-scale más
-      importantes de Europa, gestionando cientos de MW
-      en mercados como Alemania, Países Bajos, Polonia,
-      Grecia y los países nórdicos.
+      {t.company.intro.text1}
     </p>
 
     <p>
-      Hemos trabajado donde los proyectos son complejos,
-      los tiempos son ajustados y la ejecución realmente
-      importa.
+      {t.company.intro.text2}
     </p>
 
   </div>
@@ -72,9 +68,7 @@ export default function CompanyPage() {
   <div className="companyStatementContent">
 
     <h2>
-      Transformamos desafíos complejos
-      de energía renovable en activos
-      financiables, construibles y operativos.
+      {t.company.statement}
     </h2>
 
   </div>
@@ -86,7 +80,7 @@ export default function CompanyPage() {
       <section className="valuesSection">
 
         <div className="valueCard">
-          <span>01</span>
+
 
           <h3>Ejecución antes que discurso</h3>
 
@@ -97,7 +91,7 @@ export default function CompanyPage() {
         </div>
 
         <div className="valueCard">
-          <span>02</span>
+
 
           <h3>Ingeniería primero</h3>
 
@@ -108,7 +102,7 @@ export default function CompanyPage() {
         </div>
 
         <div className="valueCard">
-          <span>03</span>
+  
 
           <h3>Claridad en la complejidad</h3>
 
@@ -119,7 +113,7 @@ export default function CompanyPage() {
         </div>
 
         <div className="valueCard">
-          <span>04</span>
+    
 
           <h3>Escala con disciplina</h3>
 
@@ -134,23 +128,20 @@ export default function CompanyPage() {
 
   <div className="missionBox">
 
-    <small>MISIÓN</small>
+    <small>{t.company.mission.title}</small>
 
     <h3>
-      Ejecutar infraestructura energética
-      renovable con precisión técnica,
-      velocidad y visión comercial.
+      {t.company.mission.text}
     </h3>
 
   </div>
 
   <div className="missionBox">
 
-    <small>VISIÓN</small>
+    <small>{t.company.vision.title}</small>
 
     <h3>
-      Convertirnos en un referente europeo
-      en proyectos utility-scale PV y BESS.
+      {t.company.vision.text}
     </h3>
 
   </div>
@@ -172,32 +163,17 @@ export default function CompanyPage() {
 
   <div className="premiumRight">
 
-    <small>FOUNDER STORY</small>
+    <small>{t.company.founder.badge}</small>
 
-<h2>
-Liderazgo técnico con visión
-de ejecución real.
-</h2>
+  <h2>
+  {t.company.founder.title}
+  </h2>
 
-<p>
-La experiencia detrás de The Not Coal Company
-nace de años participando en proyectos
-utility-scale en distintos mercados europeos,
-combinando ingeniería, coordinación EPC
-y desarrollo estratégico.
-</p>
+  <p>
+  {t.company.founder.description}
+  </p>
 
 <div className="premiumNumbers">
-
-  <div>
-    <strong>500+ MW</strong>
-    <span>Participación en proyectos energéticos</span>
-  </div>
-
-  <div>
-    <strong>5+</strong>
-    <span>Mercados europeos</span>
-  </div>
 
   <div>
     <strong>RTB → COD</strong>

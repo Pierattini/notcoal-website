@@ -12,11 +12,10 @@ import {
 
 import MobileMenu from "./MobileMenu";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 export default function Navbar() {
   const { locale, setLocale, t } = useLanguage();
-  console.log(locale);
-console.log(t);
   const [open, setOpen] =
     useState(false);
 
@@ -45,64 +44,70 @@ console.log(t);
       <header className="nav">
 
         <div className="brand">
-          <div className="logoBox">
-            N
-          </div>
 
-          <strong>
-            The Not Coal Company
-          </strong>
+          <Image
+    src="/logos/logo-horizontal.png"
+    alt="The Not Coal Company"
+    width={260}
+    height={60}
+    className="navbarLogo"
+    priority
+/>
+
         </div>
 
         <nav className="navLinks">
 
   <Link href="/">
-  {t.navbar.home}
-</Link>
-<Link href="/services">
-  {t.navbar.services}
-</Link>
+    {t.navbar.home}
+  </Link>
 
-<Link href="/projects">
-  {t.navbar.projects}
-</Link>
+  <Link href="/services">
+    {t.navbar.services}
+  </Link>
 
-<Link href="/company">
-  {t.navbar.company}
-</Link>
+  <Link href="/projects">
+    {t.navbar.projects}
+  </Link>
 
-<Link href="/contact">
-  {t.navbar.contact}
-</Link>
+  <Link href="/company">
+    {t.navbar.company}
+  </Link>
+
+  <Link href="/contact">
+    {t.navbar.contact}
+  </Link>
 
 </nav>
 
         <div className="navRight">
 
           <div className="languageSwitcher">
+            <button
+              className={locale === 'en' ? 'activeLang' : ''}
+              onClick={() => setLocale('en')}
+              aria-pressed={locale === 'en'}
+            >
+              EN
+            </button>
 
-  <button
-    onClick={() => setLocale("en")}
-    className={locale === "en" ? "activeLang" : ""}
-  >
-    EN
-  </button>
+            <button
+              className={locale === 'es' ? 'activeLang' : ''}
+              onClick={() => setLocale('es')}
+              aria-pressed={locale === 'es'}
+            >
+              ES
+            </button>
 
-  <button
-    onClick={() => setLocale("es")}
-    className={locale === "es" ? "activeLang" : ""}
-  >
-    ES
-  </button>
+            <button
+              className={locale === 'de' ? 'activeLang' : ''}
+              onClick={() => setLocale('de')}
+              aria-pressed={locale === 'de'}
+            >
+              DE
+            </button>
 
-  <button
-    onClick={() => setLocale("de")}
-    className={locale === "de" ? "activeLang" : ""}
-  >
-    DE
-  </button>
-
-</div>
+          </div>
 
           <button
             className="menuBtn"

@@ -109,8 +109,8 @@
   }
 
   .statCard span {
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .heroShape {
@@ -244,12 +244,12 @@
 }
 
 .hero p {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .heroBadge {
-  font-size: 13px;
+  font-size: 15px;
   padding: 12px 18px;
 }
 .companyContent {

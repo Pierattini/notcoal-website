@@ -168,8 +168,8 @@ export default function ServicesPage() {
       <section className="servicesStats">
 
         <div>
-          <strong>250+</strong>
-          <span>Proyectos</span>
+          <strong>500+</strong>
+          <span>BW</span>
         </div>
 
         <div>
@@ -178,7 +178,7 @@ export default function ServicesPage() {
         </div>
 
         <div>
-          <strong>24/7</strong>
+          <strong>100%</strong>
           <span>Soporte</span>
         </div>
 
@@ -234,15 +234,6 @@ export default function ServicesPage() {
   {/* BLOQUE 2 */}
 <div id="consultoria" className="serviceRow reverse consultoriaSection">
 
-  <div className="serviceVisual">
-    <Image
-    src="/services/consulting.jpg"
-    alt="consulting"
-    fill
-    className="serviceImg"
-  />
-  </div>
-
   <div className="serviceText">
 
     <span className="miniTag">
@@ -271,6 +262,15 @@ export default function ServicesPage() {
       ))}
     </div>
 
+  </div>
+
+  <div className="serviceVisual">
+    <Image
+      src="/services/consulting.jpg"
+      alt="consulting"
+      fill
+      className="serviceImg"
+    />
   </div>
 
 </div>

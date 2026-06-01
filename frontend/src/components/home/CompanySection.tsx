@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Award,
   Users,
@@ -5,7 +7,10 @@ import {
   Zap
 } from "lucide-react";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function CompanySection() {
+  const { t } = useLanguage();
 
   return (
     <section
@@ -18,7 +23,7 @@ export default function CompanySection() {
         <div className="companyLeft">
 
           <span className="sectionBadge">
-            Quiénes Somos
+            {t.company.intro.badge}
           </span>
 
           <h2>

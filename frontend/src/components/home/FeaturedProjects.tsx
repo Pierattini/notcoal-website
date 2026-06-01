@@ -1,51 +1,32 @@
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function FeaturedProjects() {
+  const { t } = useLanguage();
 
   return (
-    <section
-      id="proyectos"
-      className="projectsSection"
-    >
-<div className="statementBand">
-
-    <p>
-      Ingeniería energética para infraestructura utility-scale
-    </p>
-
-  </div>
+    <section id="proyectos" className="projectsSection">
+      <div className="statementBand">
+        <p>{t.company.statement}</p>
+      </div>
 
       <div className="companySingleSection">
-
         <div className="companySingleImage">
-
           <img
             src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600"
             alt=""
           />
-
         </div>
 
         <div className="companySingleContent">
+          <span>{t.company.intro.badge}</span>
 
-          <span>
-            QUIÉNES SOMOS
-          </span>
+          <h2>{t.company.intro.title}</h2>
 
-          <h2>
-            No comenzamos desde cero.
-          </h2>
+          <p>{t.company.intro.text1}</p>
 
-          <p>
-            Antes de The Not Coal Company,
-            ya participábamos en algunos de los
-            proyectos utility-scale más importantes
-            de Europa.
-          </p>
-
-          <p>
-            Hemos trabajado donde los proyectos
-            son complejos, los tiempos son ajustados
-            y la ejecución realmente importa.
-          </p>
+          <p>{t.company.intro.text2}</p>
 
         </div>
 

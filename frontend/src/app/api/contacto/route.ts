@@ -89,26 +89,26 @@ for (const [key, value] of formData.entries()) {
       subject: 'Confirmación de tu Consulta - The Not Coal Company',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); padding: 40px 20px; text-align: center; color: white;">
+          <div style="background: var(--color-green); padding: 40px 20px; text-align: center; color: white;">
             <h1 style="margin: 0;">The Not Coal Company</h1>
             <p style="margin: 10px 0 0 0; opacity: 0.9;">Energía Renovable Sostenible</p>
           </div>
           
-          <div style="padding: 40px 20px; background: #f9fafb;">
-            <h2 style="color: #08111f; margin-top: 0;">¡Hola ${nombre}!</h2>
+          <div style="padding: 40px 20px; background: var(--color-cream);">
+            <h2 style="color: var(--color-graphite); margin-top: 0;">¡Hola ${nombre}!</h2>
             
-            <p style="color: #44526b; line-height: 1.6;">
+            <p style="color: var(--text-secondary); line-height: 1.6;">
               Gracias por tu interés en The Not Coal Company. Hemos recibido tu consulta y nos pondremos en contacto contigo en las próximas 24-48 horas.
             </p>
             
-            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #22c55e; margin: 20px 0;">
-              <h3 style="color: #08111f; margin-top: 0;">Datos de tu Consulta:</h3>
+            <div style="background: var(--color-cream); padding: 20px; border-radius: 8px; border-left: 4px solid var(--color-green); margin: 20px 0;">
+              <h3 style="color: var(--color-graphite); margin-top: 0;">Datos de tu Consulta:</h3>
               <p style="margin: 8px 0;"><strong>Nombre:</strong> ${nombre}</p>
               <p style="margin: 8px 0;"><strong>Email:</strong> ${email}</p>
               <p style="margin: 8px 0;"><strong>Teléfono:</strong> ${telefono}</p>
               <p style="margin: 8px 0;"><strong>Empresa:</strong> ${empresa}</p>
               <p style="margin: 8px 0;"><strong>Mensaje:</strong></p>
-              <p style="margin: 8px 0; color: #44526b; white-space: pre-wrap;">${mensaje}</p>
+              <p style="margin: 8px 0; color: var(--text-secondary); white-space: pre-wrap;">${mensaje}</p>
               ${attachments.length > 0 ? `
   <p style="margin: 8px 0;">
     <strong>Archivos adjuntos:</strong> ${attachments.length}
@@ -116,16 +116,16 @@ for (const [key, value] of formData.entries()) {
 ` : ''}
             </div>
             
-            <p style="color: #44526b; line-height: 1.6;">
+            <p style="color: var(--text-secondary); line-height: 1.6;">
               Si tienes más preguntas o necesitas ayuda inmediata, no dudes en contactarnos:
             </p>
             
-            <div style="background: #f3f0ea; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <p style="margin: 8px 0; color: #08111f;"><strong>📧 Email:</strong> hi@notcoal.eu</p>
-              <p style="margin: 8px 0; color: #08111f;"><strong>📱 Teléfono:</strong> +34 900 123 456</p>
+            <div style="background: var(--color-cream); padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <p style="margin: 8px 0; color: var(--color-graphite);"><strong>📧 Email:</strong> hi@notcoal.eu</p>
+              <p style="margin: 8px 0; color: var(--color-graphite);"><strong>📱 Teléfono:</strong> +34 900 123 456</p>
             </div>
             
-            <p style="color: #999; font-size: 12px; margin-top: 30px;">
+            <p style="color: var(--text-secondary); font-size: 12px; margin-top: 30px;">
               Este es un email automático de confirmación. Por favor, no respondas a este correo.
             </p>
           </div>
@@ -140,14 +140,14 @@ for (const [key, value] of formData.entries()) {
       subject: `Nueva Consulta de ${nombre} - The Not Coal Company`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); padding: 40px 20px; text-align: center; color: white;">
+          <div style="background: var(--color-green); padding: 40px 20px; text-align: center; color: white;">
             <h1 style="margin: 0;">Nueva Consulta Recibida</h1>
           </div>
           
-          <div style="padding: 40px 20px; background: #f9fafb;">
-            <h2 style="color: #08111f; margin-top: 0;">Datos del Contacto:</h2>
+          <div style="padding: 40px 20px; background: var(--color-cream);">
+            <h2 style="color: var(--color-graphite); margin-top: 0;">Datos del Contacto:</h2>
             
-            <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #22c55e;">
+            <div style="background: var(--color-cream); padding: 20px; border-radius: 8px; border-left: 4px solid var(--color-green);">
               <p style="margin: 8px 0;"><strong>Nombre:</strong> ${nombre}</p>
               <p style="margin: 8px 0;"><strong>Email:</strong> ${email}</p>
               <p style="margin: 8px 0;"><strong>Teléfono:</strong> ${telefono}</p>
@@ -155,18 +155,18 @@ for (const [key, value] of formData.entries()) {
               <p style="margin: 8px 0;"><strong>Fecha:</strong> ${new Date().toLocaleString('es-ES')}</p>
             </div>
             
-            <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
-              <h3 style="color: #08111f; margin-top: 0;">Mensaje:</h3>
-              <p style="color: #44526b; white-space: pre-wrap; line-height: 1.6;">${mensaje}</p>
+            <div style="background: var(--color-cream); padding: 20px; border-radius: 8px; margin-top: 20px;">
+              <h3 style="color: var(--color-graphite); margin-top: 0;">Mensaje:</h3>
+              <p style="color: var(--text-secondary); white-space: pre-wrap; line-height: 1.6;">${mensaje}</p>
             </div>
             
            ${attachments.length > 0 ? `
-  <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
-    <h3 style="color: #08111f; margin-top: 0;">
+  <div style="background: var(--color-cream); padding: 20px; border-radius: 8px; margin-top: 20px;">
+    <h3 style="color: var(--color-graphite); margin-top: 0;">
       Archivos Adjuntos (${attachments.length})
     </h3>
 
-    <p style="color: #44526b;">
+    <p style="color: var(--text-secondary);">
       Los archivos fueron enviados adjuntos en este correo.
     </p>
   </div>

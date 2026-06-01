@@ -6,8 +6,8 @@
   background:
     linear-gradient(
       135deg,
-      #08111f,
-      #0d2b36
+      rgba(51,51,51,0.96),
+      rgba(51,51,51,0.88)
     );
 
   padding: 55px 5% 120px;
@@ -29,9 +29,9 @@
 
 .contactHeader p {
 
-  color: #cbd5e1;
+  color: var(--text-secondary);
 
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .contactLayout {
@@ -69,11 +69,9 @@
 
   border-radius: 24px;
 
-  background:
-    rgba(255,255,255,0.05);
+  background: rgba(245,243,239,0.05);
 
-  border:
-    1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(245,243,239,0.06);
 
   transition:
     transform 0.3s ease,
@@ -88,11 +86,9 @@
 
   transform: translateY(-6px);
 
-  background:
-    rgba(255,255,255,0.07);
+  background: rgba(245,243,239,0.07);
 
-  border-color:
-    rgba(255,255,255,0.12);
+  border-color: rgba(245,243,239,0.12);
 
   box-shadow:
     0 20px 45px rgba(0,0,0,0.22);
@@ -105,12 +101,7 @@
 
   border-radius: 18px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0ea5e9,
-      #2563eb
-    );
+  background: var(--color-green);;
 
   display: flex;
   align-items: center;
@@ -123,7 +114,7 @@
 
   display: block;
 
-  color: #94a3b8;
+  color: var(--text-secondary);
 
   margin-bottom: 6px;
 }
@@ -137,15 +128,13 @@
 
 .premiumForm {
 
-  background:
-    rgba(255,255,255,0.03);
+  background: rgba(245,243,239,0.06);
 
   padding: 26px;
 
   border-radius: 30px;
 
-  border:
-    1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(245,243,239,0.12);
 
   width: 100%;
 
@@ -181,17 +170,17 @@
 
   color: white;
 
+  font-size: 16px;
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .inputGroup input,
 .inputGroup textarea {
 
-  background:
-    rgba(255,255,255,0.04);
+  background: rgba(245,243,239,0.04);
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(245,243,239,0.08);
 
   border-radius: 18px;
 
@@ -199,7 +188,8 @@
 
   color: white;
 
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.85;
 
   transition:
   border-color 0.25s ease,
@@ -207,20 +197,31 @@
   box-shadow 0.25s ease;
 }
 
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
 .inputGroup input:focus,
 .inputGroup textarea:focus {
 
   outline: none;
 
-  border-color:
-    rgba(14,165,233,0.6);
+  border-color: rgba(29,82,72,0.6);
 
-  background:
-    rgba(255,255,255,0.06);
+  background: rgba(245,243,239,0.06);
 
   box-shadow:
-    0 0 0 4px rgba(14,165,233,0.12);
-} 
+    0 0 0 4px rgba(29,82,72,0.12);
+}
+
+.inputGroup input:focus-visible,
+.inputGroup textarea:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(29,82,72,0.28);
+}
 
 .inputGroup textarea {
 
@@ -245,12 +246,7 @@
 
   border-radius: 18px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0ea5e9,
-      #2563eb
-    );
+  background: var(--color-green);
 
   color: white;
 
@@ -265,8 +261,13 @@
     box-shadow 0.3s ease,
     filter 0.3s ease;
 
+  box-shadow: 0 18px 40px rgba(29,82,72,0.25);
+}
+
+.premiumForm button:focus-visible {
+  outline: none;
   box-shadow:
-    0 18px 40px rgba(37,99,235,0.25);
+    0 0 0 4px rgba(29,82,72,0.28);
 }
 
 .premiumForm button:hover {
@@ -275,6 +276,5 @@
 
   filter: brightness(1.05);
 
-  box-shadow:
-    0 24px 50px rgba(37,99,235,0.35);
+  box-shadow: 0 24px 50px rgba(29,82,72,0.35);
 }
