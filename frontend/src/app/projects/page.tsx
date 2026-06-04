@@ -1,129 +1,30 @@
 "use client";
 
 import { useState } from "react";
-
+import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
-
-const categories = [
-  "Todos",
-  "Solar PV",
-  "BESS",
-  "EPC",
-  "Consultoría"
-];
-
-const projects = {
-  Todos: [
-    {
-      category: "Solar PV",
-      title: "Nordic Solar One",
-      description: "Desarrollo utility-scale orientado a generación fotovoltaica.",
-      power: "2.5 MW",
-      area: "500 ha",
-      country: "🇸🇪 Suecia",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    },
-
-    {
-      category: "EPC Delivery",
-      title: "Madrid Energy Hub",
-      description: "Infraestructura energética desarrollada bajo enfoque EPC y coordinación integral.",
-      power: "500 MW",
-      area: "850 ha",
-      country: "🇪🇸 España",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    },
-
-    {
-      category: "BESS Infrastructure",
-      title: "Barcelona Storage System",
-      description: "Sistema avanzado de almacenamiento energético utility-scale.",
-      power: "1.2 MW",
-      area: "850 ha",
-      country: "🇩🇪 Alemania",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    }
-  ],
-
-  "Solar PV": [
-    {
-      category: "Solar PV",
-      title: "Nordic Solar One",
-      description: "Desarrollo utility-scale orientado a generación fotovoltaica.",
-      power: "2.5 MW",
-      area: "500 ha",
-      country: "🇵🇱 Polonia",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    },
-
-    {
-      category: "Solar PV",
-      title: "Industrial Solar Platform",
-      description: "Infraestructura PV diseñada para eficiencia energética de largo plazo.",
-      power: "4.8 MW",
-      area: "720 ha",
-      country: "🇵🇱 Polonia",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    }
-  ],
-
-  BESS: [
-    {
-      category: "BESS",
-      title: "Smart Storage Grid",
-      description: "Solución avanzada de almacenamiento energético utility-scale.",
-      power: "120 MWh",
-      area: "300 ha",
-      country: "🇩🇪 Alemania",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    },
-
-    {
-      category: "BESS",
-      title: "Barcelona Storage System",
-      description: "Integración técnica y estabilización energética para infraestructura crítica.",
-      power: "1.2 MW",
-      area: "850 ha",
-      country: "🇪🇺 Europa",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    }
-  ],
-
-  EPC: [
-    {
-      category: "EPC",
-      title: "Industrial Energy Hub",
-      description: "Infraestructura energética desarrollada bajo enfoque EPC.",
-      power: "850 kW",
-      area: "450 ha",
-      country: "Polonia",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    }
-  ],
-
-  Consultoría: [
-    {
-      category: "Consultoría",
-      title: "Technical Risk Strategy",
-      description: "Consultoría enfocada en mitigación de riesgos técnicos y contractuales.",
-      power: "Advisory",
-      area: "-",
-      country: "🇪🇺 Europa",
-      company: "The Not Coal Company",
-      image: "/banner.jpg"
-    }
-  ]
-};
+import { projects } from "@/data/projects";
+import { featuredProjects } from "@/data/featuredProjects";
+import {
+  FaBolt,
+  FaMapMarkedAlt,
+  FaGlobeEurope,
+  FaHandshake,
+  FaClipboardList,
+  FaBuilding,
+  FaTruck,
+  FaTasks,
+  FaCheckCircle
+} from "react-icons/fa";
 export default function ProjectsPage() {
-
+  const { t } = useLanguage();
+  const categories = [
+  t.projects.filters.all,
+  t.projects.filters.solar,
+  t.projects.filters.bess,
+  t.projects.filters.epc,
+  t.projects.filters.consulting
+];
   const [activeCategory, setActiveCategory] =
     useState("Todos");
   const [activeProjectIndex, setActiveProjectIndex] =
@@ -132,7 +33,10 @@ export default function ProjectsPage() {
     projects[
       activeCategory as keyof typeof projects
     ];
-
+  const featured =
+  projects.Todos.filter(project =>
+    featuredProjects.includes(project.title)
+  );
   return (
 
     <main className="projectsPage">
@@ -141,80 +45,76 @@ export default function ProjectsPage() {
 
       <section className="projectsHero">
 
-        <div className="projectsHeroContent">
+  <div className="projectsHeroContent">
 
-          <span className="heroBadge">
-            Nuestro portafolio
-          </span>
+    <span className="heroBadge">
+      {t.projects.hero.badge}
+    </span>
 
-          <h1>
-            Infraestructura energética preparada para ejecución real.
-          </h1>
+    <h1>
+      {t.projects.hero.title}
+    </h1>
 
-          <p>
-            Diseñamos, desarrollamos y ejecutamos proyectos utility-scale
-            de energía solar fotovoltaica y sistemas BESS en Europa,
-            transformando desafíos complejos en activos operacionales,
-            financiables y preparados para escalar.
-          </p>
 
-        </div>
+  </div>
 
-      </section>
+</section>
+<section className="projectsOverview">
 
+  <div className="projectsOverviewContent">
+
+    <p>
+      {t.projects.overview.description}
+    </p>
+
+  </div>
+
+</section>
       {/* METRICS */}
 
-      <section className="projectsMetrics">
+     <section className="projectsMetrics">
 
-        <div>
+  <div>
+    <strong>
+      500+
+    </strong>
 
-          <strong>
-            500+
-          </strong>
+    <span>
+      {t.projects.metrics.mw}
+    </span>
+  </div>
 
-          <span>
-            MW desarrollados en Europa
-          </span>
+  <div>
+    <strong>
+      5
+    </strong>
 
-        </div>
+    <span>
+      {t.projects.metrics.markets}
+    </span>
+  </div>
 
-        <div>
+  <div>
+    <strong>
+      PV + BESS
+    </strong>
 
-          <strong>
-            5
-          </strong>
+    <span>
+      {t.projects.metrics.specialization}
+    </span>
+  </div>
 
-          <span>
-            Mercados energéticos activos
-          </span>
+  <div>
+    <strong>
+      RTB → COD
+    </strong>
 
-        </div>
+    <span>
+      {t.projects.metrics.epc}
+    </span>
+  </div>
 
-        <div>
-
-          <strong>
-            PV + BESS
-          </strong>
-
-          <span>
-            Especialización técnica utility-scale
-          </span>
-
-        </div>
-
-        <div>
-
-          <strong>
-            RTB → COD
-          </strong>
-
-          <span>
-            Ejecución integral EPC
-          </span>
-
-        </div>
-
-      </section>
+</section>
 
       {/* FILTERS */}
 
@@ -250,7 +150,7 @@ export default function ProjectsPage() {
 
   <div className="projectTabs">
 
-    {activeProjects.map((project, index) => (
+    {featured.map((project, index) => (
 
       <button
   key={index}
@@ -289,26 +189,80 @@ export default function ProjectsPage() {
 
     {/* TEXTO */}
 
-    <div className="projectShowcaseInfo">
+   <div className="projectShowcaseInfo">
 
-      <span>
-        {activeProjects[activeProjectIndex].category}
-      </span>
+  <span>
+    {activeProjects[activeProjectIndex].category}
+  </span>
 
-      <h2>
-        {activeProjects[activeProjectIndex].title}
-      </h2>
+  <h2>
+    {activeProjects[activeProjectIndex].title}
+  </h2>
 
-      <p>
-        {activeProjects[activeProjectIndex].description}
-      </p>
+  <p>
+    {activeProjects[activeProjectIndex].description}
+  </p>
 
-      <strong>
-        {activeProjects[activeProjectIndex].power}
-      </strong>
+  <div className="projectDetails">
 
+  <div className="projectDetailItem">
+    <FaBolt className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].power}
     </div>
+  </div>
 
+  <div className="projectDetailItem">
+    <FaMapMarkedAlt className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].area}
+    </div>
+  </div>
+
+  <div className="projectDetailItem">
+    <FaGlobeEurope className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].country}
+    </div>
+  </div>
+
+  <div className="projectDetailItem">
+    <FaHandshake className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].company}
+    </div>
+  </div>
+
+  <div className="projectDetailItem">
+    <FaClipboardList className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].projectPhase}
+    </div>
+  </div>
+
+  <div className="projectDetailItem">
+    <FaTruck className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].deliveryModel}
+    </div>
+  </div>
+
+  <div className="projectDetailItem">
+    <FaTasks className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].scopeOfSupport}
+    </div>
+  </div>
+
+  <div className="projectDetailItem">
+    <FaCheckCircle className="detailIcon" />
+    <div className="detailLabel">
+      {activeProjects[activeProjectIndex].status}
+    </div>
+  </div>
+
+</div>
+</div>
   </div>
 
 </section>
@@ -319,94 +273,86 @@ export default function ProjectsPage() {
 
       <section className="projectsStatement">
 
-        <div className="projectsStatementContent">
+  <div className="projectsStatementContent">
 
-          <small>
-            Ejecución primero
-          </small>
+   <small>
+  {t.projects.collaboration.badge}
+</small>
 
-          <h2>
-            Transformamos complejidad técnica en infraestructura operacional.
-          </h2>
+<h2>
+  {t.projects.collaboration.title}
+</h2>
 
-          <p>
-            Ayudamos a desarrollar y ejecutar proyectos renovables con foco
-            en ingeniería, control técnico, gestión EPC y viabilidad real
-            desde RTB hasta COD.
-          </p>
+<p>
+  {t.projects.collaboration.description1}
+</p>
 
-        </div>
+<p>
+  {t.projects.collaboration.description2}
+</p>
 
-        <div className="projectsStatementImage">
+<p>
+  {t.projects.collaboration.description3}
+</p>
 
-          <Image
-            src="/banner.jpg"
-            alt="Infraestructura energética"
-            fill
-            className="projectImage"
-          />
+<p>
+  {t.projects.collaboration.description4}
+</p>
 
-        </div>
+  </div>
 
-      </section>
+  <div className="projectsStatementImage">
 
-      {/* PRINCIPLES */}
+    <Image
+          src="/company/mapa.png"
+          alt="European Markets"
+          fill
+          className="coverImage"
+        />
 
-      <section className="principlesSection">
+  </div>
 
-        <div className="principleCard">
+</section>
 
-          <span>
-            01
-          </span>
+     <section className="principlesSection">
 
-          <h3>
-            Execution Over Talk
-          </h3>
+  <div className="principleCard">
 
-          <p>
-            Los proyectos no avanzan con presentaciones. Avanzan con
-            decisiones, coordinación y accountability.
-          </p>
+    <h3>
+      {t.projects.principles.execution.title}
+    </h3>
 
-        </div>
+    <p>
+      {t.projects.principles.execution.description}
+    </p>
 
-        <div className="principleCard">
+  </div>
 
-          <span>
-            02
-          </span>
+  <div className="principleCard">
 
-          <h3>
-            Engineering First
-          </h3>
+    <h3>
+      {t.projects.principles.engineering.title}
+    </h3>
 
-          <p>
-            La ingeniería correcta reduce riesgos, retrasos y costos.
-            Es la base del proyecto, no un agregado.
-          </p>
+    <p>
+      {t.projects.principles.engineering.description}
+    </p>
 
-        </div>
+  </div>
 
-        <div className="principleCard">
+  <div className="principleCard">
 
-          <span>
-            03
-          </span>
+    <h3>
+      {t.projects.principles.clarity.title}
+    </h3>
 
-          <h3>
-            Clarity in Complexity
-          </h3>
+    <p>
+      {t.projects.principles.clarity.description}
+    </p>
 
-          <p>
-            Simplificamos decisiones técnicas, interfaces y estructuras
-            contractuales complejas.
-          </p>
+  </div>
 
-        </div>
-
-      </section>
-
+</section>
       {/* PROJECTS LIST */}
 
       <section id="proyectos" className="projectsListSection">
@@ -414,12 +360,12 @@ export default function ProjectsPage() {
         <div className="projectsListHeader">
 
           <span className="sectionBadge">
-            Casos de éxito
-          </span>
+  {t.projects.featured.badge}
+</span>
 
-          <h2>
-            Proyectos destacados
-          </h2>
+<h2>
+  {t.projects.featured.title}
+</h2>
 
         </div>
 
@@ -456,36 +402,33 @@ export default function ProjectsPage() {
                 <p>
                   {project.description}
                 </p>
-<div className="projectStats">
+<div className="featuredProjectStats">
 
-  <div className="statItem">
+  <div className="featuredProjectItem">
+    <FaBolt className="featuredIcon" />
     <strong>{project.power}</strong>
-    <span>Potencia</span>
   </div>
 
-  <div className="statItem">
+  <div className="featuredProjectItem">
+    <FaMapMarkedAlt className="featuredIcon" />
     <strong>{project.area}</strong>
-    <span>Área</span>
   </div>
 
-  <div className="statItem">
-  <strong>{project.country}</strong>
-  <span>País</span>
-</div>
-</div>
+  <div className="featuredProjectItem">
+    <FaGlobeEurope className="featuredIcon" />
+    <strong>{project.country}</strong>
+  </div>
 
-<div className="projectPartner">
-
-  <span>Partner</span>
-
-  <strong>{project.company}</strong>
+  <div className="featuredProjectItem">
+    <FaHandshake className="featuredIcon" />
+    <strong>{project.company}</strong>
+  </div>
 
 </div>
-              </div>
-
+    </div>
             </article>
 
-          ))}
+         ) )}
 
         </div>
 

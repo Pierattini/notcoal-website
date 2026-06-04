@@ -46,12 +46,12 @@ export default function Navbar() {
         <div className="brand">
 
           <Image
-    src="/logos/logo-horizontal.png"
-    alt="The Not Coal Company"
-    width={260}
-    height={60}
-    className="navbarLogo"
-    priority
+  src="/logos/logofullt.png"
+  alt="The Not Coal Company"
+  width={420}
+  height={84}
+  className="navbarLogo"
+  priority
 />
 
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-
+import Image from "next/image";
 export default function FeaturedProjects() {
   const { t } = useLanguage();
 
@@ -13,23 +13,24 @@ export default function FeaturedProjects() {
 
       <div className="companySingleSection">
         <div className="companySingleImage">
-          <img
-            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600"
-            alt=""
-          />
+          <Image
+  src="/company/mapa.png"
+  alt="The Not Coal Company"
+  fill
+  className="companyImage"
+/>
         </div>
+<div className="companySingleContent">
 
-        <div className="companySingleContent">
-          <span>{t.company.intro.badge}</span>
+  <span>{t.home.whoWeAre.badge}</span>
 
-          <h2>{t.company.intro.title}</h2>
+  <h2>{t.home.whoWeAre.title}</h2>
 
-          <p>{t.company.intro.text1}</p>
+  <p>{t.home.whoWeAre.text1}</p>
 
-          <p>{t.company.intro.text2}</p>
+  <p>{t.home.whoWeAre.text2}</p>
 
-        </div>
-
+</div>
       </div>
 
     </section>

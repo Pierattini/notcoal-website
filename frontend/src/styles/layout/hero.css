@@ -275,7 +275,39 @@ background:
   align-items: center;
   justify-content: center;
 
-  width: 220px;
+  min-width: 220px;
+  width: auto;
+
+  white-space: nowrap;
+}
+
+.secondaryBtn {
+  height: 56px;
+
+  padding: 0 34px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(245,243,239,0.08);
+
+  background: rgba(245,243,239,0.04);
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 220px;
+  width: auto;
+
+  white-space: nowrap;
 }
 
 .primaryBtn:hover {
@@ -305,9 +337,12 @@ background:
 
   text-decoration: none;
 
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-width: 220px;
+  min-width: 220px;
+  width: auto;
+
+  
 }

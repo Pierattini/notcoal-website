@@ -79,51 +79,33 @@ export default function CompanyPage() {
 
       <section className="valuesSection">
 
-        <div className="valueCard">
+  <div className="valueCard">
+    <h3>{t.company.values.value1.title}</h3>
+    <p>{t.company.values.value1.text}</p>
+  </div>
 
+  <div className="valueCard">
+    <h3>{t.company.values.value2.title}</h3>
+    <p>{t.company.values.value2.text}</p>
+  </div>
 
-          <h3>Ejecución antes que discurso</h3>
+  <div className="valueCard">
+    <h3>{t.company.values.value3.title}</h3>
+    <p>{t.company.values.value3.text}</p>
+  </div>
 
-          <p>
-            Los proyectos se entregan mediante
-            decisiones, coordinación y responsabilidad.
-          </p>
-        </div>
+  <div className="valueCard">
+    <h3>{t.company.values.value4.title}</h3>
+    <p>{t.company.values.value4.text}</p>
+  </div>
 
-        <div className="valueCard">
+  <div className="valueCard">
+    <h3>{t.company.values.value5.title}</h3>
+    <p>{t.company.values.value5.text}</p>
+  </div>
 
+</section>
 
-          <h3>Ingeniería primero</h3>
-
-          <p>
-            Una buena ingeniería reduce retrasos,
-            riesgos y costos innecesarios.
-          </p>
-        </div>
-
-        <div className="valueCard">
-  
-
-          <h3>Claridad en la complejidad</h3>
-
-          <p>
-            Simplificamos contratos, interfaces
-            y decisiones técnicas que otros complican.
-          </p>
-        </div>
-
-        <div className="valueCard">
-    
-
-          <h3>Escala con disciplina</h3>
-
-          <p>
-            Los proyectos utility-scale requieren
-            ambición, estructura y control.
-          </p>
-        </div>
-
-      </section>
 <section className="missionVision">
 
   <div className="missionBox">
@@ -152,35 +134,57 @@ export default function CompanyPage() {
 <section className="premiumGrid">
 
   <div className="premiumLeft">
-<Image
-  src="/company/fundadora.jpg"
-  alt="Solar"
-  fill
-  className="coverImage"
-/>
 
-</div>
+    <Image
+      src="/company/fundadora.jpg"
+      alt="Founder"
+      fill
+      className="coverImage"
+    />
+
+  </div>
 
   <div className="premiumRight">
 
-    <small>{t.company.founder.badge}</small>
+    <small>
+      {t.company.operatingModel.badge}
+    </small>
 
-  <h2>
-  {t.company.founder.title}
-  </h2>
+    <h2>
+      {t.company.operatingModel.title}
+    </h2>
 
-  <p>
-  {t.company.founder.description}
-  </p>
+    <p>
+      {t.company.operatingModel.description}
+    </p>
 
-<div className="premiumNumbers">
+    <div className="premiumNumbers">
 
-  <div>
-    <strong>RTB → COD</strong>
-    <span>Experiencia en desarrollo y ejecución</span>
-  </div>
+      <div>
+        <strong>
+          {t.company.operatingModel.metric1}
+        </strong>
+      </div>
 
-</div>
+      <div>
+        <strong>
+          {t.company.operatingModel.metric2}
+        </strong>
+      </div>
+
+      <div>
+        <strong>
+          {t.company.operatingModel.metric3}
+        </strong>
+      </div>
+
+      <div>
+        <strong>
+          {t.company.operatingModel.metric4}
+        </strong>
+      </div>
+
+    </div>
 
   </div>
 

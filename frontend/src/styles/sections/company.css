@@ -49,14 +49,12 @@
 
 .companyRight {
 
-  display: grid;
+  display: flex;
 
-  grid-template-columns:
-    1fr 1fr;
+  flex-direction: column;
 
   gap: 24px;
 }
-
 .miniCard {
 
   background: var(--color-cream);
@@ -74,6 +72,16 @@
 
   border:
     1px solid rgba(15,23,42,0.04);
+
+  width: 100%;
+
+  min-height: 180px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
 }
 
 .miniCard:hover {
@@ -369,6 +377,10 @@ font-size:
 .timelineItem p {
   color: var(--text-inverse);
 }
+.companyLeft h2 {
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
 
 @media (max-width: 980px) {
 
@@ -560,7 +572,11 @@ font-size:
 }
 
 .valueCard {
+
+  position: relative;
+
   color: var(--text-inverse);
+
   background:
     linear-gradient(
       180deg,
@@ -642,9 +658,7 @@ font-size:
 }
 
 .valueCard p {
-
-  color: var(--text-secondary);
-
+  color: #1d5248;
   line-height: 1.9;
 
   font-size: 17px;
@@ -837,7 +851,7 @@ font-size:
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 60px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .premiumLeft {
@@ -927,20 +941,24 @@ font-size:
 
 .premiumNumbers strong {
 
-  display: block;
+  display: block !important;
 
-  font-size: 48px;
+  font-size: 28px !important;
 
-  margin-bottom: 10px;
+  margin-bottom: 0;
 
   color: var(--color-graphite);
+
+  line-height: 1.1;
+
+  font-weight: 700;
 }
 
 .premiumNumbers span {
 
   color: var(--text-inverse);
 
-  font-size: 16px;
+  font-size: 10px;
 }
 
 @media (max-width: 980px) {
@@ -952,7 +970,7 @@ font-size:
 
   .premiumLeft {
 
-    min-height: 420px;
+    min-height: 720px;
   }
 }
 .companyIntroImage img,
@@ -965,10 +983,7 @@ font-size:
 
   display: block;
 }
-.coverImage {
 
-  object-fit: cover;
-}
 @media (max-width: 768px) {
 .waveSection::before {
   content: "";
@@ -1029,6 +1044,24 @@ font-size:
 
     padding: 40px 0 60px;
   }
+ .companySingleSection {
+
+  display: flex !important;
+
+  width: 100%;
+
+  gap: 0;
+}
+
+.companySingleImage {
+
+  order: 2;
+}
+
+.companySingleContent {
+
+  order: 1;
+}
 
   .companyIntroImage,
   .premiumLeft,
@@ -1139,5 +1172,31 @@ font-size:
 .founderText h2 {
 
   max-width: 100%;
+}
+.companySingleSection {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.companySingleContent {
+  width: 100% !important;
+}
+.companySingleImage {
+  width: calc(100% + 14%) !important;
+  margin-left: -7% !important;
+  margin-top: 30px;
+
+  height: 280px !important;
+  min-height: 280px !important;
+
+  position: relative;
+}
+
+
+.companySingleImage img,
+.companyImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
 }
 }

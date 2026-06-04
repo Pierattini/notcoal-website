@@ -217,9 +217,8 @@
 }
 
 .serviceText {
-  padding-top: 80px;
-  padding-right: 20px;
-  padding-left: 5%;
+  padding: 20px 40px;
+  width: 100%;
 }
 .serviceRow {
   display: grid;
@@ -232,42 +231,40 @@
 .serviceText h2 {
   font-size: clamp(42px,4vw,64px);
   line-height: 1.05;
-  margin: 18px 0 20px;
+  margin: 10px 0 12px;
   color: var(--color-graphite);
-  max-width: 700px;
+
+  max-width: none;
+  width: 100%;
 }
 
+
 .serviceText p {
+  max-width: none;
+  width: 100%;
+
   color: var(--text-inverse);
-  line-height: 1.9;
-  font-size: 18px;
-  margin-bottom: 34px;
-  max-width: 620px;
+  opacity: 1;
 }
 
 .serviceVisual {
   position: relative;
-  width: 100%;
-  min-height: 760px;
-  height: 100%;
   overflow: hidden;
-  border-radius: 0px;
+
+  width: 100%;
+  height: 100%;
 }
 
 .serviceImg {
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  transition: transform .4s ease;
 }
 .serviceVisual:hover .serviceImg {
   transform: scale(1.02);
 }
 .serviceRow.reverse {
-  padding-left: 0;
-  padding-right: 7%;
+  padding: 0;
   grid-template-columns: 1fr 1fr;
 }
 .miniTag {
@@ -301,8 +298,8 @@
 .serviceExpand {
   display: flex;
   flex-direction: column;
-  gap: 34px;
-  margin-top: 50px;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 .serviceStep {
@@ -310,7 +307,7 @@
   background: transparent;
   border: none;
   border-radius: 0;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .serviceStep:hover {
@@ -323,7 +320,7 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  padding: 20px 0;
+  padding: 6px 10px;
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(15,23,42,0.08);
@@ -346,12 +343,12 @@
 .serviceStepMeta {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 2px;
 }
 
 .serviceStepHeader .serviceStepTitle,
 .serviceText .serviceStepTitle {
-  font-size: 20px;
+  font-size: 16px;
   margin: 0;
   color: #111827 !important;
   line-height: 1.25;
@@ -399,7 +396,7 @@
 }
 
 .serviceStepContentInner {
-  padding: 12px 0 18px 72px;
+   padding: 4px 0 4px 30px;
   background: transparent;
   border: none;
 }
@@ -407,7 +404,7 @@
 .serviceStepContentInner p {
   margin: 0;
   color: var(--text-inverse);
-  line-height: 1.9;
+  line-height: 1.4;
 }
 
 .serviceStep.open .serviceStepContent,
@@ -474,19 +471,144 @@
   position: relative;
   z-index: 4;
 }
+/* INTRO */
+
+.servicesIntro {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  display: grid;
+  grid-template-columns: 45% 55%;
+  min-height: 600px;
+}
+.servicesIntroImage {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.servicesIntroImage::after {
+  content: "";
+
+  position: absolute;
+
+  top: -10%;
+  right: -180px;
+
+  width: 380px;
+  height: 120%;
+
+  background: var(--color-cream);
+
+  border-radius: 50%;
+
+  z-index: 10;
+}
+
+.servicesIntroContent,
+.servicesIntroImage {
+  position: relative;
+  z-index: 2;
+}
+.servicesIntroImage {
+  position: relative;
+  min-height: 600px;
+}
+
+.servicesIntroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6%;
+}
+
+.servicesIntroContent span {
+  color: var(--color-green);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.servicesIntroContent h2 {
+  color: var(--color-graphite);
+  font-size: clamp(42px,4vw,64px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.servicesIntroContent p {
+  color: var(--text-inverse);
+  line-height: 1.9;
+  font-size: 18px;
+}
+
+.coverImage {
+  object-fit: cover;
+}
 .consultoriaSection .serviceVisual {
   grid-column: 1;
   grid-row: 1;
-  overflow: hidden;
-  width: calc(100% + 65px);
+
+  width: 100%;
+  min-width: 100%;
 }
 
-.consultoriaSection .serviceText h2 {
-  white-space: nowrap;
-}
 .consultoriaSection .serviceText {
   grid-column: 2;
-  padding-left: 15%;
+  padding: 60px;
+}
+.servicesFinalCta {
+  background: var(--color-cream);
+
+  padding: 140px 8%;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicesFinalCta .miniTag {
+  margin-bottom: 20px;
+}
+
+.servicesFinalCta h2 {
+  font-size: clamp(42px, 4vw, 72px);
+
+  color: var(--color-graphite);
+
+  max-width: 900px;
+
+  margin-bottom: 24px;
+
+  line-height: 1.1;
+}
+
+.servicesFinalCta p {
+  max-width: 760px;
+
+  font-size: 20px;
+
+  line-height: 1.9;
+
+  color: var(--text-inverse);
+
+  margin-bottom: 40px;
+}
+
+.servicesFinalCta .primaryBtn {
+  min-width: 260px;
+}
+.serviceStepContentInner p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.5;
+}
+
+.serviceStepContentInner p + p {
+  margin-top: 8px !important;
 }
 @media (max-width: 768px) {
   .serviceRow,
@@ -505,13 +627,24 @@
     max-width: 100%;
     overflow: hidden;
   }
-  .serviceText {
-    padding: 40px 7%;
-  }
-  .serviceText h2 {
-    font-size: 42px;
-    line-height: 1;
-  }
+ .serviceText {
+  padding: 30px 24px;
+}
+
+.serviceText h2 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.serviceText p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.serviceExpand {
+  margin-top: 20px;
+}
   .servicesStats {
     flex-direction: column;
     gap: 30px;
@@ -571,5 +704,101 @@
 .consultoriaSection .serviceVisual {
   display: block;
   order: 2;
+}
+.serviceRow.reverse {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceRow.reverse .serviceText {
+  order: 1;
+}
+
+.serviceRow.reverse .serviceVisual {
+  order: 2;
+}
+.companyGrid {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.companyContent {
+  order: 1 !important;
+}
+
+.companyMap {
+  order: 2 !important;
+}
+
+.companyContent {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 30px 24px !important;
+  order: 1 !important;
+}
+
+.companyContent h2 {
+  font-size: 42px !important;
+  line-height: 1.1 !important;
+}
+
+.companyMap {
+  width: 100% !important;
+  height: 220px !important;
+  margin-top: 20px !important;
+  order: 2 !important;
+}
+
+.companyMap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.companyContent p {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+.companyContent * {
+  max-width: 100% !important;
+}
+.servicesIntro {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.servicesIntroContent {
+  width: 100% !important;
+  order: 1 !important;
+  padding: 30px 24px !important;
+}
+
+.servicesIntroImage {
+  width: 100% !important;
+  height: 250px !important;
+  order: 2 !important;
+  position: relative !important;
+}
+
+.coverImage {
+  object-fit: contain !important;
+}
+.primaryBtn {
+  width: 100%;
+  max-width: 100%;
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 15px;
+  line-height: 1.3;
+
+  padding: 16px 20px;
+
+  white-space: normal;
 }
 }

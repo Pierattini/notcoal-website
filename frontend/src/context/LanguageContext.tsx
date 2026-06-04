@@ -13,7 +13,7 @@ import de from "@/messages/de.json";
 
 type Lang = "es" | "en" | "de";
 
-type Messages = typeof es;
+type Messages = typeof en;
 
 const translations: Record<Lang, Messages> = {
   es,

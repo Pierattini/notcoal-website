@@ -6,8 +6,14 @@ import {
   Mail,
   MapPin
 } from "lucide-react";
-
+import { useLanguage } from "@/context/LanguageContext";
+import { useSearchParams } from "next/navigation";
 export default function ContactSection() {
+  const { t } = useLanguage();
+  const searchParams = useSearchParams();
+
+  const selectedService =
+  searchParams.get("service") || "service01";
   const [formData, setFormData] = useState<{
     nombre: string;
     email: string;
@@ -16,6 +22,7 @@ export default function ContactSection() {
     mensaje: string;
     archivos: File[];
     aceptaPrivacidad: boolean;
+    
   }>({
     nombre: '',
     email: '',
@@ -123,16 +130,15 @@ export default function ContactSection() {
       <div className="contactHeader">
 
         <span className="sectionBadge">
-          Contacto
+          {t.contact.badge}
         </span>
 
         <h2>
-          Hablemos de tu Proyecto
+          {t.contact.title}
         </h2>
 
         <p>
-          Estamos aquí para ayudarte a dar el paso
-          hacia la energía renovable
+          {t.contact.description}
         </p>
 
       </div>
@@ -141,46 +147,58 @@ export default function ContactSection() {
 
         <div className="contactCards">
 
-          <div className="contactCard">
+  <div className="contactInfoPanel">
 
-            <div className="contactIcon">
-              <Phone size={22} />
-            </div>
+    <span className="contactMiniBadge">
+      {t.contact.whyChooseUsTitle}
+    </span>
 
-            <div>
-              <small>Teléfono</small>
-              <strong>+34 900 123 456</strong>
-            </div>
+    <ul className="whyChooseList">
+      {t.contact.whyChooseUsItems.map(
+        (item: string, index: number) => (
+          <li key={index}>
+            {item}
+          </li>
+        )
+      )}
+    </ul>
 
-          </div>
+    <div className="contactDivider"></div>
 
-          <div className="contactCard">
+    <span className="contactMiniBadge">
+      {t.contact.contactInfoTitle}
+    </span>
 
-            <div className="contactIcon">
-              <Mail size={22} />
-            </div>
+    <div className="contactItem">
+      <small>{t.contact.emailLabel}</small>
+      <strong>{t.contact.email}</strong>
+    </div>
 
-            <div>
-              <small>Email</small>
-              <strong>info@energytech.com</strong>
-            </div>
+    <div className="contactItem">
+      <small>{t.contact.phoneLabel}</small>
+      <strong>{t.contact.phone}</strong>
+    </div>
 
-          </div>
+    <div className="contactItem">
+      <small>{t.contact.locationLabel}</small>
+      <strong>{t.contact.location}</strong>
+    </div>
 
-          <div className="contactCard">
+    <div className="contactItem">
+      <small>{t.contact.responseLabel}</small>
+      <strong>{t.contact.response}</strong>
+    </div>
 
-            <div className="contactIcon">
-              <MapPin size={22} />
-            </div>
+    <a
+      href="#"
+      className="linkedinButton"
+    >
+      {t.contact.linkedinText}
+    </a>
 
-            <div>
-              <small>Dirección</small>
-              <strong>Barcelona, Spain</strong>
-            </div>
+  </div>
 
-          </div>
-
-        </div>
+</div>
 
         <form className="premiumForm" onSubmit={handleSubmit}>
 
@@ -281,7 +299,32 @@ export default function ContactSection() {
             </div>
 
           </div>
+<div className="inputGroup">
+  <label>
+    <span style={{
+      color: 'rgba(255, 99, 99, 1)',
+      marginRight: '4px'
+    }}>
+      *
+    </span>
+    Service Required
+  </label>
 
+  <select
+  name="service"
+  className="serviceSelect"
+  defaultValue={selectedService}
+>
+  <option value="service01">{t.contact.services.service01}</option>
+  <option value="service02">{t.contact.services.service02}</option>
+  <option value="service03">{t.contact.services.service03}</option>
+  <option value="service04">{t.contact.services.service04}</option>
+  <option value="service05">{t.contact.services.service05}</option>
+  <option value="service06">{t.contact.services.service06}</option>
+  <option value="service07">{t.contact.services.service07}</option>
+  <option value="service08">{t.contact.services.service08}</option>
+</select>
+</div>
           <div className="inputGroup">
             <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Mensaje</label>
             <textarea
@@ -299,12 +342,13 @@ export default function ContactSection() {
               style={{
                 border: '2px dashed rgba(29,82,72,0.5)',
                 borderRadius: '12px',
-                padding: '20px 16px',
+                padding: '10px 12px',
                 textAlign: 'center',
                 background: 'rgba(29,82,72,0.03)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 position: 'relative',
+                height: '75px',
                 minHeight: 'auto'
               }}
               onDragOver={(e) => {

@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-
+import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 function AccordionItem({
   index,
   title,
@@ -17,7 +18,7 @@ function AccordionItem({
   const [open, setOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [maxH, setMaxH] = useState("0px");
-
+  const { t } = useLanguage();
   useEffect(() => {
     // Measure after paint to ensure accurate scrollHeight
     const id = requestAnimationFrame(() => {
@@ -70,204 +71,99 @@ function AccordionItem({
   );
 }
 
-const solarItems = [
-  {
-    number: "01",
-    title: "Evaluación Inicial",
-    shortDesc: "Analizamos consumo energético, infraestructura y viabilidad solar.",
-    longDesc:
-      "Analizamos consumo energético, infraestructura, restricciones técnicas, interconexión y viabilidad financiera. Preparamos un plan con recomendaciones para maximizar producción y reducir costos."
-  },
-  {
-    number: "02",
-    title: "Diseño Estratégico",
-    shortDesc: "Diseñamos una solución solar optimizada para máximo rendimiento energético.",
-    longDesc:
-      "Definimos layout, selección de módulos e inversores, estructura de soporte y cadenas eléctricas. Incluye modelado de rendimiento y una hoja de ruta para la implementación."
-  },
-  {
-    number: "03",
-    title: "Implementación",
-    shortDesc: "Instalación profesional y monitoreo avanzado del sistema fotovoltaico.",
-    longDesc:
-      "Coordinamos ejecución, pruebas, comisionado y puesta en marcha. Entregamos supervisión remota y validación de performance para asegurar que el sistema opere según diseño."
-  }
-];
-
-const consultoriaItems = [
-  {
-    number: "01",
-    title: "Análisis Energético",
-    shortDesc: "Evaluamos consumo, costos y eficiencia operativa de la empresa.",
-    longDesc:
-      "Realizamos auditorías técnicas, mediciones de energía y diagnósticos de rendimiento. Identificamos desviaciones, oportunidades de ahorro y riesgos de costos ocultos."
-  },
-  {
-    number: "02",
-    title: "Estrategia Corporativa",
-    shortDesc: "Creamos planes de optimización y reducción de costos energéticos.",
-    longDesc:
-      "Diseñamos una hoja de ruta estratégica para integrar renovables, mejorar eficiencia y soportar metas ESG. Incluye análisis de viabilidad financiera y recomendaciones para emisiones."
-  },
-  {
-    number: "03",
-    title: "Optimización Continua",
-    shortDesc: "Monitoreamos resultados y aplicamos mejoras constantes de rendimiento.",
-    longDesc:
-      "Implementamos KPIs y seguimiento de operaciones en tiempo real. Proponemos mejoras continuas, ajustes técnicos y acciones correctivas para sostener ahorros."
-  }
-];
-
-const mantenimientoItems = [
-  {
-    number: "01",
-    title: "Inspección Técnica",
-    shortDesc: "Revisamos paneles, conexiones y rendimiento general de la instalación.",
-    longDesc:
-      "Ejecutamos inspecciones visuales y termográficas, pruebas eléctricas y chequeos de integridad. Detectamos fallas tempranas y riesgos de performance."
-  },
-  {
-    number: "02",
-    title: "Mantenimiento Preventivo",
-    shortDesc: "Ejecutamos limpieza, calibración y optimización del sistema.",
-    longDesc:
-      "Programamos mantenimientos de alta precisión: limpieza, ajustes mecánicos y verificaciones eléctricas. Diseñamos intervenciones que prolongan la vida útil del activo."
-  },
-  {
-    number: "03",
-    title: "Monitoreo Avanzado",
-    shortDesc: "Supervisión continua y soporte técnico especializado 24/7.",
-    longDesc:
-      "Activamos sistemas de telemetría y alertas con análisis de datos. Respondemos rápidamente a incidencias y optimizamos el rendimiento operativo."
-  }
-];
-
 export default function ServicesPage() {
+
+  const { t } = useLanguage();
+  const service01Items = t.services.service01.items;
+  const service02Items = t.services.service02.items;
+  const service03Items = t.services.service03.items;
+  const service04Items = t.services.service04.items;
+  const service05Items = t.services.service05.items;
+  const service06Items = t.services.service06.items;
+  const service07Items = t.services.service07.items;
   return (
     <main className="servicesPage">
 
       {/* HERO */}
-      <section className="servicesHero">
+<section className="servicesHero">
 
-        <span className="sectionBadge">
-          Soluciones Premium
-        </span>
+  <span className="sectionBadge">
+    {t.services.hero.badge}
+  </span>
 
-        <h1>
-          Nuestros Servicios
-        </h1>
+  <h1>
+    {t.services.hero.title}
+  </h1>
 
-        <p>
-          Soluciones energéticas inteligentes para empresas,
-          industrias y proyectos corporativos modernos.
-        </p>
+  <p>
+    {t.services.hero.description}
+  </p>
 
-      </section>
+</section>
 
-      {/* STATS */}
-      <section className="servicesStats">
+{/* INTRO */}
+<section className="servicesIntro">
 
-        <div>
-          <strong>500+</strong>
-          <span>BW</span>
-        </div>
+  <div className="servicesIntroImage">
+    <Image
+      src="/company/mapa.png"
+      alt="European Markets"
+      fill
+      className="coverImage"
+    />
+  </div>
 
-        <div>
-          <strong>98%</strong>
-          <span>Eficiencia</span>
-        </div>
+  <div className="servicesIntroContent">
+    <span>{t.services.intro.badge}</span>
 
-        <div>
-          <strong>100%</strong>
-          <span>Soporte</span>
-        </div>
+    <h2>{t.services.intro.title}</h2>
 
-      </section>
+    <p>{t.services.intro.text1}</p>
 
-     {/* SERVICES */}
-<section className="servicesShowcase">
+    <p>{t.services.intro.text2}</p>
+  </div>
+
+</section>
+
 
 {/* BLOQUE 1 */}
-<div id="solar" className="serviceRow">
+<section className="servicesShowcase">
+
+{/* SERVICE 01 */}
+
+<div id="service01" className="serviceRow">
 
   <div className="serviceText">
+<span className="miniTag">01</span>
 
-    <span className="miniTag">
-      Energía Solar
-    </span>
+<h2>{t.services.service01.title}</h2>
 
-    <h2>
-      Instalación Solar
-    </h2>
+<p>{t.services.service01.description}</p>
 
-    <p>
-      Diseñamos e implementamos sistemas solares
-      de alto rendimiento para empresas modernas,
-      industrias y proyectos corporativos.
-    </p>
-
-    <div className="serviceExpand">
-      {solarItems.map((item, idx) => (
-        <AccordionItem
-          key={idx}
-          index={idx}
-          title={item.title}
-          shortDesc={item.shortDesc}
-          longDesc={item.longDesc}
-        />
-      ))}
-    </div>
-
-  </div>
-
-  <div className="serviceVisual">
-    <Image
-    src="/services/hola.jpg"
-    alt="hola"
-    fill
-    className="serviceImg"
-  />
-  </div>
-
+<div className="serviceExpand">
+  {service01Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
 </div>
 
-  {/* BLOQUE 2 */}
-<div id="consultoria" className="serviceRow reverse consultoriaSection">
-
-  <div className="serviceText">
-
-    <span className="miniTag">
-      Consultoría
-    </span>
-
-    <h2>
-      Consultoría Energética
-    </h2>
-
-    <p>
-      Analizamos consumo, eficiencia y
-      oportunidades de optimización energética
-      para reducir costos operativos.
-    </p>
-
-    <div className="serviceExpand">
-      {consultoriaItems.map((item, idx) => (
-        <AccordionItem
-          key={idx}
-          index={idx}
-          title={item.title}
-          shortDesc={item.shortDesc}
-          longDesc={item.longDesc}
-        />
-      ))}
-    </div>
-
+<Link
+  href="/?service=service01#contacto"
+  className="primaryBtn"
+>
+  {t.services.service01.button}
+</Link>
   </div>
 
   <div className="serviceVisual">
     <Image
-      src="/services/consulting.jpg"
-      alt="consulting"
+      src="/banner.jpg"
+      alt="service01"
       fill
       className="serviceImg"
     />
@@ -275,52 +171,277 @@ export default function ServicesPage() {
 
 </div>
 
-  {/* BLOQUE 3 */}
-<div id="mantenimiento" className="serviceRow">
+{/* SERVICE 02 */}
+
+<div id="service02" className="serviceRow reverse consultoriaSection">
 
   <div className="serviceText">
 
-    <span className="miniTag">
-      Soporte Técnico
-    </span>
+<span className="miniTag">02</span>
 
-    <h2>
-      Mantenimiento
-    </h2>
+<h2>{t.services.service02.title}</h2>
 
-    <p>
-      Supervisión avanzada y mantenimiento
-      preventivo para garantizar máxima
-      eficiencia energética.
-    </p>
+<p>{t.services.service02.description}</p>
 
-    <div className="serviceExpand">
-      {mantenimientoItems.map((item, idx) => (
-        <AccordionItem
-          key={idx}
-          index={idx}
-          title={item.title}
-          shortDesc={item.shortDesc}
-          longDesc={item.longDesc}
-        />
-      ))}
-    </div>
+<div className="serviceExpand">
+  {service02Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
+</div>
 
-  </div>
-
+<Link
+  href="/?service=service02#contacto"
+  className="primaryBtn"
+>
+  {t.services.service02.button}
+</Link>
+</div>
   <div className="serviceVisual">
-      <Image
-    src="/services/maintenance.jpg"
-    alt="Maintenance"
-    fill
-    className="serviceImg"
-  />
+    <Image
+      src="/banner.jpg"
+      alt="service02"
+      fill
+      className="serviceImg"
+    />
   </div>
 
 </div>
 
-</section>
+{/* SERVICE 03 */}
 
+<div id="service03" className="serviceRow">
+
+  <div className="serviceText">
+<span className="miniTag">03</span>
+
+<h2>{t.services.service03.title}</h2>
+
+<p>{t.services.service03.description}</p>
+
+<div className="serviceExpand">
+  {service03Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
+</div>
+
+<Link
+ href="/?service=service03#contacto"
+  className="primaryBtn"
+>
+  {t.services.service03.button}
+</Link>
+  </div>
+
+  <div className="serviceVisual">
+    <Image
+      src="/banner.jpg"
+      alt="service03"
+      fill
+      className="serviceImg"
+    />
+  </div>
+
+</div>
+
+{/* SERVICE 04 */}
+
+<div id="service04" className="serviceRow reverse consultoriaSection">
+
+  <div className="serviceText">
+
+<span className="miniTag">04</span>
+
+<h2>{t.services.service04.title}</h2>
+
+<p>{t.services.service04.description}</p>
+
+<div className="serviceExpand">
+  {service04Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
+</div>
+
+<Link
+  href="/?service=service04#contacto"
+  className="primaryBtn"
+>
+  {t.services.service04.button}
+</Link>
+  </div>
+
+  <div className="serviceVisual">
+    <Image
+      src="/banner.jpg"
+      alt="service04"
+      fill
+      className="serviceImg"
+    />
+  </div>
+
+</div>
+
+{/* SERVICE 05 */}
+
+<div id="service05" className="serviceRow">
+
+  <div className="serviceText">
+<span className="miniTag">05</span>
+
+<h2>{t.services.service05.title}</h2>
+
+<p>{t.services.service05.description}</p>
+
+<div className="serviceExpand">
+  {service05Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
+</div>
+
+<Link
+  href="/?service=service05#contacto"
+  className="primaryBtn"
+>
+  {t.services.service05.button}
+</Link>
+  </div>
+
+  <div className="serviceVisual">
+    <Image
+      src="/banner.jpg"
+      alt="service05"
+      fill
+      className="serviceImg"
+    />
+  </div>
+
+</div>
+
+{/* SERVICE 06 */}
+
+<div id="service06" className="serviceRow reverse consultoriaSection">
+
+  <div className="serviceText">
+<span className="miniTag">06</span>
+
+<h2>{t.services.service06.title}</h2>
+
+<p>{t.services.service06.description}</p>
+
+<div className="serviceExpand">
+  {service06Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
+</div>
+
+<Link
+  href="/?service=service06#contacto"
+  className="primaryBtn"
+>
+  {t.services.service06.button}
+</Link>
+  </div>
+
+  <div className="serviceVisual">
+    <Image
+      src="/banner.jpg"
+      alt="service06"
+      fill
+      className="serviceImg"
+    />
+  </div>
+
+</div>
+
+{/* SERVICE 07 */}
+
+<div id="service07" className="serviceRow">
+
+  <div className="serviceText">
+<span className="miniTag">07</span>
+
+<h2>{t.services.service07.title}</h2>
+
+<p>{t.services.service07.description}</p>
+
+<div className="serviceExpand">
+  {service07Items.map((item, idx) => (
+    <AccordionItem
+      key={idx}
+      index={idx}
+      title={item.title}
+      shortDesc={item.shortDesc}
+      longDesc={item.longDesc}
+    />
+  ))}
+</div>
+
+<Link
+  href="/?service=service07#contacto"
+  className="primaryBtn"
+>
+  {t.services.service07.button}
+</Link>
+  </div>
+
+  <div className="serviceVisual">
+    <Image
+      src="/banner.jpg"
+      alt="service07"
+      fill
+      className="serviceImg"
+    />
+  </div>
+
+</div>
+
+{/* SERVICE 08 CTA */}
+
+<section className="servicesFinalCta">
+
+<span className="miniTag">08</span>
+
+  <h2>{t.services.cta.title}</h2>
+
+  <p>{t.services.cta.description}</p>
+
+  <Link
+    href="/#contacto"
+    className="primaryBtn"
+  >
+    {t.services.cta.button}
+  </Link>
+</section>
+</section>
     </main>
   );
 }

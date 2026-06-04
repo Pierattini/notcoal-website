@@ -1,41 +1,504 @@
 {
-  "navbar": {
-    "home": "Home",
-    "services": "Services",
-    "projects": "Projects",
-    "company": "Company",
-    "contact": "Contact"
-  },
-  "company": {
-    "hero": {
-      "badge": "About Us",
-      "title": "Engineering and execution for utility-scale PV and BESS projects",
-      "description": "We design, develop and execute high-performance renewable energy infrastructure across Europe."
+"navbar": {
+"home": "Home",
+"services": "Services",
+"projects": "Projects",
+"company": "Company",
+"contact": "Contact"
+},
+
+"home": {
+"hero": {
+"badge": "Growth in Energy",
+"title": "From Ready-to-Build to Commercial Operation",
+"subtitle": "Project Management, EPC Strategy and Strategic Business Development for Utility-Scale Solar PV and BESS",
+"primaryButton": "Schedule an introductory call",
+"secondaryButton": "Discuss your project's path to COD"
+},
+
+"overview": {
+  "badge": "PROJECT MANAGEMENT & STRATEGIC EXECUTION",
+  "title": "From RTB to COD with greater clarity, speed and control.",
+  "description": "The Not Coal Company supports developers, EPC contractors, investors and renewable energy companies across Europe with project management, technical advisory, EPC partner facilitation, supplier coordination, contract negotiation support and strategic business development. We help clients reduce execution risk, improve procurement and contracting outcomes, and move utility-scale Solar PV and BESS projects from RTB to COD with greater clarity, speed and control."
+},
+
+"whoWeAre": {
+  "badge": "WHO WE ARE",
+  "title": "The Not Coal Company",
+  "text1": "The Not Coal Company is a founder-led renewable energy company registered in Estonia and operated from Valencia, supporting large-scale Solar PV and BESS projects across the European Union.",
+  "text2": "We act as an independent partner for developers, EPC contractors, investors and project stakeholders who need stronger execution control, sharper commercial coordination and access to trusted technical and market relationships across Europe."
+},
+
+"differentiators": {
+  "badge": "WHY CLIENTS WORK WITH US",
+  "title": "Trusted execution, commercial clarity and strategic reach.",
+  "description": "Somos una empresa especializada en soluciones energéticas modernas, sostenibles e inteligentes.",
+  "closingMessage": "For B2B clients in Solar PV and BESS, delivery success depends on more than technical capability alone. It depends on the right commercial structure, the right project interfaces, the right counterparties and the right decisions before execution risk compounds.",
+
+  "items": [
+    {
+      "title": "Founder-led support",
+      "text": "Direct senior involvement throughout the project lifecycle."
     },
-
-    "intro": {
-      "badge": "WHO WE ARE",
-      "title": "We did not start from zero.",
-      "text1": "Before The Not Coal Company, we were already involved in some of Europe's most important utility-scale projects, managing hundreds of MW across Germany, the Netherlands, Poland, Greece and the Nordic countries.",
-      "text2": "We have worked where projects are complex, deadlines are tight and execution truly matters."
+    {
+      "title": "10+ Years Experience",
+      "text": "More than 10 years of experience in utility-scale renewable energy across Europe."
     },
-
-    "statement": "We transform complex renewable energy challenges into financeable, buildable and operational assets.",
-
-    "mission": {
-      "title": "MISSION",
-      "text": "Execute renewable energy infrastructure with technical precision, speed and commercial vision."
+    {
+      "title": "550+ MW Delivered",
+      "text": "550+ MW delivered across European markets according to the founder's public profile."
     },
-
-    "vision": {
-      "title": "VISION",
-      "text": "Become a European benchmark in utility-scale PV and BESS projects."
+    {
+      "title": "Execution & EPC Expertise",
+      "text": "Practical expertise across execution, procurement, EPC strategy and contractual negotiation."
     },
-
-    "founder": {
-      "badge": "FOUNDER STORY",
-      "title": "Technical leadership with real execution vision.",
-      "description": "The experience behind The Not Coal Company comes from years participating in utility-scale projects across European markets, combining engineering, EPC coordination and strategic development."
+    {
+      "title": "Strategic Network",
+      "text": "Strategic business development support through an established European network."
     }
+  ]
+}
+
+},
+
+"company": {
+"hero": {
+"badge": "About Us",
+"title": "Engineering and execution for utility-scale PV and BESS projects",
+"description": "We design, develop and execute high-performance renewable energy infrastructure across Europe."
+},
+
+"intro": {
+  "badge": "WHO WE ARE",
+  "title": "We did not start from zero.",
+  "text1": "Before The Not Coal Company, we were already involved in some of Europe's most important utility-scale projects, managing hundreds of MW across Germany, the Netherlands, Poland, Greece and the Nordic countries.",
+  "text2": "We have worked where projects are complex, deadlines are tight and execution truly matters."
+},
+
+"statement": "We transform complex renewable energy challenges into financeable, buildable and operational assets.",
+
+"founder": {
+  "badge": "FOUNDER STORY",
+  "title": "Technical leadership with real execution vision.",
+  "description": "The experience behind The Not Coal Company comes from years participating in utility-scale projects across European markets, combining engineering, EPC coordination and strategic development."
+},
+"mission": {
+    "title": "MISSION",
+    "text": "Deliver practical renewable energy execution support across Europe."
+  },
+
+  "vision": {
+    "title": "VISION",
+    "text": "Become a trusted partner for utility-scale Solar PV and BESS projects."
+  },
+  
+"values": {
+  "value1": {
+    "title": "Execution Over Theory",
+    "text": "We focus on what moves projects forward."
+  },
+  "value2": {
+    "title": "Clarity in Complexity",
+    "text": "Better interfaces and clearer scope reduce risk. We simplify technical, contractual and commercial challenges."
+  },
+  "value3": {
+    "title": "Scale with Discipline",
+    "text": "Large-scale infrastructure requires both ambition and structure. We deliver both."
+  },
+  "value4": {
+    "title": "Trusted Partnerships",
+    "text": "The right counterparties matter as much as the right technology."
+  },
+  "value5": {
+    "title": "Measurable Results",
+    "text": "Megawatts delivered. COD achieved. Systems operating."
+  },
+  "ourStory": {
+  "title": "We didn't start from zero.",
+
+  "text1": "The Not Coal Company was founded by Marisol Masella, a renewable energy professional with more than 10 years of experience across utility-scale Solar PV and BESS projects across the Netherlands, Germany, Poland, the Nordics, Greece and other European markets.",
+
+  "text2": "With more than 550 MW delivered across European markets, her experience sits at the intersection of project execution, EPC strategy, business development and infrastructure delivery.",
+
+  "text3": "The company was built on practical project experience rather than abstract consulting. It exists to help clients reduce execution friction, improve procurement and contracting outcomes, connect with the right market counterparts and bring renewable energy projects to construction and COD with greater certainty."
+},
+
+"founder": {
+  "name": "Marisol Masella",
+  "role": "Founder & Director",
+
+  "quote": "I built this company because the energy transition needs people who understand both the megawatts and the contracts — and are willing to own the outcome."
+}
+},
+
+"operatingModel": {
+  "badge": "OPERATING MODEL",
+  "title": "Independent execution support across Europe.",
+  "description": "Registered in Estonia and operated from Valencia, The Not Coal Company works across the European Union as an independent strategic and technical partner. The company combines execution support, contract negotiation awareness, EPC facilitation and business development through a flexible model adapted to the needs of developers, contractors, investors and renewable energy platforms.",
+  "metric1": "10+ Years Experience",
+  "metric2": "550+ MW Delivered",
+  "metric3": "Founder-led",
+  "metric4": "European Markets"
+}
+},
+
+"contact": {
+  "badge": "GET IN TOUCH",
+  "title": "Let's discuss your project",
+  "description": "Tell us about your project, challenge or opportunity. We will identify the most appropriate support structure and contact you shortly.",
+
+  "whyChooseUsTitle": "Why Choose Us",
+
+  "whyChooseUsItems": [
+    "Founder-led execution and strategic oversight.",
+    "Utility-scale Solar PV and BESS experience across Europe.",
+    "Commercial and technical alignment from RTB to COD.",
+    "Strong EPC, supplier and partner network.",
+    "Practical solutions focused on execution, not theory."
+  ],
+
+  "contactInfoTitle": "Contact Information",
+
+  "emailLabel": "Email",
+  "email": "hi@notcoal.eu",
+
+  "phoneLabel": "Phone",
+  "phone": "+34 900 123 456",
+
+  "locationLabel": "Location",
+  "location": "Valencia, Spain",
+
+  "linkedinLabel": "LinkedIn",
+  "linkedinText": "Connect with us",
+
+  "responseLabel": "Response Time",
+  "response": "Within 24 hours",
+
+"services": {
+  "service01": "01 EPC Project Management",
+  "service02": "02 EPC Strategy and Partner Facilitation",
+  "service03": "03 Technical Advisory",
+  "service04": "04 Contract Strategy and Negotiation Support",
+  "service05": "05 Supplier and Specialist Network Coordination",
+  "service06": "06 Strategic Business Development & EPC Partnership Facilitation",
+  "service07": "07 Applied Innovation & Technology Integration",
+  "service08": "08 Not sure which service applies to your situation?"
+}
+},
+
+"services": {
+  "hero": {
+    "badge": "Services",
+    "title": "Integrated support for utility-scale Solar PV and BESS projects",
+    "description": ""
+  },
+
+  "intro": {
+  "badge": "Integrated Support",
+  "title": "Utility-scale Solar PV and BESS",
+  "text1": "We support clients where project value is most often won or lost: execution readiness, procurement strategy, contract structure, stakeholder coordination, market access and delivery discipline.",
+  "text2": "Our services are designed for B2B renewable energy clients operating in complex European project environments."
+},
+
+  "service01": {
+"title": "EPC Project Management",
+"description": "We provide project management support from RTB to COD, helping clients maintain execution control, reduce coordination gaps and keep delivery aligned with commercial and technical milestones. Our approach is practical, interface-driven and focused on avoiding the issues that typically delay utility-scale Solar PV and BESS projects.",
+"button": "Discuss EPC Project Management",
+"items": [
+{
+"title": "Schedule Follow-up and Milestone Control",
+"shortDesc": "Project schedule oversight",
+"longDesc": "Monitoring project milestones, critical activities and schedule adherence throughout the project lifecycle."
+},
+{
+"title": "Stakeholder Coordination",
+"shortDesc": "Interface management",
+"longDesc": "Coordination between developers, EPCs, suppliers, investors and project stakeholders."
+},
+{
+"title": "Procurement Interface Management",
+"shortDesc": "Procurement support",
+"longDesc": "Support procurement activities and coordination between technical and commercial teams."
+},
+{
+"title": "Construction Readiness Support",
+"shortDesc": "Execution preparation",
+"longDesc": "Assessment of project readiness before construction activities begin."
+},
+{
+"title": "Risk Monitoring and Issue Tracking",
+"shortDesc": "Risk control",
+"longDesc": "Identification, tracking and mitigation of project execution risks."
+},
+{
+"title": "Quality and Delivery Oversight",
+"shortDesc": "Delivery supervision",
+"longDesc": "Monitoring quality objectives and delivery performance throughout execution."
+}
+]
+},
+
+"service02": {
+"title": "EPC Strategy and Partner Facilitation",
+"description": "We identify and connect the right EPC, light EPC or construction partners based on project scope, geography, delivery model and commercial priorities. This service is designed for clients who need better partner fit, stronger tender positioning and smoother transition from opportunity to execution.",
+"button": "Discuss EPC Strategy and Partner Facilitation",
+"items": [
+{
+"title": "EPC and Contractor Identification",
+"shortDesc": "Partner sourcing",
+"longDesc": "Identification of suitable EPC contractors and delivery partners."
+},
+{
+"title": "Developer-EPC Introductions",
+"shortDesc": "Strategic connections",
+"longDesc": "We help clients assess the most appropriate delivery model for each project – full EPC, EPC M, light EPC, multi-contract, BOP-focused or construction-only – based on scope complexity, risk allocation preferences, market conditions and available partners. We translate technical and execution realities into clear options, explaining trade-offs in terms of risk, cost, control, interfaces and schedule, so that decision-makers can choose a contracting and delivery structure that supports bankability and execution."
+},
+{
+"title": "Delivery-model Assessment",
+"shortDesc": "Contracting strategy",
+"longDesc": "Evaluation of EPC, EPCM, Light EPC and alternative delivery structures."
+},
+{
+"title": "Tender Participation Support",
+"shortDesc": "Tender assistance",
+"longDesc": "Support throughout tender preparation, positioning and participation."
+},
+{
+"title": "Pre-award Coordination",
+"shortDesc": "Award preparation",
+"longDesc": "Coordination activities before final contractor selection and award."
+},
+{
+"title": "Commercial Alignment Support",
+"shortDesc": "Commercial coordination",
+"longDesc": "Ensuring commercial expectations align with execution realities."
+}
+]
+}
+,
+
+  "service03": {
+"title": "Technical Advisory",
+"description": "We provide execution-oriented technical advisory for utility-scale Solar PV and BESS projects, helping clients improve technical clarity before issues reach site or delay contractual decisions. Our support is tailored to real project needs rather than generic consulting outputs.",
+"button": "Discuss Technical Advisory",
+"items": [
+{
+"title": "Engineering Review",
+"shortDesc": "Independent engineering review",
+"longDesc": "We assess engineering assumptions, design choices and project documentation to identify potential execution risks before they impact delivery."
+},
+{
+"title": "Technical Documentation Support",
+"shortDesc": "Documentation packages",
+"longDesc": "We help structure, review and improve technical documentation required for procurement, execution and stakeholder alignment."
+},
+{
+"title": "Technical Risk Assessment",
+"shortDesc": "Risk identification",
+"longDesc": "We evaluate technical uncertainties, execution challenges and project constraints that could affect schedule, quality or performance."
+},
+{
+"title": "Interface Clarification",
+"shortDesc": "Responsibility mapping",
+"longDesc": "We clarify responsibilities between stakeholders, contractors and suppliers to reduce gaps and avoid scope conflicts."
+},
+{
+"title": "Quality-focused Decision Support",
+"shortDesc": "Technical decision support",
+"longDesc": "We provide independent input to help clients make quality-focused technical and commercial decisions."
+},
+{
+"title": "Coordination with Specialized Technical Partners",
+"shortDesc": "Specialized expertise",
+"longDesc": "We coordinate with selected technical specialists when additional expertise is required for specific project challenges."
+}
+]
+},
+
+"service04": {
+"title": "Contract Strategy and Negotiation Support",
+"description": "We support contract structuring and negotiation processes with a strong focus on scope definition, interface clarity, risk allocation, procurement logic and commercially robust execution frameworks. This service is especially valuable where contract quality directly affects bankability, change exposure, dispute prevention and delivery confidence.",
+"button": "Discuss Contract Strategy and Negotiation Support",
+"items": [
+{
+"title": "Scope Gap Review",
+"shortDesc": "Scope validation",
+"longDesc": "Identification of omissions, overlaps and contractual scope gaps."
+},
+{
+"title": "Interface and Responsibility Mapping",
+"shortDesc": "Role definition",
+"longDesc": "Clarification of responsibilities between project parties."
+},
+{
+"title": "Risk Allocation Support",
+"shortDesc": "Risk balancing",
+"longDesc": "Support in allocating project risks appropriately between stakeholders."
+},
+{
+"title": "Tender and Negotiation Input",
+"shortDesc": "Negotiation support",
+"longDesc": "Strategic participation during tendering and negotiations."
+},
+{
+"title": "Procurement and Supplier Framework Review",
+"shortDesc": "Commercial review",
+"longDesc": "Assessment of procurement structures and supplier frameworks."
+},
+{
+"title": "Execution-oriented Contractual Recommendations",
+"shortDesc": "Practical contracting",
+"longDesc": "Recommendations focused on delivery confidence and execution success."
+},
+{
+"title": "EPC and Procurement Contractual Negotiations",
+"shortDesc": "Contract negotiation",
+"longDesc": "Support during EPC and procurement contract negotiations."
+}
+]
+},
+
+"service05": {
+"title": "Supplier and Specialist Network Coordination",
+"description": "We work through a trusted network of suppliers, technical partners and specialized service providers across Europe to support project needs from RTB through commissioning. This allows clients to access targeted capabilities without adding unnecessary internal complexity.",
+"button": "Discuss Supplier and Specialist Network Coordination",
+"items": [
+{
+"title": "Supplier Introductions",
+"shortDesc": "Network access",
+"longDesc": "Connecting clients with relevant suppliers across Europe."
+},
+{
+"title": "Subcontracted Engineering Support",
+"shortDesc": "Engineering resources",
+"longDesc": "Access to specialized engineering support when required."
+},
+{
+"title": "Quality Inspections",
+"shortDesc": "Quality verification",
+"longDesc": "Inspection services focused on project quality assurance."
+},
+{
+"title": "Main Component Inspections",
+"shortDesc": "Equipment validation",
+"longDesc": "Inspection of critical project equipment and components."
+},
+{
+"title": "Specialist Technical Services",
+"shortDesc": "Technical expertise",
+"longDesc": "Coordination of specialist technical services for specific project needs."
+},
+{
+"title": "Coordination of Selected External Scopes",
+"shortDesc": "External management",
+"longDesc": "Management and coordination of outsourced project scopes."
+}
+]
+}
+,
+
+"service06": {
+"title": "Strategic Business Development & EPC Partnership Facilitation",
+"description": "We support renewable energy companies with strategic business development across Europe through an industry network built over more than a decade. This includes market access support, lead generation, EPC and developer introductions, partnership development and targeted growth support in selected European markets.",
+"button": "Discuss Strategic Business Development & EPC Partnership Facilitation",
+"items": [
+{ "title": "EPC or BOP Partner Identification", "shortDesc": "Partner sourcing", "longDesc": "Identification of suitable EPC and BOP partners." },
+{ "title": "Market Entry Support", "shortDesc": "New market access", "longDesc": "Support entering selected European markets." },
+{ "title": "Opportunity Sourcing", "shortDesc": "Business opportunities", "longDesc": "Identification of strategic project opportunities." },
+{ "title": "Lead Generation", "shortDesc": "Business pipeline", "longDesc": "Generation of qualified commercial opportunities." },
+{ "title": "EPC and Developer Introductions", "shortDesc": "Strategic introductions", "longDesc": "Connecting developers and EPC organizations." },
+{ "title": "Strategic Partnership Development", "shortDesc": "Partnership building", "longDesc": "Support for long-term strategic partnerships." },
+{ "title": "Tender Participation Support", "shortDesc": "Tender assistance", "longDesc": "Participation support for competitive tender processes." },
+{ "title": "Commercial Support for EU Expansion", "shortDesc": "European growth", "longDesc": "Commercial guidance for expansion into European markets." }
+]
+},
+
+"service07": {
+"title": "Applied Innovation & Technology Integration",
+"description": "Selected technology partnerships are vetted and activated based on project-specific needs Focus areas include:",
+"button": "Discuss Applied Innovation & Technology Integration",
+"items": [
+{ "title": "Advanced Testing Technologies", "shortDesc": "Testing solutions", "longDesc": "Assessment and integration of advanced testing technologies." },
+{ "title": "Quality Assurance Solutions", "shortDesc": "Quality systems", "longDesc": "Implementation of quality-focused technologies and processes." },
+{ "title": "Performance Analytics", "shortDesc": "Data-driven insights", "longDesc": "Performance monitoring and analytics solutions." },
+{ "title": "Digital Project Management Tools", "shortDesc": "Digital execution", "longDesc": "Evaluation and implementation of digital delivery tools." },
+{ "title": "Emerging Renewable Energy Technologies", "shortDesc": "Innovation scouting", "longDesc": "Review and integration of emerging renewable energy technologies." }
+]
+}
+,
+
+  "cta": {
+    "title": "Not sure which service applies to your situation?",
+    "description": "Describe your situation. We will identify the right support structure.",
+    "button": "Start the Conversation"
   }
+},
+"projects": {
+  "hero": {
+    "badge": "Selected Experience",
+    "title": "Selected Experience Across European Markets"
+  },
+
+  "overview": {
+    "description": "Our experience spans utility-scale Solar PV and BESS projects across multiple European markets, with support provided in project execution, EPC coordination, technical advisory, contract structuring, supplier interfaces and commercial development. References may include direct delivery experience, strategic support mandates and selected collaborations where disclosure is appropriate."
+  },
+
+  "metrics": {
+  "mw": "MW developed across Europe",
+  "markets": "Active energy markets",
+  "specialization": "Utility-scale technical specialization",
+  "epc": "End-to-end EPC execution"
+},
+
+  "filters": {
+    "all": "All",
+    "solar": "Solar PV",
+    "bess": "BESS",
+    "epc": "EPC",
+    "consulting": "Consulting"
+  },
+
+  "collaboration": {
+  "badge": "Current Collaborations",
+  "title": "BrightWatt Partners",
+  "partner": "Active Business Development Collaboration",
+  "description1": "Focused on qualified lead generation for EPC and BOP opportunities across EU markets.",
+  "description2": "Scope covers Solar PV and BESS at utility scale.",
+  "description3": "Project Portfolio Template",
+  "description4": "Technology: Utility-scale Solar PV / Standalone BESS / Hybrid Solar + BESS"
+},
+
+  "featured": {
+    "badge": "Success Cases",
+    "title": "Featured Projects"
+  },
+  
+  "labels": {
+  "power": "Power",
+  "area": "Area",
+  "country": "Country",
+  "partner": "Partner",
+
+  "phase": "Project Phase",
+  "client": "Client Type",
+  "delivery": "Delivery Model",
+  "scope": "Scope of Support",
+  "status": "Status"
+},
+"principles": {
+  "execution": {
+    "title": "Execution Over Talk",
+    "description": "Projects do not move forward through presentations. They move forward through decisions, coordination and accountability."
+  },
+  "engineering": {
+    "title": "Engineering First",
+    "description": "The right engineering approach reduces risks, delays and costs. It is the foundation of every project."
+  },
+  "clarity": {
+    "title": "Clarity in Complexity",
+    "description": "We simplify technical decisions, interfaces and complex contractual structures."
+  }
+}
+}
+
 }
