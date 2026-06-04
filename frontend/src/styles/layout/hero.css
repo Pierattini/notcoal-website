@@ -5,34 +5,37 @@
 .hero {
   position: relative;
 
-  min-height: 92vh;
+  display: flex;
+  align-items: center;
+
+  min-height: 130vh;
 
   padding: 125px 6% 180px;
 
   overflow: hidden;
 
-background:
-  linear-gradient(
-    90deg,
-    rgba(51,51,51,0.96) 0%,
-    rgba(51,51,51,0.88) 35%,
-    rgba(51,51,51,0.72) 60%,
-    rgba(51,51,51,0.55) 100%
-  ),
+  background:
+    linear-gradient(
+      90deg,
+      rgba(51,51,51,0.96) 0%,
+      rgba(51,51,51,0.88) 35%,
+      rgba(51,51,51,0.72) 60%,
+      rgba(51,51,51,0.55) 100%
+    ),
 
-  radial-gradient(
-    circle at 75% 45%,
-    rgba(29,82,72,0.10),
-    transparent 25%
-  ),
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(29,82,72,0.10),
+      transparent 25%
+    ),
 
-  radial-gradient(
-    circle at 85% 30%,
-    rgba(29,82,72,0.08),
-    transparent 30%
-  ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(29,82,72,0.08),
+      transparent 30%
+    ),
 
-  url("/banner.jpg");
+    url("/banner.jpg");
 
   background-size: cover;
   background-position: center;
