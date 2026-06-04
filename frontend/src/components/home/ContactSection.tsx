@@ -8,7 +8,8 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSearchParams } from "next/navigation";
-export default function ContactSection() {
+import { Suspense } from "react";
+function ContactSectionContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
 
@@ -500,5 +501,12 @@ export default function ContactSection() {
       </div>
 
     </section>
+  );
+}
+export default function ContactSection() {
+  return (
+    <Suspense fallback={null}>
+      <ContactSectionContent />
+    </Suspense>
   );
 }
