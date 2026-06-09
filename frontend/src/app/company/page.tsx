@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import HeroBadge from "@/components/ui/HeroBadge";
 
 export default function CompanyPage() {
   const { t } = useLanguage();
@@ -15,9 +16,7 @@ export default function CompanyPage() {
 
   <div className="companyHeroOverlay"></div>
 
-  <span className="sectionBadge">
-    {t.company.hero.badge}
-  </span>
+  <HeroBadge text={t.company.hero.badge} />
 
   <h1>
     {t.company.hero.title}
@@ -158,31 +157,19 @@ export default function CompanyPage() {
       {t.company.operatingModel.description}
     </p>
 
-    <div className="premiumNumbers">
+    <div className="founderCompactStatement">
 
-      <div>
-        <strong>
-          {t.company.operatingModel.metric1}
-        </strong>
+      <div className="founderCompactBio">
+        <strong>Marisol Masella</strong>
+        <span>Founder & Director</span>
+        <p>
+          10+ years · 550+ MW delivered · Solar PV & BESS · European markets
+        </p>
       </div>
 
-      <div>
-        <strong>
-          {t.company.operatingModel.metric2}
-        </strong>
-      </div>
-
-      <div>
-        <strong>
-          {t.company.operatingModel.metric3}
-        </strong>
-      </div>
-
-      <div>
-        <strong>
-          {t.company.operatingModel.metric4}
-        </strong>
-      </div>
+      <blockquote>
+        “Today’s energy transition needs people who understand both the megawatts and the contracts— and are willing to own the outcome.”
+      </blockquote>
 
     </div>
 

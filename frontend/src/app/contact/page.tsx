@@ -5,6 +5,24 @@ export default function ContactPage() {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [telefono, setTelefono] = useState("");
+const [empresa, setEmpresa] = useState("");
+const [servicio, setServicio] = useState("");
+
+const [quiereReunion, setQuiereReunion] =
+  useState(false);
+
+const [fechaReunion, setFechaReunion] =
+  useState("");
+
+const [horarioReunion, setHorarioReunion] =
+  useState("");
+  const [countryCode, setCountryCode] =
+  useState("");
+
+const [countryName, setCountryName] =
+  useState("");
+  
   return (
     <main className="contactPage">
 
@@ -45,7 +63,44 @@ export default function ContactPage() {
 
         </div>
 
-        <form className="contactPageForm">
+        <form
+  className="contactPageForm"
+  onSubmit={async (e) => {
+    e.preventDefault();
+
+    await fetch(
+      "http://localhost:4000/leads",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type":
+            "application/json",
+        },
+        body: JSON.stringify({
+  name: nombre,
+  email: email,
+  phone: telefono,
+  company: empresa,
+  message: mensaje,
+
+  service: servicio,
+
+  wants_meeting: quiereReunion,
+  country_code: countryCode,
+  country_name: countryName,
+  meetingDate: fechaReunion,
+  meetingSlot: horarioReunion,
+}),
+      }
+    );
+
+    alert("Consulta enviada");
+
+    setNombre("");
+    setEmail("");
+    setMensaje("");
+  }}
+>
 
           <input
   type="text"
@@ -54,36 +109,83 @@ export default function ContactPage() {
   onChange={(e) => setNombre(e.target.value)}
 />
 
-          <input
+<input
   type="email"
   placeholder="Correo"
   value={email}
   onChange={(e) => setEmail(e.target.value)}
 />
 
-          <textarea
+<input
+  type="text"
+  placeholder="Teléfono"
+  value={telefono}
+  onChange={(e) => setTelefono(e.target.value)}
+/>
+
+<input
+  type="text"
+  placeholder="Empresa"
+  value={empresa}
+  onChange={(e) => setEmpresa(e.target.value)}
+/>
+
+<input
+  type="text"
+  placeholder="Servicio"
+  value={servicio}
+  onChange={(e) => setServicio(e.target.value)}
+/>
+
+<input
+  type="text"
+  placeholder="Código País"
+  value={countryCode}
+  onChange={(e) => setCountryCode(e.target.value)}
+/>
+
+<input
+  type="text"
+  placeholder="País"
+  value={countryName}
+  onChange={(e) => setCountryName(e.target.value)}
+/>
+<input
+  type="date"
+  value={fechaReunion}
+  onChange={(e) =>
+    setFechaReunion(e.target.value)
+  }
+/>
+
+<input
+  type="text"
+  placeholder="Horario reunión"
+  value={horarioReunion}
+  onChange={(e) =>
+    setHorarioReunion(e.target.value)
+  }
+/>
+
+<label>
+  <input
+    type="checkbox"
+    checked={quiereReunion}
+    onChange={(e) =>
+      setQuiereReunion(e.target.checked)
+    }
+  />
+  Solicitar reunión
+</label>
+<textarea
   placeholder="Mensaje"
   value={mensaje}
   onChange={(e) => setMensaje(e.target.value)}
 />
 
-          <button
+<button
   type="submit"
-  disabled={
-    !nombre ||
-    !email ||
-    !mensaje
-  }
-  className={`
-    contactSubmitButton
-    ${
-      !nombre ||
-      !email ||
-      !mensaje
-        ? 'disabledButton'
-        : ''
-    }
-  `}
+  className="contactSubmitButton"
 >
   Enviar Consulta
 </button>

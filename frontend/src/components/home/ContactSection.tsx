@@ -1,14 +1,49 @@
 'use client';
 
 import { useState } from 'react';
-import {
-  Phone,
-  Mail,
-  MapPin
-} from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import HeroBadge from "@/components/ui/HeroBadge";
+
+const countryByPhoneCode: Record<string, string> = {
+  "+34": "Spain",
+  "+44": "United Kingdom",
+  "+49": "Germany",
+  "+39": "Italy",
+  "+33": "France",
+  "+56": "Chile",
+  "+52": "Mexico"
+};
+
+const meetingSlots = ["17:00", "18:00", "19:00", "20:00"];
+
+function detectCountryFromPhone(phone: string) {
+  const normalizedPhone = phone.replace(/\s+/g, "");
+  const matchingCode = Object.keys(countryByPhoneCode)
+    .sort((a, b) => b.length - a.length)
+    .find((code) => normalizedPhone.startsWith(code));
+
+  return matchingCode ? countryByPhoneCode[matchingCode] : "";
+}
+
+function detectCountryCodeFromPhone(phone: string) {
+  const normalizedPhone = phone.replace(/\s+/g, "");
+
+  return Object.keys(countryByPhoneCode)
+    .sort((a, b) => b.length - a.length)
+    .find((code) => normalizedPhone.startsWith(code)) || "";
+}
+
+function isAllowedMeetingDate(dateValue: string) {
+  if (!dateValue) {
+    return true;
+  }
+
+  const day = new Date(`${dateValue}T12:00:00`).getDay();
+  return day >= 1 && day <= 4;
+}
+
 function ContactSectionContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
@@ -20,32 +55,51 @@ function ContactSectionContent() {
     email: string;
     telefono: string;
     empresa: string;
+    service: string;
     mensaje: string;
     archivos: File[];
     aceptaPrivacidad: boolean;
+    wantsMeeting: boolean;
+    meetingDate: string;
+    meetingTime: string;
+    country_name: string;
+    country_code: string;
     
   }>({
     nombre: '',
     email: '',
     telefono: '',
     empresa: '',
+    service: selectedService,
     mensaje: '',
     archivos: [],
-    aceptaPrivacidad: false
+    aceptaPrivacidad: false,
+    wantsMeeting: false,
+    meetingDate: '',
+    meetingTime: '',
+    country_name: '',
+    country_code: ''
   });
 
   const [enviando, setEnviando] = useState(false);
   const [mensajeExito, setMensajeExito] = useState('');
   const [mensajeError, setMensajeError] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
 
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
+      ...(name === "telefono"
+        ? { country_name: detectCountryFromPhone(value) }
+        : {}),
+      ...(name === "telefono"
+        ? { country_code: detectCountryCodeFromPhone(value) }
+        : {})
     }));
   };
   
@@ -57,6 +111,37 @@ function ContactSectionContent() {
     aceptaPrivacidad: e.target.checked
   }));
 };
+
+  const handleMeetingCheckboxChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const isChecked = e.target.checked;
+
+    setFormData(prev => ({
+      ...prev,
+      wantsMeeting: isChecked,
+      meetingDate: isChecked ? prev.meetingDate : '',
+      meetingTime: isChecked ? prev.meetingTime : ''
+    }));
+  };
+
+  const handleMeetingDateChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { value } = e.target;
+
+    if (!isAllowedMeetingDate(value)) {
+      e.target.setCustomValidity("Please select Monday, Tuesday, Wednesday or Thursday.");
+      e.target.reportValidity();
+      return;
+    }
+
+    e.target.setCustomValidity("");
+    setFormData(prev => ({
+      ...prev,
+      meetingDate: value
+    }));
+  };
 
   const handleFileChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -83,7 +168,13 @@ function ContactSectionContent() {
     formDataObj.append('email', formData.email);
     formDataObj.append('telefono', formData.telefono);
     formDataObj.append('empresa', formData.empresa);
+    formDataObj.append('service', formData.service);
     formDataObj.append('mensaje', formData.mensaje);
+    formDataObj.append('country_name', formData.country_name);
+    formDataObj.append('country_code', formData.country_code);
+    formDataObj.append('wants_meeting', formData.wantsMeeting ? 'Yes' : 'No');
+    formDataObj.append('meeting_date', formData.wantsMeeting ? formData.meetingDate : '');
+    formDataObj.append('meeting_time', formData.wantsMeeting ? formData.meetingTime : '');
 
     formData.archivos.forEach((file, index) => {
       formDataObj.append(`archivo_${index}`, file);
@@ -95,6 +186,7 @@ function ContactSectionContent() {
       });
 
       if (response.ok) {
+        setShowSuccessModal(true);
         setMensajeExito('✓ ¡Consulta enviada exitosamente! Recibirás confirmación en tu email en los próximos minutos.');
         setMensajeError('');
         setFormData({
@@ -102,9 +194,15 @@ function ContactSectionContent() {
           email: '',
           telefono: '',
           empresa: '',
+          service: selectedService,
           mensaje: '',
           archivos: [],
-          aceptaPrivacidad: false
+          aceptaPrivacidad: false,
+          wantsMeeting: false,
+          meetingDate: '',
+          meetingTime: '',
+          country_name: '',
+          country_code: ''
         });
 
         setTimeout(() => setMensajeExito(''), 6000);
@@ -130,9 +228,7 @@ function ContactSectionContent() {
 
       <div className="contactHeader">
 
-        <span className="sectionBadge">
-          {t.contact.badge}
-        </span>
+        <HeroBadge text={t.contact.badge} />
 
         <h2>
           {t.contact.title}
@@ -285,6 +381,16 @@ function ContactSectionContent() {
                 onChange={handleInputChange}
                 required
               />
+              <input
+                type="hidden"
+                name="country_name"
+                value={formData.country_name}
+              />
+              <input
+                type="hidden"
+                name="country_code"
+                value={formData.country_code}
+              />
             </div>
 
             <div className="inputGroup">
@@ -314,7 +420,8 @@ function ContactSectionContent() {
   <select
   name="service"
   className="serviceSelect"
-  defaultValue={selectedService}
+  value={formData.service}
+  onChange={handleInputChange}
 >
   <option value="service01">{t.contact.services.service01}</option>
   <option value="service02">{t.contact.services.service02}</option>
@@ -326,6 +433,49 @@ function ContactSectionContent() {
   <option value="service08">{t.contact.services.service08}</option>
 </select>
 </div>
+          <div className="meetingRequestBlock">
+            <label className="meetingRequestToggle">
+              <input
+                type="checkbox"
+                checked={formData.wantsMeeting}
+                onChange={handleMeetingCheckboxChange}
+              />
+              <span>Request a Meeting</span>
+            </label>
+
+            {formData.wantsMeeting && (
+              <div className="meetingFields">
+                <div className="inputGroup">
+                  <label>Preferred Meeting Date</label>
+                  <input
+                    type="date"
+                    name="meetingDate"
+                    value={formData.meetingDate}
+                    onChange={handleMeetingDateChange}
+                    required={formData.wantsMeeting}
+                  />
+                </div>
+
+                <div className="inputGroup">
+                  <label>Preferred Meeting Time</label>
+                  <select
+                    name="meetingTime"
+                    className="serviceSelect"
+                    value={formData.meetingTime}
+                    onChange={handleInputChange}
+                    required={formData.wantsMeeting}
+                  >
+                    <option value="">Select a time slot</option>
+                    {meetingSlots.map((slot) => (
+                      <option key={slot} value={slot}>
+                        {slot}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            )}
+          </div>
           <div className="inputGroup">
             <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Mensaje</label>
             <textarea
@@ -343,13 +493,13 @@ function ContactSectionContent() {
               style={{
                 border: '2px dashed rgba(29,82,72,0.5)',
                 borderRadius: '12px',
-                padding: '10px 12px',
+                padding: '8px 12px',
                 textAlign: 'center',
                 background: 'rgba(29,82,72,0.03)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 position: 'relative',
-                height: '75px',
+                height: '84px',
                 minHeight: 'auto'
               }}
               onDragOver={(e) => {
@@ -387,11 +537,18 @@ function ContactSectionContent() {
                   top: 0
                 }}
               />
-              <div style={{ pointerEvents: 'none' }}>
-                <div style={{ fontSize: '24px', marginBottom: '8px' }}>📎</div>
+              <div style={{
+                pointerEvents: 'none',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <div style={{ fontSize: '24px', marginBottom: '6px', lineHeight: 1 }}>📎</div>
                 {formData.archivos.length === 0 ? (
                   <>
-                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 4px 0', fontSize: '13px' }}>
+                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 6px 0', fontSize: '13px' }}>
                       Arrastra archivos aquí o haz clic
                     </p>
                     <small style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>
@@ -451,7 +608,7 @@ function ContactSectionContent() {
           </div>
 <div
   style={{
-    marginTop: '20px',
+    marginTop: '28px',
     display: 'flex',
     alignItems: 'flex-start',
     gap: '10px',
@@ -499,6 +656,44 @@ function ContactSectionContent() {
         </form>
 
       </div>
+
+      {showSuccessModal && (
+        <div
+          className="successModalOverlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="successModalTitle"
+        >
+          <div className="successModal">
+            <button
+              type="button"
+              className="successModalClose"
+              onClick={() => setShowSuccessModal(false)}
+              aria-label="Cerrar modal"
+            >
+              ×
+            </button>
+
+            <h3 id="successModalTitle">
+              Consulta enviada correctamente
+            </h3>
+
+            <p>
+              Gracias por contactarnos. Hemos recibido tu consulta y nos pondremos en contacto contigo lo antes posible.
+            </p>
+
+            <div className="successModalActions">
+              <a href="/projects">
+                Ver Proyectos
+              </a>
+
+              <a href="/services">
+                Ver Servicios
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
     </section>
   );

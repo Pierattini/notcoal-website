@@ -143,23 +143,20 @@
 
 .heroBadge {
   display: inline-flex;
-
-  padding:
-    14px 22px;
-
+  padding: 12px 24px;
   border-radius: 999px;
-
-  border: 1px solid rgba(245,243,239,0.08);
-
-  background: rgba(245,243,239,0.04);
-
-  color: var(--color-cream);
-
-  margin-bottom: 36px;
+  background: rgba(15, 23, 42, 0.58);
+  border: 1px solid rgba(245,243,239,0.12);
+  backdrop-filter: blur(18px);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: clamp(38px, 6vw, 54px);
+  font-size: clamp(60px, 6vw, 90px);
 
   line-height: 1.02;
 
@@ -177,9 +174,9 @@
 .hero p {
   max-width: 700px;
 
-  font-size: 18px;
+  font-size: 20px;
 
-  line-height: 1.75;
+  line-height: 1.7;
 
   color: var(--text-secondary);
 }
@@ -233,7 +230,7 @@
 
   display: block;
 
-  font-size: 30px;
+  font-size: clamp(28px, 3vw, 40px);
 
   color: white;
 
@@ -244,9 +241,9 @@
 
   color: var(--text-secondary);
 
-  font-size: 15px;
+  font-size: 16px;
 
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .primaryBtn {

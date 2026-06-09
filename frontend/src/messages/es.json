@@ -143,7 +143,7 @@
 },
 
 "contact": {
-  "badge": "GET IN TOUCH",
+  "badge": "CONTACT",
   "title": "Let's discuss your project",
   "description": "Tell us about your project, challenge or opportunity. We will identify the most appropriate support structure and contact you shortly.",
 
@@ -469,7 +469,6 @@
 },
 
   "featured": {
-    "badge": "Success Cases",
     "title": "Featured Projects"
   },
   

@@ -75,6 +75,16 @@
 
   gap: 18px;
 }
+.footerBrandSimple {
+  display: flex;
+  align-items: center;
+}
+
+.footerLogoHorizontal {
+  width: 320px;
+  height: auto;
+  display: block;
+}
 
 .footerLogoImage {
 
@@ -93,7 +103,7 @@
 
   color: white;
 
-  font-size: 30px;
+  font-size: clamp(28px, 3vw, 40px);
 
   font-weight: 700;
 
@@ -106,7 +116,7 @@
 
   font-size: 16px;
 
-  line-height: 1.85;
+  line-height: 1.7;
 }
 .socialIcons {
 
@@ -186,7 +196,7 @@
 .footerBrandText strong {
   display: block;
   color: white;
-  font-size: 28px;
+  font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   margin-bottom: 10px;
 }
@@ -194,8 +204,8 @@
 .footerBrandText p {
   max-width: 380px;
   color: rgba(245,243,239,0.82);
-  line-height: 1.85;
-  font-size: 15px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 .footerContactMini {
@@ -211,7 +221,7 @@
 
 .footerContactMini span {
   color: rgba(245,243,239,0.86);
-  font-size: 15px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -220,7 +230,7 @@
   display: inline-block;
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   transition: color 0.25s ease;
 }
@@ -239,7 +249,7 @@
 .footerColumn h4 {
   color: white;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
@@ -249,7 +259,7 @@
   color: rgba(245,243,239,0.86);
   text-decoration: none;
   margin-bottom: 14px;
-  font-size: 15px;
+  font-size: 16px;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -295,7 +305,7 @@
 }
 
 .contactHint {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.75;
   max-width: 240px;
@@ -410,16 +420,15 @@
   display: block;
 }
 .footerSimple {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
 
   padding: 22px 5%;
 
-  border-top: 1px solid rgba(255,255,255,.08);
+  background: var(--color-cream);
+
+  border-top: 1px solid rgba(51,51,51,0.08);
 
   gap: 30px;
 }
@@ -433,21 +442,17 @@
 }
 
 .footerSimple a {
-
-  color: rgba(255,255,255,.75);
-
+  color: var(--color-graphite);
   text-decoration: none;
+  transition: 0.25s ease;
 }
 
 .footerSimple a:hover {
-
-  color: white;
+  color: var(--color-green);
 }
 
 .footerBrandSimple {
-
-  color: white;
-
+  color: var(--color-graphite);
   font-weight: 700;
 }
 

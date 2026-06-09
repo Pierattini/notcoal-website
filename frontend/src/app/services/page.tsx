@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
+import HeroBadge from "@/components/ui/HeroBadge";
 function AccordionItem({
   index,
   title,
@@ -87,9 +88,7 @@ export default function ServicesPage() {
       {/* HERO */}
 <section className="servicesHero">
 
-  <span className="sectionBadge">
-    {t.services.hero.badge}
-  </span>
+  <HeroBadge text={t.services.hero.badge} />
 
   <h1>
     {t.services.hero.title}

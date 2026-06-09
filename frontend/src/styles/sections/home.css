@@ -26,13 +26,14 @@
 
 .companySection h2 {
   color: var(--color-graphite);
-  font-size: clamp(40px, 5vw, 62px);
+  font-size: clamp(36px, 3.2vw, 54px);
   margin-bottom: 20px;
 }
 
 .companySection p {
   color: var(--text-inverse);
-  line-height: 1.8;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .companySingleSection {
@@ -92,22 +93,22 @@
 
 .companySingleContent span {
   color: var(--color-green);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
 }
 
 .companySingleContent h2 {
-  font-size: clamp(54px,5vw,84px);
-  line-height: 0.92;
+  font-size: clamp(36px, 3.2vw, 54px);
+  line-height: 1;
   letter-spacing: -4px;
   margin: 24px 0 34px;
   color: #020617;
 }
 
 .companySingleContent p {
-  font-size: 19px;
-  line-height: 1.9;
+  font-size: 20px;
+  line-height: 1.5;
   color: var(--text-inverse);
   margin-bottom: 24px;
   max-width: 720px;
@@ -151,12 +152,12 @@
   }
 
 .companySingleContent h2 {
-    font-size: 52px;
+    font-size: clamp(36px, 3.2vw, 54px);
     letter-spacing: -2px;
   }
 
 .companySingleContent p {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 /* ======================================
@@ -190,7 +191,7 @@ OVERVIEW SECTION
 
   color: var(--color-green);
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 700;
 
@@ -200,9 +201,9 @@ OVERVIEW SECTION
 }
 
 .overviewContent h2 {
-  font-size: clamp(42px, 5vw, 72px);
+  font-size: clamp(36px, 3.2vw, 54px);
 
-  line-height: 1;
+  line-height: 1.05;
 
   letter-spacing: -3px;
 
@@ -211,10 +212,28 @@ OVERVIEW SECTION
   margin-bottom: 30px;
 }
 
+main .hero h1 {
+  font-size: clamp(36px, 3.2vw, 54px);
+}
+
+.companySection .miniCard {
+  min-height: 156px;
+}
+
+.companySection .miniCard h4 {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.15;
+}
+
+.companySection .miniCard p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .overviewContent p {
   font-size: 20px;
 
-  line-height: 1.9;
+  line-height: 1.5;
 
   color: var(--text-inverse);
 }
@@ -250,7 +269,7 @@ OVERVIEW SECTION
   }
 
   .overviewContent h2 {
-    font-size: 48px;
+    font-size: clamp(36px, 3.2vw, 54px);
   }
 
 }

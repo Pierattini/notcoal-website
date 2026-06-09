@@ -1,111 +1,72 @@
-/* ======================================
+h2/* ======================================
  COMPANY
 ====================================== */
-
 .companyContent {
-
   display: grid;
-
   grid-template-columns:
     1fr 1fr;
-
   gap: 90px;
-
   align-items: center;
 }
-
 .companyNumbers {
-
   display: flex;
-
   gap: 70px;
-
   margin-top: 50px;
 }
-
 .companyNumbers strong {
-
   display: block;
-
-  font-size: 54px;
-
+  font-size: clamp(36px, 3.2vw, 54px);
   color: var(--color-graphite);
 }
 
 .companyNumbers small {
-
   display: block;
-
   margin-top: 10px;
-
   color: var(--text-inverse);
-
   font-size: 16px;
-
   font-weight: 500;
-
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .companyRight {
-
   display: flex;
-
   flex-direction: column;
-
   gap: 24px;
 }
 .miniCard {
-
   background: var(--color-cream);
-
   padding: 32px;
-
   border-radius: 24px;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-
   box-shadow:
     0 10px 30px rgba(15,23,42,0.06);
-
   border:
     1px solid rgba(15,23,42,0.04);
-
   width: 100%;
-
   min-height: 180px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
 .miniCard:hover {
-
   transform: translateY(-6px);
-
   box-shadow:
     0 22px 50px rgba(15,23,42,0.12);
 }
 
 .miniCard svg {
-
   color: var(--color-green);
-
   margin-bottom: 20px;
 }
 
 .miniCard h4 {
-
-  font-size: 26px;
-
+  font-size: clamp(20px, 2vw, 28px);
   margin-bottom: 12px;
-
   color: var(--color-graphite);
+  line-height: 1.15;
 }
 .companyPage {
   background: var(--color-cream);
@@ -116,35 +77,26 @@
 .companyHero {
   position: relative;
   overflow: hidden;
-
   padding: 170px 7% 130px;
   text-align: center;
-
   background:
     linear-gradient(
       rgba(51,51,51,0.72),
       rgba(51,51,51,0.82)
     ),
     url("/banner.jpg");
-
   background-size: cover;
   background-position: center;
-
   color: white;
 }
 .companyHero::after {
   content: "";
-
   position: absolute;
-
   left: 0;
   bottom: -1px;
-
   width: 100%;
   height: 180px;
-
   background: var(--color-cream);
-
   clip-path: polygon(
     0% 72%,
     3% 73%,
@@ -186,40 +138,27 @@
 
   z-index: 3;
 }
-.companyHero .sectionBadge,
+.companyHero .heroBadge,
 .companyHero h1,
 .companyHero p {
   position: relative;
   z-index: 4;
 }
 .companyHero h1 {
-
-font-size:
-  clamp(52px, 6vw, 92px);
-
-  line-height: 0.98;
-
+  font-size: clamp(36px, 3.2vw, 54px);
+  line-height: 1.02;
   max-width: 1200px;
-
-  margin:
-    28px auto;
-
+  margin: 24px auto;
   letter-spacing: -4px;
-
   color: white;
 }
 
 .companyHero p {
-
   max-width: 900px;
-
   margin: auto;
-
   color: rgba(245,243,239,0.86);
-
-  font-size: 22px;
-
-  line-height: 1.9;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 /* ======================================
@@ -234,17 +173,12 @@ font-size:
 /* ONDA SUPERIOR */
 .waveSection::before {
   content: "";
-
   position: absolute;
-
   top: -55px;
   left: -5%;
-
   width: 110%;
   height: 180px;
-
   background: var(--color-cream);
-
   border-bottom-left-radius: 50% 100%;
   border-bottom-right-radius: 50% 100%;
 
@@ -254,20 +188,14 @@ font-size:
 /* ONDA INFERIOR */
 .waveSection::after {
   content: "";
-
   position: absolute;
-
   bottom: -58px;
   left: -5%;
-
   width: 110%;
   height: 180px;
-
   background: var(--color-cream);
-
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
-
   z-index: 1;
 }
 
@@ -282,41 +210,31 @@ font-size:
   z-index: 5;
 }
 .companyStory {
-
   padding:
     140px 7%;
-
   display: grid;
-
   grid-template-columns:
     1fr 1fr;
-
   gap: 100px;
-
   align-items: center;
 }
 
 .companyStory small {
   color: var(--color-green);
-  font-size: 15px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 
 .companyStory h2 {
-
-  font-size:
-    clamp(54px, 5vw, 82px);
-
+  font-size: clamp(36px, 3.2vw, 54px);
   line-height: 0.98;
-
   margin-top: 20px;
-
   color: var(--color-graphite);
 }
 
 .companyStory p {
   color: var(--text-inverse);
-  line-height: 1.9;
+  line-height: 1.5;
   font-size: 18px;
 }
 
@@ -328,36 +246,30 @@ font-size:
 }
 
 .missionCard {
-
   padding: 46px;
-
   border-radius: 34px;
-
   background: var(--color-cream);
-
   border:
     1px solid rgba(15,23,42,0.04);
-
   box-shadow:
     0 12px 40px rgba(15,23,42,0.06);
-
   transition:
     transform .35s ease,
     box-shadow .35s ease;
 }
 
 .missionCard h3 {
-  font-size: 30px;
+  font-size: clamp(24px, 2.5vw, 34px);
   margin-bottom: 20px;
 }
 
 .missionCard p {
   color: var(--text-inverse);
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 .timelineSection h2 {
-  font-size: 52px;
+   font-size: clamp(36px, 3.2vw, 54px);
   margin-bottom: 60px;
 }
 
@@ -368,7 +280,7 @@ font-size:
 }
 
 .timelineItem strong {
-  font-size: 42px;
+  font-size: clamp(24px, 2.5vw, 34px);
   color: var(--color-green);
   display: block;
   margin-bottom: 18px;
@@ -399,38 +311,31 @@ font-size:
   }
 
   .companyHero h1 {
-    font-size: 58px;
+     font-size: clamp(36px, 3.2vw, 54px);
   }
 
   .companyStory h2 {
-    font-size: 42px;
+     font-size: clamp(36px, 3.2vw, 54px);
   }
 }
 .missionCard:hover,
 .timelineItem:hover,
 .companyStats div:hover {
-
   transform:
     translateY(-10px);
-
   box-shadow:
     0 25px 60px rgba(15,23,42,0.10);
 }
 .companyHero::before {
-
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   background:
     radial-gradient(
       circle at top,
       rgba(29,82,72,0.12),
       transparent 55%
     );
-
   pointer-events: none;
 }
 /* ======================================
@@ -438,30 +343,19 @@ font-size:
 ====================================== */
 
 .companyIntro {
-
   display: grid;
-
   grid-template-columns: 52% 48%;
-
   align-items: center;
-
   width: 100%;
-
   overflow: hidden;
-
   background: var(--color-cream);
-
   padding: 0;
 }
 
 .companyIntroImage {
-
   position: relative;
-
   height: 760px;
-
   width: 100%;
-
   overflow: hidden;
 }
 
@@ -481,13 +375,13 @@ font-size:
 
 .companyIntroContent span {
   color: var(--color-green);
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 2px;
   font-weight: 700;
 }
 
 .companyIntroContent h2 {
-  font-size: clamp(38px, 4vw, 64px);
+  font-size: clamp(36px, 3.2vw, 54px);
   line-height: 0.95;
   margin: 24px 0 34px;
   color: var(--color-graphite);
@@ -495,8 +389,8 @@ font-size:
 }
 
 .companyIntroContent p {
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 20px;
+  line-height: 1.5;
   color: var(--text-inverse);
   margin-bottom: 28px;
   max-width: 720px;
@@ -507,50 +401,31 @@ font-size:
 ====================================== */
 
 .companyStatement {
-
   position: relative;
-
   padding: 180px 7%;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   text-align: center;
-
   background-image:
     linear-gradient(
       rgba(2,7,22,0.72),
       rgba(2,7,22,0.72)
     ),
     url("/banner.jpg");
-
   background-size: cover;
   background-position: center;
-
   overflow: hidden;
 }
 
-
 .companyStatement h2 {
-
   position: relative;
-
   z-index: 4;
-
-  font-size:
-    clamp(34px, 4vw, 62px);
-
+  font-size: clamp(36px, 3.2vw, 54px);
   line-height: 1.08;
-
   max-width: 1200px;
-
   margin: auto;
-
   color: white;
-
   letter-spacing: -2px;
 }
 
@@ -559,63 +434,43 @@ font-size:
 ====================================== */
 
 .valuesSection {
-
   padding:
   40px 7% 140px;
-
   display: grid;
-
   grid-template-columns:
     repeat(4,1fr);
-
   gap: 26px;
 }
 
 .valueCard {
-
   position: relative;
-
   color: var(--text-inverse);
-
   background:
     linear-gradient(
       180deg,
       rgba(255,255,255,0.95),
       rgba(255,255,255,0.82)
     );
-
   backdrop-filter: blur(12px);
-
-  padding: 42px;
-
+  padding: 30px;
   border-radius: 40px 12px 40px 12px;
-
   overflow: hidden;
-
   border: 1px solid rgba(245,243,239,0.5);
-
   box-shadow:
     0 20px 60px rgba(15,23,42,0.06);
-
   transition:
     transform .35s ease,
     box-shadow .35s ease;
 }
 
 .valueCard::before {
-
   content: "";
-
   position: absolute;
-
   top: -80px;
   right: -80px;
-
   width: 180px;
   height: 180px;
-
   border-radius: 50%;
-
   background:
     radial-gradient(
       circle,
@@ -625,43 +480,31 @@ font-size:
 }
 
 .valueCard:hover {
-
   transform:
     translateY(-10px);
-
   box-shadow:
     0 30px 70px rgba(15,23,42,0.10);
 }
 
 .valueCard span {
-
-  font-size: 15px;
-
+  font-size: 13px;
   font-weight: 700;
-
   color: var(--color-green);
-
   display: block;
-
   margin-bottom: 18px;
 }
 
 .valueCard h3 {
-
-  font-size: 24px;
-
-  line-height: 1.1;
-
-  margin-bottom: 20px;
-
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1;
+  margin-bottom: 12px;
   color: var(--color-graphite);
 }
 
 .valueCard p {
   color: #1d5248;
-  line-height: 1.9;
-
-  font-size: 17px;
+  line-height: 1.5;
+  font-size: 18px;
 }
 
 /* ======================================
@@ -669,64 +512,42 @@ font-size:
 ====================================== */
 
 .missionVision {
-
   padding: 0 5% 120px;
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 30px;
 }
 
 .missionBox {
-
   position: relative;
-
   overflow: hidden;
-
   background:
     linear-gradient(
       180deg,
       rgba(255,255,255,0.92),
       rgba(255,255,255,0.78)
     );
-
   padding: 60px;
-
   border-radius: 44px 14px 44px 14px;
-
   border: 1px solid rgba(245,243,239,0.5);
-
   backdrop-filter: blur(10px);
-
   box-shadow:
     0 25px 60px rgba(15,23,42,0.05);
 }
 
 .missionBox small {
-
   display: block;
-
   margin-bottom: 18px;
-
   color: var(--color-green);
-
-  font-size: 15px;
-
+  font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
 .missionBox h3 {
-
-  font-size: 32px;
-
+  font-size: clamp(22px, 2vw, 30px);
   line-height: 1.3;
-
   color: var(--color-graphite);
-
   font-weight: 700;
 }
 
@@ -735,76 +556,49 @@ font-size:
 ====================================== */
 
 .founderSection {
-
   padding:
     0 7% 140px;
-
   display: grid;
-
   grid-template-columns:
     1fr 1fr;
-
   gap: 90px;
-
   align-items: center;
 }
 
 .founderImage {
-
   border-radius: 34px;
-
   overflow: hidden;
-
   min-height: 720px;
-
   box-shadow:
     0 30px 80px rgba(15,23,42,0.12);
 }
 
 .founderImage img {
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   display: block;
 }
 
 .founderText small {
-
   color: var(--color-green);
-
-  font-size: 15px;
-
+  font-size: 13px;
   letter-spacing: 2px;
-
   font-weight: 700;
 }
 
 .founderText h2 {
-
-  font-size:
-    clamp(48px, 5vw, 74px);
-
+  font-size: clamp(36px, 3.2vw, 54px);
   line-height: 1;
-
-  margin:
-    24px 0 30px;
-
+  margin: 24px 0 30px;
   color: var(--color-graphite);
-
   letter-spacing: -3px;
 }
 
 .founderText p {
-
   color: var(--text-inverse);
-
-  font-size: 19px;
-
-  line-height: 1.9;
-
+  font-size: 20px;
+  line-height: 1.5;
   margin-bottom: 24px;
 }
 
@@ -818,27 +612,21 @@ font-size:
   .founderSection,
   .valuesSection,
   .companyStats {
-
     grid-template-columns: 1fr;
   }
 
   .companyIntroImage,
   .founderImage {
-
     min-height: 420px;
   }
 
   .companyHero {
-
     padding:
       190px 7% 180px;
   }
 
   .companyHero h1 {
-
-    font-size:
-      clamp(48px, 13vw, 74px);
-
+    font-size: clamp(36px, 3.2vw, 54px);
     letter-spacing: -2px;
   }
 }
@@ -861,104 +649,119 @@ font-size:
   height: 680px;
 }
 .coverImage {
-
   object-fit: cover;
-
   object-position: center top;
 }
 .premiumLeft img {
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   display: block;
-
   transition:
     transform .7s ease;
 }
 
 .premiumLeft:hover img {
-
   transform: scale(1.05);
 }
 
 .premiumRight small {
-
   color: var(--color-green);
-
-  font-size: 15px;
-
+  font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
 .premiumRight h2 {
-
-  font-size:
-    clamp(34px,3.5vw,54px);
-
+  font-size: clamp(36px, 3.2vw, 54px);
   line-height: 0.95;
-
   margin: 18px 0 24px;
-
   color: var(--color-graphite);
-
   letter-spacing: -3px;
-
   max-width: 620px;
 }
 
 .premiumRight p {
-
   font-size: 20px;
-
-  line-height: 1.9;
-
+  line-height: 1.5;
   color: var(--text-inverse);
-
   margin-bottom: 40px;
 }
 
+.founderCompactStatement {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  margin-top: 34px;
+  margin-right: clamp(20px, 4vw, 72px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0;
+  background: rgba(29, 82, 72, 0.08);
+}
+
+.founderCompactBio {
+  padding: 28px 32px;
+}
+
+.founderCompactBio strong {
+  display: block;
+  color: var(--color-graphite);
+  font-size: 24px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.founderCompactBio span {
+  display: block;
+  color: var(--color-green);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.founderCompactBio p {
+  margin: 0;
+  color: var(--text-inverse);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.founderCompactStatement blockquote {
+  margin: 0;
+  padding: 30px clamp(38px, 5vw, 64px);
+  border-left: 4px solid rgba(29, 82, 72, 0.7);
+  color: var(--color-graphite);
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 700;
+  max-width: 620px;
+}
+
 .premiumNumbers {
-
   display: flex;
-
   flex-direction: column;
-
   gap: 26px;
 }
 
 .premiumNumbers div {
-
   padding-bottom: 26px;
-
   border-bottom:
     1px solid rgba(15,23,42,0.08);
 }
 
 .premiumNumbers strong {
-
   display: block !important;
-
-  font-size: 28px !important;
-
+  font-size: clamp(20px, 1.8vw, 28px) !important;
   margin-bottom: 0;
-
   color: var(--color-graphite);
-
   line-height: 1.1;
-
   font-weight: 700;
 }
 
 .premiumNumbers span {
-
   color: var(--text-inverse);
-
-  font-size: 10px;
+  font-size: 16px;
 }
 
 @media (max-width: 980px) {
@@ -972,7 +775,43 @@ font-size:
 
     min-height: 720px;
   }
+
+  .founderCompactStatement {
+    grid-template-columns: 1fr;
+    margin-right: 0;
+  }
+
+  .founderCompactStatement blockquote {
+    border-left: none;
+    border-top: 4px solid rgba(29, 82, 72, 0.7);
+    max-width: none;
+  }
 }
+
+@media (max-width: 640px) {
+  .founderCompactStatement {
+    margin-top: 28px;
+  }
+
+  .founderCompactBio {
+    padding: 24px;
+  }
+
+  .founderCompactBio strong {
+    font-size: 22px;
+  }
+
+  .founderCompactBio p {
+    font-size: 14px;
+  }
+
+  .founderCompactStatement blockquote {
+    padding: 24px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+}
+
 .companyIntroImage img,
 .premiumLeft img {
 
@@ -1011,16 +850,14 @@ font-size:
     padding: 120px 7% 80px;
   }
 .companyHero h1 {
-  font-size: 42px;
-  line-height: 0.95;
+  font-size: clamp(36px, 3.2vw, 54px);
+  line-height: 1.02;
   letter-spacing: -2px;
   }
 
   .companyHero p {
-
-    font-size: 17px;
-
-    line-height: 1.8;
+    font-size: 20px;
+    line-height: 1.5;
   }
 
   .companyStory,
@@ -1077,7 +914,7 @@ font-size:
   .founderText h2,
   .companyStory h2 {
 
-    font-size: 38px;
+    font-size: clamp(42px, 4vw, 64px);
 
     line-height: 1;
   }
@@ -1111,33 +948,24 @@ font-size:
   .premiumRight p,
   .founderText p,
   .companyStory p {
-
-    font-size: 16px;
-
-    line-height: 1.7;
+    font-size: 20px;
+    line-height: 1.5;
   }
 
   .companyStatement {
-
      padding: 160px 7% 140px;
   }
 
   .companyStatement h2 {
-
-    font-size: 26px;
-
-  line-height: 1.15;
+    font-size: clamp(36px, 3.2vw, 54px);
+    line-height: 1.15;
   }
 
-  
-
   .companyHero::after {
-
     height: 60px;
   }
 
   .companyPage {
-
     overflow-x: hidden;
   }
 .companyStory,
@@ -1146,13 +974,11 @@ font-size:
 .companyStatement,
 .valuesSection,
 .missionVision {
-
   padding-left: 7%;
   padding-right: 7%;
 }
 
 .companyIntroContent {
-
   padding-left: 7%;
   padding-right: 7%;
 }
@@ -1160,7 +986,6 @@ font-size:
 .premiumRight,
 .founderText,
 .companyStory {
-
   padding-left: 0;
   padding-right: 0;
 }
@@ -1170,7 +995,6 @@ font-size:
 .companyIntroContent h2,
 .premiumRight h2,
 .founderText h2 {
-
   max-width: 100%;
 }
 .companySingleSection {

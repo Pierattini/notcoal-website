@@ -15,7 +15,7 @@
 @import "./responsive/responsive.css";
 
 html {
-  font-size: 12px;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -31,10 +31,9 @@ body {
 
   font-family: var(--font-family-base);
   line-height: 1.7;
-  font-size: 16px;
+  font-size: 18px;
 
   overflow-x: hidden;
-  zoom: 0.75;
 }
 
 button,
@@ -253,5 +252,319 @@ img {
 
   .cookieConsentButton {
     width: 100%;
+  }
+}
+
+.cookieConsentOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(2, 7, 22, 0.72);
+  backdrop-filter: blur(7px);
+  animation: cookieOverlayFade 0.24s ease both;
+}
+
+.cookieConsentOverlay .cookieConsentCard {
+  position: relative;
+  width: min(100%, 760px);
+  margin: 0;
+  padding: 42px;
+  border: 1px solid rgba(245, 243, 239, 0.16);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(51, 51, 51, 0.96),
+      rgba(29, 82, 72, 0.82)
+    );
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+  animation: cookieModalIn 0.28s ease both;
+}
+
+.cookieConsentClose {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(245, 243, 239, 0.12);
+  border-radius: 12px;
+  background: rgba(245, 243, 239, 0.06);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cookieConsentOverlay .cookieConsentHeader {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding-right: 46px;
+  text-align: left;
+}
+
+.cookieConsentOverlay .cookieBadge {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: rgba(245, 243, 239, 0.08);
+  border: 1px solid rgba(245, 243, 239, 0.12);
+  color: var(--color-cream);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.cookieConsentOverlay .cookieConsentHeader h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.08;
+}
+
+.cookieConsentOverlay .cookieConsentHeader p {
+  margin: 0;
+  max-width: 650px;
+  color: rgba(245, 243, 239, 0.82);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.cookieConsentOverlay .cookieConsentActions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.cookieConsentOverlay .cookieConsentButton {
+  width: 100%;
+  min-height: 58px;
+  border: 1px solid rgba(29, 82, 72, 0.72);
+  border-radius: 16px;
+  padding: 0 20px;
+  background: rgba(245, 243, 239, 0.08);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.cookieConsentOverlay .cookieConsentCategories {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cookiePreferenceRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid rgba(245, 243, 239, 0.12);
+  border-radius: 18px;
+  background: rgba(245, 243, 239, 0.06);
+}
+
+.cookiePreferenceRow input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--color-green);
+}
+
+.cookiePreferenceRow input:disabled {
+  opacity: 0.65;
+}
+
+.cookiePreferenceRow strong {
+  display: block;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.cookiePreferenceRow small {
+  display: block;
+  color: rgba(245, 243, 239, 0.72);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.cookieConsentLinks {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.cookieConsentLinks a {
+  color: var(--color-cream);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@keyframes cookieOverlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cookieModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .cookieConsentOverlay {
+    padding: 16px;
+  }
+
+  .cookieConsentOverlay .cookieConsentCard {
+    padding: 32px 20px 24px;
+    border-radius: 22px;
+  }
+
+  .cookieConsentOverlay .cookieConsentHeader {
+    padding-right: 38px;
+  }
+
+  .cookieConsentOverlay .cookieConsentActions {
+    grid-template-columns: 1fr;
+  }
+
+  .cookieConsentLinks {
+    gap: 14px;
+  }
+}
+
+.legalPage {
+  background: var(--color-cream);
+  color: var(--color-graphite);
+}
+
+.legalHero {
+  padding: 170px 7% 110px;
+  text-align: center;
+  background:
+    linear-gradient(
+      rgba(51, 51, 51, 0.78),
+      rgba(29, 82, 72, 0.82)
+    ),
+    url("/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.legalContainer {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.legalHero h1 {
+  margin: 24px 0 20px;
+  font-size: clamp(42px, 4vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.legalHero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: rgba(245, 243, 239, 0.82);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.legalSection {
+  padding: 90px 7% 130px;
+}
+
+.legalDocument {
+  display: grid;
+  gap: 18px;
+  padding: 48px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+}
+
+.legalDocument h2 {
+  margin-top: 18px;
+  color: var(--color-graphite);
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: 1.15;
+}
+
+.legalDocument h2:first-child {
+  margin-top: 0;
+}
+
+.legalDocument p,
+.legalDocument li {
+  color: var(--text-inverse);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.legalDocument a {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+.legalInfoCard {
+  display: grid;
+  gap: 6px;
+  padding: 24px;
+  border-left: 4px solid var(--color-green);
+  border-radius: 18px;
+  background: var(--color-cream);
+}
+
+.legalInfoCard p {
+  margin: 0;
+}
+
+@media screen and (max-width: 720px) {
+  .legalHero {
+    padding: 130px 20px 80px;
+  }
+
+  .legalSection {
+    padding: 60px 20px 90px;
+  }
+
+  .legalDocument {
+    padding: 28px;
+    border-radius: 22px;
+  }
+
+  .legalHero p,
+  .legalDocument p,
+  .legalDocument li {
+    font-size: 16px;
   }
 }

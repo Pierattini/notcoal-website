@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
+import HeroBadge from "@/components/ui/HeroBadge";
 import { projects } from "@/data/projects";
-import { featuredProjects } from "@/data/featuredProjects";
 import {
   FaBolt,
   FaMapMarkedAlt,
@@ -16,27 +16,30 @@ import {
   FaTasks,
   FaCheckCircle
 } from "react-icons/fa";
+
+function getCountryName(country: string) {
+  return country
+    .replace(/^[^\p{L}\p{N}]+/u, "")
+    .replace(/^[A-Z]{2}\s+/, "");
+}
+
 export default function ProjectsPage() {
   const { t } = useLanguage();
   const categories = [
-  t.projects.filters.all,
-  t.projects.filters.solar,
-  t.projects.filters.bess,
-  t.projects.filters.epc,
-  t.projects.filters.consulting
+  { key: "Todos", label: t.projects.filters.all },
+  { key: "Solar PV", label: t.projects.filters.solar },
+  { key: "BESS", label: t.projects.filters.bess },
+  { key: "EPC", label: t.projects.filters.epc },
+  { key: "Consulting", label: t.projects.filters.consulting }
 ];
   const [activeCategory, setActiveCategory] =
     useState("Todos");
   const [activeProjectIndex, setActiveProjectIndex] =
   useState(0);
   const activeProjects =
-    projects[
-      activeCategory as keyof typeof projects
-    ];
-  const featured =
-  projects.Todos.filter(project =>
-    featuredProjects.includes(project.title)
-  );
+    (projects as Record<string, typeof projects.Todos>)[activeCategory] ?? [];
+  const activeCategoryLabel =
+    categories.find((category) => category.key === activeCategory)?.label ?? activeCategory;
   return (
 
     <main className="projectsPage">
@@ -47,9 +50,7 @@ export default function ProjectsPage() {
 
   <div className="projectsHeroContent">
 
-    <span className="heroBadge">
-      {t.projects.hero.badge}
-    </span>
+    <HeroBadge text={t.projects.hero.badge} />
 
     <h1>
       {t.projects.hero.title}
@@ -123,17 +124,18 @@ export default function ProjectsPage() {
         {categories.map((category) => (
 
           <button
-            key={category}
+            key={category.key}
             className={
-              activeCategory === category
+              activeCategory === category.key
                 ? "active"
                 : ""
             }
-            onClick={() =>
-              setActiveCategory(category)
-            }
+            onClick={() => {
+              setActiveCategory(category.key);
+              setActiveProjectIndex(0);
+            }}
           >
-            {category}
+            {category.label}
           </button>
 
         ))}
@@ -142,7 +144,7 @@ export default function ProjectsPage() {
 
       {/* SHOWCASE */}
 
-{activeProjects.length > 0 && (
+{activeProjects.length > 0 ? (
 
 <section className="projectsShowcase">
 
@@ -150,7 +152,7 @@ export default function ProjectsPage() {
 
   <div className="projectTabs">
 
-    {featured.map((project, index) => (
+    {activeProjects.map((project, index) => (
 
       <button
   key={index}
@@ -222,7 +224,7 @@ export default function ProjectsPage() {
   <div className="projectDetailItem">
     <FaGlobeEurope className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].country}
+      {getCountryName(activeProjects[activeProjectIndex].country)}
     </div>
   </div>
 
@@ -265,6 +267,32 @@ export default function ProjectsPage() {
 </div>
   </div>
 
+</section>
+
+) : (
+
+<section className="projectsEmptyState">
+  <div className="projectsEmptyStateCard">
+    <span>{activeCategoryLabel}</span>
+
+    <h2>
+      {activeCategoryLabel} Projects
+    </h2>
+
+    <p>
+      New consulting projects will be published soon.
+    </p>
+
+    <button
+      type="button"
+      onClick={() => {
+        setActiveCategory("Todos");
+        setActiveProjectIndex(0);
+      }}
+    >
+      View All Projects
+    </button>
+  </div>
 </section>
 
 )}
@@ -355,13 +383,10 @@ export default function ProjectsPage() {
 </section>
       {/* PROJECTS LIST */}
 
+      {activeProjects.length > 0 && (
       <section id="proyectos" className="projectsListSection">
 
         <div className="projectsListHeader">
-
-          <span className="sectionBadge">
-  {t.projects.featured.badge}
-</span>
 
 <h2>
   {t.projects.featured.title}
@@ -416,7 +441,7 @@ export default function ProjectsPage() {
 
   <div className="featuredProjectItem">
     <FaGlobeEurope className="featuredIcon" />
-    <strong>{project.country}</strong>
+    <strong>{getCountryName(project.country)}</strong>
   </div>
 
   <div className="featuredProjectItem">
@@ -433,6 +458,7 @@ export default function ProjectsPage() {
         </div>
 
       </section>
+      )}
 
     </main>
   );
