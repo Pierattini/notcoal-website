@@ -14,44 +14,61 @@ model AdminUser {
   createdAt DateTime @default(now())
 }
 
-model Lead {
-  id             String   @id @default(cuid())
-  name           String
-  email          String
-  phone          String?
-  company        String?
-  message        String
-  meetingDate    DateTime?
-  meetingSlot    String?
-  createdAt      DateTime @default(now())
-}
-
 model Availability {
-  id        String   @id @default(cuid())
+  id        String  @id @default(cuid())
   day       String
   startHour String
   endHour   String
-  active    Boolean  @default(true)
+  active    Boolean @default(true)
+}
+
+model Lead {
+  id            String    @id @default(cuid())
+  name          String
+  email         String
+  phone         String?
+  company       String?
+  message       String
+  meetingDate   DateTime?
+  meetingSlot   String?
+  createdAt     DateTime  @default(now())
+  country_code  String?
+  country_name  String?
+  service       String?
+  wants_meeting Boolean?  @default(false)
+  attachments   String?
+  status        String?   @default("Nuevo")
 }
 
 model Project {
-  id            String   @id @default(cuid())
-  title         String
-  description   String
-  featured      Boolean  @default(false)
+  id              String   @id @default(cuid())
+  title           String
+  description     String
 
-  imageUrl      String?
+  category        String?
+  power           String?
+  area            String?
+  country         String?
+  city            String?
 
-  createdAt     DateTime @default(now())
+  company         String?
+  projectphase    String?
+  clienttype      String?
+  deliverymodel   String?
+  scopeofsupport  String?
+  status          String?
 
-  // FUTURO
-  // category
-  // gallery
-  // videos
-  // SEO
-  // analytics
-  // tags
-  // client
-  // location
-  // power
+  slug            String? @unique
+  metaTitle       String?
+  metaDescription String?
+
+  gallery         String?
+  videoUrl        String?
+
+  featured        Boolean  @default(false)
+  displayorder    Int?     @default(0)
+
+  imageUrl        String?
+
+  createdAt       DateTime @default(now())
 }
