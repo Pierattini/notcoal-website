@@ -2,11 +2,13 @@
 
 import {
   Menu,
+  User,
   X
 } from "lucide-react";
 
 import {
   useEffect,
+  useRef,
   useState
 } from "react";
 
@@ -14,10 +16,16 @@ import MobileMenu from "./MobileMenu";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAuth } from "@/hooks/useAuth";
 export default function Navbar() {
   const { locale, setLocale, t } = useLanguage();
+  const { openLoginModal } = useAuth();
   const [open, setOpen] =
     useState(false);
+  const [userMenuOpen, setUserMenuOpen] =
+    useState(false);
+  const userMenuRef =
+    useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
 
@@ -37,6 +45,33 @@ export default function Navbar() {
       );
     };
 
+  }, []);
+
+  useEffect(() => {
+    const closeUserMenu = (
+      event: MouseEvent
+    ) => {
+      if (
+        userMenuRef.current &&
+        !userMenuRef.current.contains(
+          event.target as Node
+        )
+      ) {
+        setUserMenuOpen(false);
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      closeUserMenu
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        closeUserMenu
+      );
+    };
   }, []);
 
   return (
@@ -107,6 +142,46 @@ export default function Navbar() {
               DE
             </button>
 
+          </div>
+
+          <div
+            className="userAccess"
+            ref={userMenuRef}
+          >
+            <button
+              type="button"
+              className="userAccessButton"
+              aria-label="My Project"
+              aria-expanded={userMenuOpen}
+              onClick={() =>
+                setUserMenuOpen(!userMenuOpen)
+              }
+            >
+              <User size={20} strokeWidth={1.8} />
+              <span className="userAccessTooltip">
+                My Project
+              </span>
+            </button>
+
+            {userMenuOpen && (
+              <div className="userAccessDropdown">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setUserMenuOpen(false);
+                    openLoginModal();
+                  }}
+                >
+                  Login
+                </button>
+
+                {/*
+                  Future authenticated menu options:
+                  My Project, Profile and Logout.
+                  CLIENT users will later access /my-project.
+                */}
+              </div>
+            )}
           </div>
 
           <button

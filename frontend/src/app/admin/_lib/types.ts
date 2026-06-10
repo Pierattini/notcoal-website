@@ -43,7 +43,14 @@ export type Project = {
   gallery?: string | string[] | null;
   status?: string;
   featured?: boolean;
+  displayorder?: number | null;
   createdAt?: string;
+};
+
+export type FeaturedProjectPositions = {
+  1: string;
+  2: string;
+  3: string;
 };
 
 export type ProjectForm = {

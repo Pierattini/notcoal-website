@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import path from 'path';
+import { existsSync } from 'fs';
 //import { writeFile, mkdir } from 'fs/promises';
 //import { join } from 'path';
 //import { existsSync } from 'fs';
@@ -88,8 +90,19 @@ export async function POST(request: NextRequest) {
     const safeMeetingTime = escapeHtml(meetingTime || '');
     const meetingRequestedLabel = wantsMeeting ? 'Yes' : 'No';
     const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || '').replace(/\/$/, '');
-    const squareLogoUrl = siteUrl ? `${siteUrl}/logos/logo-square.png` : '';
     const horizontalLogoUrl = siteUrl ? `${siteUrl}/logos/logofullt.png` : '';
+    const fullLogoPath = path.join(process.cwd(), 'public', 'logos', 'logofullt.png');
+    const inlineLogoAttachments = existsSync(fullLogoPath)
+      ? [{
+          filename: 'logofullt.png',
+          path: fullLogoPath,
+          cid: 'tncc-logo-full',
+        }]
+      : [];
+    const emailLogoSrc =
+      inlineLogoAttachments.length > 0
+        ? 'cid:tncc-logo-full'
+        : horizontalLogoUrl;
 
     // Validar datos requeridos
     if (!nombre || !email || !telefono || !empresa || !mensaje) {
@@ -275,8 +288,7 @@ attachments
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 760px; overflow: hidden; border-radius: 28px; background: #10251f; box-shadow: 0 28px 80px rgba(16,37,31,0.2);">
                 <tr>
                   <td style="padding: 42px 38px 36px; text-align: center; background: #10251f;">
-                    ${squareLogoUrl ? `<img src="${squareLogoUrl}" width="74" height="74" alt="The Not Coal Company logo" style="display: block; margin: 0 auto 22px; border-radius: 16px;">` : ''}
-                    <div style="color: #d7c6a1; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;">The Not Coal Company</div>
+                    ${emailLogoSrc ? `<img src="${emailLogoSrc}" width="260" alt="The Not Coal Company" style="display: block; margin: 0 auto 22px; max-width: 260px; height: auto;">` : ''}
                     <h1 style="margin: 14px 0 0; color: #f5f3ef; font-size: 34px; line-height: 1.08; letter-spacing: 0.08em;">NEW CONTACT REQUEST</h1>
                   </td>
                 </tr>
@@ -348,7 +360,7 @@ attachments
                       ${companyInfo.address}<br>
                       ${companyInfo.phone}
                     </p>
-                    ${horizontalLogoUrl ? `<img src="${horizontalLogoUrl}" width="210" alt="The Not Coal Company" style="display: block; margin: 24px auto 0; max-width: 210px; height: auto;">` : ''}
+                    ${emailLogoSrc ? `<img src="${emailLogoSrc}" width="210" alt="The Not Coal Company" style="display: block; margin: 24px auto 0; max-width: 210px; height: auto;">` : ''}
                   </td>
                 </tr>
               </table>
@@ -366,7 +378,7 @@ attachments
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 640px; border-radius: 24px; overflow: hidden; background: #ffffff;">
                 <tr>
                   <td style="padding: 36px 30px; text-align: center; background: #10251f;">
-                    ${squareLogoUrl ? `<img src="${squareLogoUrl}" width="64" height="64" alt="The Not Coal Company logo" style="display: block; margin: 0 auto 18px; border-radius: 14px;">` : ''}
+                    ${emailLogoSrc ? `<img src="${emailLogoSrc}" width="230" alt="The Not Coal Company" style="display: block; margin: 0 auto 18px; max-width: 230px; height: auto;">` : ''}
                     <h1 style="margin: 0; color: #f5f3ef; font-size: 28px;">Consulta enviada correctamente</h1>
                   </td>
                 </tr>
@@ -398,7 +410,8 @@ attachments
       from: process.env.SMTP_FROM,
       to: email,
       subject: 'Confirmation of your request - The Not Coal Company',
-      html: confirmationEmailHtml
+      html: confirmationEmailHtml,
+      attachments: inlineLogoAttachments
     };
 
     const emailEmpresa = {
@@ -406,7 +419,10 @@ attachments
       to: process.env.SMTP_TO,
       subject: `New Contact Request from ${safeNombre} - The Not Coal Company`,
       html: premiumEmailHtml,
-      attachments
+      attachments: [
+        ...inlineLogoAttachments,
+        ...attachments
+      ]
     };
 
     // Enviar emails

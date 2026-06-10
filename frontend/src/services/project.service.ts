@@ -17,6 +17,28 @@ export async function getFeaturedProjects() {
   return response.json();
 }
 
+export async function setFeaturedProjectPosition(
+  position: number,
+  projectId: string
+) {
+  const response =
+    await fetch(
+      `${API_URL}/featured/${position}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type":
+            "application/json",
+        },
+        body: JSON.stringify({
+          projectId: projectId || null,
+        }),
+      }
+    );
+
+  return response.json();
+}
+
 export async function createProject(
   data: Record<string, unknown>
 ) {

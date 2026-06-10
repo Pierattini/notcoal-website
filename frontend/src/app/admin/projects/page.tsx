@@ -1,80 +1,72 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getProjects } from "@/services/project.service";
+import { useEffect } from "react";
+import styles from "../AdminDashboard.module.css";
+import { AdminShell } from "../_components/AdminShell";
+import { ProjectModals } from "../_components/ProjectModals";
+import { ProjectsSection } from "../_components/ProjectsSection";
+import { StatsGrid } from "../_components/StatsGrid";
+import { Toast } from "../_components/Toast";
+import { useAdminDashboard } from "../_hooks/useAdminDashboard";
 
-type Project = {
-  id: string;
-  title: string;
-  category?: string;
-  country?: string;
-  featured?: boolean;
-};
-
-export default function ProjectsAdminPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
+export default function AdminProjectsPage() {
+  const admin = useAdminDashboard();
 
   useEffect(() => {
-    const loadProjects = async () => {
-      const data = await getProjects();
-      setProjects(data);
-    };
-
-    loadProjects();
+    admin.setActiveSection("projects");
   }, []);
 
   return (
-    <main style={{ padding: "40px" }}>
-      <h1>Administración de Proyectos</h1>
+    <AdminShell
+      activeSection="projects"
+      onRefresh={admin.loadDashboard}
+      onSectionChange={admin.setActiveSection}
+    >
+      <StatsGrid stats={admin.stats} />
 
-      <button
-        style={{
-          padding: "10px 20px",
-          marginBottom: "20px",
-        }}
-      >
-        Nuevo Proyecto
-      </button>
+      {admin.loading ? (
+        <div className={styles.loadingState}>Cargando proyectos...</div>
+      ) : (
+        <ProjectsSection
+          duplicateProject={admin.duplicateProject}
+          featuredPositions={admin.featuredPositions}
+          openProjectModal={admin.openProjectModal}
+          paginatedProjects={admin.paginatedProjects}
+          projects={admin.projects}
+          projectCategoryFilter={admin.projectCategoryFilter}
+          projectPage={admin.projectPage}
+          projectPages={admin.projectPages}
+          projectSearch={admin.projectSearch}
+          projectStatusFilter={admin.projectStatusFilter}
+          removeProject={admin.removeProject}
+          setPreviewProject={admin.setPreviewProject}
+          setProjectCategoryFilter={admin.setProjectCategoryFilter}
+          setProjectPage={admin.setProjectPage}
+          setProjectSearch={admin.setProjectSearch}
+          setProjectStatusFilter={admin.setProjectStatusFilter}
+          toggleProjectSort={admin.toggleProjectSort}
+          toggleProjectStatus={admin.toggleProjectStatus}
+          updateFeaturedPosition={admin.updateFeaturedPosition}
+        />
+      )}
 
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-        }}
-      >
-        <thead>
-          <tr>
-            <th>Título</th>
-            <th>Categoría</th>
-            <th>País</th>
-            <th>Destacado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
+      <ProjectModals
+        closeProjectModal={admin.closeProjectModal}
+        editingProject={admin.editingProject}
+        handleGalleryImages={admin.handleGalleryImages}
+        handleMainImage={admin.handleMainImage}
+        handleProjectField={admin.handleProjectField}
+        moveGalleryImage={admin.moveGalleryImage}
+        previewProject={admin.previewProject}
+        projectForm={admin.projectForm}
+        projectModalOpen={admin.projectModalOpen}
+        removeGalleryImage={admin.removeGalleryImage}
+        saveProject={admin.saveProject}
+        savingProject={admin.savingProject}
+        setPreviewProject={admin.setPreviewProject}
+      />
 
-        <tbody>
-          {projects.map((project) => (
-            <tr key={project.id}>
-              <td>{project.title}</td>
-              <td>{project.category}</td>
-              <td>{project.country}</td>
-              <td>{project.featured ? "Sí" : "No"}</td>
-
-              <td>
-                <button>Editar</button>
-
-                <button
-                  style={{
-                    marginLeft: "10px",
-                  }}
-                >
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </main>
+      <Toast toast={admin.toast} />
+    </AdminShell>
   );
 }

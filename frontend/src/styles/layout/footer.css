@@ -466,3 +466,15 @@
   }
 
 }
+@media (max-width: 768px) {
+
+  .footerLinks {
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .footerLinks a {
+    padding: 0 8px;
+  }
+
+}

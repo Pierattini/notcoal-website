@@ -45,8 +45,10 @@ export default function AdminPage() {
       ) : (
         <ProjectsSection
           duplicateProject={admin.duplicateProject}
+          featuredPositions={admin.featuredPositions}
           openProjectModal={admin.openProjectModal}
           paginatedProjects={admin.paginatedProjects}
+          projects={admin.projects}
           projectCategoryFilter={admin.projectCategoryFilter}
           projectPage={admin.projectPage}
           projectPages={admin.projectPages}
@@ -60,6 +62,7 @@ export default function AdminPage() {
           setProjectStatusFilter={admin.setProjectStatusFilter}
           toggleProjectSort={admin.toggleProjectSort}
           toggleProjectStatus={admin.toggleProjectStatus}
+          updateFeaturedPosition={admin.updateFeaturedPosition}
         />
       )}
 

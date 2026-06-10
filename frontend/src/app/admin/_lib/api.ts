@@ -25,3 +25,15 @@ export async function updateLeadStatus(leadId: string, status: string) {
 
   return response.json();
 }
+
+export async function getCurrentUser() {
+  const response = await fetch("http://localhost:4000/auth/me", {
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Not authenticated");
+  }
+
+  return response.json();
+}

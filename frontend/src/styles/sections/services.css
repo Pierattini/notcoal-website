@@ -770,18 +770,25 @@
 .servicesIntroContent {
   width: 100% !important;
   order: 1 !important;
-  padding: 30px 24px !important;
+  padding: 30px 24px 20px !important;
 }
 
 .servicesIntroImage {
   width: 100% !important;
-  height: 250px !important;
+  height: 220px !important;
+  min-height: 220px !important;
   order: 2 !important;
   position: relative !important;
+  overflow: hidden !important;
 }
 
-.coverImage {
-  object-fit: contain !important;
+.servicesIntroImage::after {
+  display: none !important;
+}
+
+.servicesIntroImage .coverImage {
+  object-fit: cover !important;
+  object-position: center center !important;
 }
 .primaryBtn {
   width: 100%;

@@ -122,6 +122,102 @@
   gap: 18px;
 }
 
+.userAccess {
+  position: relative;
+}
+
+.userAccessButton {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(51,51,51,0.08);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.32);
+  color: var(--color-graphite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.userAccessButton:hover,
+.userAccessButton:focus-visible {
+  background: rgba(29,82,72,0.08);
+  border-color: rgba(29,82,72,0.22);
+  color: var(--color-green);
+  transform: translateY(-1px);
+}
+
+.userAccessTooltip {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: rgba(29,82,72,0.96);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.userAccessButton:hover .userAccessTooltip,
+.userAccessButton:focus-visible .userAccessTooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.userAccessDropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 14px);
+  min-width: 164px;
+  z-index: 1001;
+  border: 1px solid rgba(51,51,51,0.08);
+  border-radius: 16px;
+  padding: 8px;
+  background: rgba(245,243,239,0.96);
+  box-shadow: 0 18px 45px rgba(29,82,72,0.16);
+  backdrop-filter: blur(18px);
+}
+
+.userAccessDropdown a,
+.userAccessDropdown button {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: transparent;
+  color: var(--color-graphite);
+  text-decoration: none;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.userAccessDropdown a:hover,
+.userAccessDropdown a:focus-visible,
+.userAccessDropdown button:hover,
+.userAccessDropdown button:focus-visible {
+  background: rgba(29,82,72,0.08);
+  color: var(--color-green);
+}
+
 
 .menuBtn {
   width: 48px;
@@ -203,4 +299,107 @@
   max-width: none !important;
   object-fit: contain;
   display: block;
+}
+/* =========================
+ TABLET Y MÓVIL
+========================= */
+
+@media (max-width: 1024px) {
+
+  .brand {
+    min-width: auto;
+  }
+
+  .navbarLogo {
+    width: 220px !important;
+    max-width: 60vw;
+    height: auto !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .nav {
+    height: 76px;
+    padding: 0 10px;
+  }
+
+  .navRight {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .brand {
+    margin-left: 0;
+    min-width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    transform: translateY(-2px);
+  }
+
+}
+@media (max-width: 768px) {
+
+  .navbarLogo {
+    width: 150px !important;
+    max-width: 38vw !important;
+    height: auto !important;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .languageSwitcher {
+    gap: 2px;
+    padding: 2px;
+    flex-shrink: 0;
+  }
+
+  .languageSwitcher button {
+    width: 29px;
+    height: 29px;
+    font-size: 11px;
+  }
+
+  .userAccessButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menuBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+
+@media (max-width: 420px) {
+  .nav {
+    padding: 0 8px;
+  }
+
+  .navRight {
+    gap: 4px;
+  }
+
+  .navbarLogo {
+    width: 132px !important;
+    max-width: 34vw !important;
+  }
+
+  .languageSwitcher button {
+    width: 26px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .userAccessButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menuBtn {
+    width: 32px;
+    height: 32px;
+  }
 }

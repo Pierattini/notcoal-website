@@ -2,13 +2,15 @@
 
 import styles from "../AdminDashboard.module.css";
 import { PROJECT_CATEGORIES, PROJECT_STATUSES } from "../_lib/constants";
-import { Project } from "../_lib/types";
+import { FeaturedProjectPositions, Project } from "../_lib/types";
 import { formatDate } from "../_lib/utils";
 
 type ProjectsSectionProps = {
   duplicateProject: (project: Project) => void;
+  featuredPositions: FeaturedProjectPositions;
   openProjectModal: (project?: Project) => void;
   paginatedProjects: Project[];
+  projects: Project[];
   projectCategoryFilter: string;
   projectPage: number;
   projectPages: number;
@@ -22,12 +24,18 @@ type ProjectsSectionProps = {
   setProjectStatusFilter: (value: string) => void;
   toggleProjectSort: (key: keyof Project) => void;
   toggleProjectStatus: (project: Project) => void;
+  updateFeaturedPosition: (
+    position: keyof FeaturedProjectPositions,
+    projectId: string
+  ) => void;
 };
 
 export function ProjectsSection({
   duplicateProject,
+  featuredPositions,
   openProjectModal,
   paginatedProjects,
+  projects,
   projectCategoryFilter,
   projectPage,
   projectPages,
@@ -41,7 +49,10 @@ export function ProjectsSection({
   setProjectStatusFilter,
   toggleProjectSort,
   toggleProjectStatus,
+  updateFeaturedPosition,
 }: ProjectsSectionProps) {
+  const featuredPositionItems = [1, 2, 3] as const;
+
   return (
     <section className={styles.panel}>
       <div className={styles.panelHeader}>
@@ -57,6 +68,45 @@ export function ProjectsSection({
         >
           Crear Proyecto
         </button>
+      </div>
+
+      <div className={styles.featuredManager}>
+        <div className={styles.featuredManagerHeader}>
+          <div>
+            <span className={styles.eyebrow}>Featured Projects</span>
+            <h3>Public homepage selection</h3>
+          </div>
+        </div>
+
+        <div className={styles.featuredPositionGrid}>
+          {featuredPositionItems.map((position) => {
+            const selectedProject = projects.find(
+              (project) => project.id === featuredPositions[position],
+            );
+
+            return (
+              <label key={position} className={styles.featuredPositionCard}>
+                <span>Featured Position {position}</span>
+                <select
+                  value={featuredPositions[position]}
+                  onChange={(event) =>
+                    updateFeaturedPosition(position, event.target.value)
+                  }
+                >
+                  <option value="">No featured project assigned</option>
+                  {projects.map((project) => (
+                    <option key={project.id} value={project.id}>
+                      {project.title || "Untitled project"}
+                    </option>
+                  ))}
+                </select>
+                <small>
+                  {selectedProject?.title || "No featured project assigned"}
+                </small>
+              </label>
+            );
+          })}
+        </div>
       </div>
 
       <div className={styles.toolbar}>

@@ -195,6 +195,21 @@
     gap: 24px;
   }
 
+  .premiumForm,
+  .contactCards {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .premiumForm {
+    grid-row: 1;
+  }
+
+  .contactCards {
+    grid-row: 2;
+  }
+
   .contactCard {
     padding: 24px;
   }
@@ -205,7 +220,15 @@
   }
 
   .premiumForm {
-    padding: 20px;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .premiumForm > button {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
   }
 
   .footer {
@@ -218,8 +241,12 @@
     text-align: center;
   }
 .nav {
-  height: 72px;
-  padding: 0 20px;
+  height: 76px;
+  padding: 0 10px;
+}
+
+.navRight {
+  gap: 6px;
 }
 
 .logoBox {
@@ -234,8 +261,8 @@
 }
 
 .menuBtn {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
 }
 .hero h1 {
   font-size: clamp(60px, 6vw, 90px);
@@ -272,4 +299,35 @@
 .miniCard h4 {
   font-size: clamp(28px, 3vw, 40px);
 }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    padding: 0 8px;
+  }
+
+  .navRight {
+    gap: 4px;
+  }
+
+  .navbarLogo {
+    width: 132px !important;
+    max-width: 34vw !important;
+  }
+
+  .languageSwitcher button {
+    width: 26px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  .userAccessButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menuBtn {
+    width: 32px;
+    height: 32px;
+  }
 }

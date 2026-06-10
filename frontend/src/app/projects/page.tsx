@@ -1,30 +1,68 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 import HeroBadge from "@/components/ui/HeroBadge";
-import { projects } from "@/data/projects";
+import { projects as fallbackProjects } from "@/data/projects";
+import {
+  getFeaturedProjects,
+  getProjects,
+} from "@/services/project.service";
 import {
   FaBolt,
   FaMapMarkedAlt,
   FaGlobeEurope,
   FaHandshake,
   FaClipboardList,
-  FaBuilding,
+  //FaBuilding,
   FaTruck,
   FaTasks,
   FaCheckCircle
 } from "react-icons/fa";
 
-function getCountryName(country: string) {
-  return country
+type Project = {
+  id?: string;
+  title?: string;
+  description?: string;
+  metaDescription?: string;
+  category?: string;
+  power?: string;
+  area?: string;
+  country?: string;
+  company?: string;
+  projectphase?: string;
+  deliverymodel?: string;
+  scopeofsupport?: string;
+  status?: string;
+  imageUrl?: string;
+  image?: string;
+  featured?: boolean;
+  displayorder?: number | null;
+  projectPhase?: string;
+  deliveryModel?: string;
+  scopeOfSupport?: string;
+};
+
+function getCountryName(country?: string) {
+  return (country || "-")
     .replace(/^[^\p{L}\p{N}]+/u, "")
     .replace(/^[A-Z]{2}\s+/, "");
 }
 
+function getProjectImage(project?: Project) {
+  return project?.imageUrl || project?.image || "/banner.jpg";
+}
+
+function getProjectDescription(project?: Project) {
+  return project?.description || project?.metaDescription || "";
+}
+
 export default function ProjectsPage() {
   const { t } = useLanguage();
+  const [allProjects, setAllProjects] = useState<Project[]>([]);
+  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+  const [loadingProjects, setLoadingProjects] = useState(true);
   const categories = [
   { key: "Todos", label: t.projects.filters.all },
   { key: "Solar PV", label: t.projects.filters.solar },
@@ -35,9 +73,67 @@ export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] =
     useState("Todos");
   const [activeProjectIndex, setActiveProjectIndex] =
-  useState(0);
-  const activeProjects =
-    (projects as Record<string, typeof projects.Todos>)[activeCategory] ?? [];
+  useState<number | null>(0);
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const [projectsData, featuredData] = await Promise.all([
+          getProjects(),
+          getFeaturedProjects(),
+        ]);
+
+        setAllProjects(Array.isArray(projectsData) ? projectsData : []);
+        setFeaturedProjects(Array.isArray(featuredData) ? featuredData : []);
+      } catch (error) {
+        console.error(error);
+        setAllProjects([]);
+        setFeaturedProjects([]);
+      } finally {
+        setLoadingProjects(false);
+      }
+    };
+
+    loadProjects();
+  }, []);
+
+  const activeProjects = useMemo(() => {
+    if (allProjects.length === 0) {
+      const fallbackKey =
+        activeCategory === "Consulting"
+          ? "ConsultorÃ­a"
+          : activeCategory;
+
+      return (
+        (fallbackProjects as Record<string, Project[]>)[fallbackKey] ??
+        fallbackProjects.Todos
+      );
+    }
+
+    if (activeCategory === "Todos") {
+      return allProjects;
+    }
+
+    return allProjects.filter(
+      (project) => project.category === activeCategory,
+    );
+  }, [activeCategory, allProjects]);
+
+  const featuredPositions = [1, 2, 3].map((position) =>
+    featuredProjects?.find(
+      (project) => project.featured && project.displayorder === position,
+    ),
+  );
+  const featuredListProjects =
+    featuredProjects?.length > 0
+      ? featuredPositions.filter(
+          (project): project is Project => Boolean(project),
+        )
+      : activeProjects;
+
+  const activeProject =
+    activeProjectIndex === null
+      ? undefined
+      : activeProjects?.[activeProjectIndex];
   const activeCategoryLabel =
     categories.find((category) => category.key === activeCategory)?.label ?? activeCategory;
   return (
@@ -144,7 +240,7 @@ export default function ProjectsPage() {
 
       {/* SHOWCASE */}
 
-{activeProjects.length > 0 ? (
+{activeProjects?.length > 0 ? (
 
 <section className="projectsShowcase">
 
@@ -162,7 +258,9 @@ export default function ProjectsPage() {
       : "projectTab"
   }
   onClick={() =>
-    setActiveProjectIndex(index)
+    setActiveProjectIndex(
+      activeProjectIndex === index ? null : index
+    )
   }
 >
   {project.title}
@@ -174,17 +272,28 @@ export default function ProjectsPage() {
 
   {/* CONTENIDO */}
 
+  {activeProject && (
   <div className="projectShowcaseContent">
+
+    <button
+      type="button"
+      className="projectShowcaseClose"
+      onClick={() => setActiveProjectIndex(null)}
+      aria-label="Close project details"
+    >
+      ×
+    </button>
 
     {/* IMAGEN */}
 
     <div className="projectShowcaseImage">
 
       <Image
-        src={activeProjects[activeProjectIndex].image}
-        alt={activeProjects[activeProjectIndex].title}
+        src={getProjectImage(activeProject)}
+        alt={activeProject?.title || "Project"}
         fill
         className="projectImage"
+        unoptimized
       />
 
     </div>
@@ -194,15 +303,15 @@ export default function ProjectsPage() {
    <div className="projectShowcaseInfo">
 
   <span>
-    {activeProjects[activeProjectIndex].category}
+    {activeProject?.category || "-"}
   </span>
 
   <h2>
-    {activeProjects[activeProjectIndex].title}
+    {activeProject?.title || "Untitled project"}
   </h2>
 
   <p>
-    {activeProjects[activeProjectIndex].description}
+    {getProjectDescription(activeProject)}
   </p>
 
   <div className="projectDetails">
@@ -210,62 +319,63 @@ export default function ProjectsPage() {
   <div className="projectDetailItem">
     <FaBolt className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].power}
+      {activeProject?.power || "-"}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaMapMarkedAlt className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].area}
+      {activeProject?.area || "-"}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaGlobeEurope className="detailIcon" />
     <div className="detailLabel">
-      {getCountryName(activeProjects[activeProjectIndex].country)}
+      {getCountryName(activeProject?.country)}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaHandshake className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].company}
+      {activeProject?.company || "-"}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaClipboardList className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].projectPhase}
+      {activeProject?.projectphase || activeProject?.projectPhase || "-"}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaTruck className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].deliveryModel}
+      {activeProject?.deliverymodel || activeProject?.deliveryModel || "-"}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaTasks className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].scopeOfSupport}
+      {activeProject?.scopeofsupport || activeProject?.scopeOfSupport || "-"}
     </div>
   </div>
 
   <div className="projectDetailItem">
     <FaCheckCircle className="detailIcon" />
     <div className="detailLabel">
-      {activeProjects[activeProjectIndex].status}
+      {activeProject?.status || "-"}
     </div>
   </div>
 
 </div>
 </div>
   </div>
+  )}
 
 </section>
 
@@ -383,7 +493,6 @@ export default function ProjectsPage() {
 </section>
       {/* PROJECTS LIST */}
 
-      {activeProjects.length > 0 && (
       <section id="proyectos" className="projectsListSection">
 
         <div className="projectsListHeader">
@@ -396,7 +505,16 @@ export default function ProjectsPage() {
 
         <div className="projectsListGrid">
 
-          {activeProjects.map((project, index) => (
+          {loadingProjects ? (
+            <article className="projectListCard">
+              <div className="projectListContent">
+                <span>Loading</span>
+                <h3>Loading featured projects...</h3>
+                <p>Please wait while projects are loaded.</p>
+              </div>
+            </article>
+          ) : (
+            featuredListProjects.map((project, index) => (
 
             <article
               className="projectListCard"
@@ -406,10 +524,11 @@ export default function ProjectsPage() {
               <div className="projectListImage">
 
                 <Image
-                  src={project.image}
-                  alt={project.title}
+                  src={getProjectImage(project)}
+                  alt={project.title || "Featured project"}
                   fill
                   className="projectImage"
+                  unoptimized
                 />
 
               </div>
@@ -417,26 +536,26 @@ export default function ProjectsPage() {
               <div className="projectListContent">
 
                 <span>
-                  {project.category}
+                  {project.category || "-"}
                 </span>
 
                 <h3>
-                  {project.title}
+                  {project.title || "Untitled project"}
                 </h3>
 
                 <p>
-                  {project.description}
+                  {getProjectDescription(project)}
                 </p>
 <div className="featuredProjectStats">
 
   <div className="featuredProjectItem">
     <FaBolt className="featuredIcon" />
-    <strong>{project.power}</strong>
+    <strong>{project.power || "-"}</strong>
   </div>
 
   <div className="featuredProjectItem">
     <FaMapMarkedAlt className="featuredIcon" />
-    <strong>{project.area}</strong>
+    <strong>{project.area || "-"}</strong>
   </div>
 
   <div className="featuredProjectItem">
@@ -446,19 +565,18 @@ export default function ProjectsPage() {
 
   <div className="featuredProjectItem">
     <FaHandshake className="featuredIcon" />
-    <strong>{project.company}</strong>
+    <strong>{project.company || "-"}</strong>
   </div>
 
 </div>
     </div>
             </article>
 
-         ) )}
+         ) ))}
 
         </div>
 
       </section>
-      )}
 
     </main>
   );

@@ -507,3 +507,125 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 48px 24px 52px;
+  }
+
+  .contactHeader {
+    margin-bottom: 34px;
+  }
+
+  .contactHeader h2 {
+    font-size: clamp(34px, 8vw, 46px);
+    line-height: 1.12;
+  }
+
+  .contactHeader p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .contactLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+
+  .premiumForm,
+  .contactCards {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .premiumForm {
+    grid-row: 1;
+  }
+
+  .contactCards {
+    grid-row: 2;
+  }
+
+  .contactInfoPanel {
+    width: 100%;
+  }
+
+  .formGrid,
+  .meetingFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contactSection {
+    padding: 42px 16px 46px;
+  }
+
+  .contactHeader h2 {
+    font-size: clamp(32px, 9vw, 40px);
+    line-height: 1.18;
+  }
+
+  .contactHeader p {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .premiumForm {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .premiumForm > button {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    height: 60px;
+    border-radius: 16px;
+  }
+
+  .inputGroup {
+    gap: 9px;
+  }
+
+  .inputGroup label {
+    font-size: 14px;
+  }
+
+  .inputGroup input,
+  .inputGroup textarea,
+  .serviceSelect {
+    min-width: 0;
+    height: auto;
+    min-height: 52px;
+    border-radius: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 12px 14px;
+  }
+
+  .contactInfoPanel {
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .contactMiniBadge {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .whyChooseList li {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .contactItem strong,
+  .linkedinButton {
+    overflow-wrap: anywhere;
+  }
+}

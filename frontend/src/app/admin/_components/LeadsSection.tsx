@@ -46,7 +46,7 @@ export function LeadsSection({
     <section className={styles.panel}>
       <div className={styles.panelHeader}>
         <div>
-          <span className={styles.eyebrow}>Pipeline comercial</span>
+          <span className={styles.eyebrow}>Comercial</span>
           <h2>Formularios y reuniones</h2>
         </div>
 

@@ -1,11 +1,13 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import * as XLSX from "xlsx";
 import {
   createProject,
   deleteProject,
   getProjects,
+  setFeaturedProjectPosition,
   updateProject,
 } from "@/services/project.service";
 import {
@@ -13,18 +15,24 @@ import {
   PAGE_SIZE,
   emptyProjectForm,
 } from "../_lib/constants";
-import { getLeads, updateLeadStatus as patchLeadStatus } from "../_lib/api";
+import {
+  getCurrentUser,
+  getLeads,
+  updateLeadStatus as patchLeadStatus,
+} from "../_lib/api";
 import { fileToDataUrl, formatDate, formatMeeting, parseJsonList, sortValue } from "../_lib/utils";
 import {
   AdminSection,
   Lead,
   Project,
+  FeaturedProjectPositions,
   ProjectForm,
   SortConfig,
   Toast,
 } from "../_lib/types";
 
 export function useAdminDashboard() {
+  const router = useRouter();
   const [activeSection, setActiveSection] = useState<AdminSection>("leads");
   const [leads, setLeads] = useState<Lead[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
@@ -55,6 +63,12 @@ export function useAdminDashboard() {
   const [projectModalOpen, setProjectModalOpen] = useState(false);
   const [previewProject, setPreviewProject] = useState<Project | null>(null);
   const [savingProject, setSavingProject] = useState(false);
+  const [featuredPositions, setFeaturedPositions] =
+    useState<FeaturedProjectPositions>({
+      1: "",
+      2: "",
+      3: "",
+    });
 
   const showToast = (nextToast: Toast) => {
     setToast(nextToast);
@@ -65,13 +79,35 @@ export function useAdminDashboard() {
     setLoading(true);
 
     try {
+      const session = await getCurrentUser();
+
+      if (session.user?.role !== "ADMIN") {
+        router.replace("/login");
+        return;
+      }
+
       const [leadData, projectData] = await Promise.all([
         getLeads(),
         getProjects(),
       ]);
 
       setLeads(leadData);
-      setProjects(Array.isArray(projectData) ? projectData : []);
+      const normalizedProjects = Array.isArray(projectData) ? projectData : [];
+      setProjects(normalizedProjects);
+      setFeaturedPositions({
+        1:
+          normalizedProjects.find(
+            (project) => project.featured && project.displayorder === 1,
+          )?.id || "",
+        2:
+          normalizedProjects.find(
+            (project) => project.featured && project.displayorder === 2,
+          )?.id || "",
+        3:
+          normalizedProjects.find(
+            (project) => project.featured && project.displayorder === 3,
+          )?.id || "",
+      });
     } catch (error) {
       console.error(error);
       showToast({
@@ -93,9 +129,7 @@ export function useAdminDashboard() {
     return {
       totalLeads: leads.length,
       meetingRequests: leads.filter((lead) => lead.wants_meeting).length,
-      publishedProjects: projects.filter(
-        (project) => project.status === "Published" || project.featured,
-      ).length,
+      publishedProjects: projects.length,
       currentMonthLeads: leads.filter((lead) => {
         if (!lead.createdAt) return false;
         const created = new Date(lead.createdAt);
@@ -350,7 +384,6 @@ export function useAdminDashboard() {
   const projectPayload = () => ({
     ...projectForm,
     gallery: JSON.stringify(projectForm.gallery),
-    featured: projectForm.status === "Published",
   });
 
   const saveProject = async (event: FormEvent<HTMLFormElement>) => {
@@ -417,7 +450,6 @@ export function useAdminDashboard() {
     try {
       const updated = await updateProject(project.id, {
         status: nextStatus,
-        featured: nextStatus === "Published",
       });
 
       setProjects((current) =>
@@ -448,10 +480,60 @@ export function useAdminDashboard() {
     try {
       await deleteProject(project.id);
       setProjects((current) => current.filter((item) => item.id !== project.id));
+      setFeaturedPositions((current) => ({
+        1: current[1] === project.id ? "" : current[1],
+        2: current[2] === project.id ? "" : current[2],
+        3: current[3] === project.id ? "" : current[3],
+      }));
       showToast({ type: "success", message: "Proyecto eliminado." });
     } catch (error) {
       console.error(error);
       showToast({ type: "error", message: "No se pudo eliminar el proyecto." });
+    }
+  };
+
+  const updateFeaturedPosition = async (
+    position: keyof FeaturedProjectPositions,
+    projectId: string
+  ) => {
+    try {
+      await setFeaturedProjectPosition(Number(position), projectId);
+
+      setProjects((current) =>
+        current.map((project) => {
+          const isPreviousPosition =
+            project.featured && project.displayorder === Number(position);
+          const isSelectedProject = project.id === projectId;
+
+          if (isPreviousPosition || isSelectedProject) {
+            return {
+              ...project,
+              featured: isSelectedProject && Boolean(projectId),
+              displayorder: isSelectedProject && projectId ? Number(position) : 0,
+            };
+          }
+
+          return project;
+        }),
+      );
+
+      setFeaturedPositions((current) => ({
+        1: current[1] === projectId ? "" : current[1],
+        2: current[2] === projectId ? "" : current[2],
+        3: current[3] === projectId ? "" : current[3],
+        [position]: projectId,
+      }));
+
+      showToast({
+        type: "success",
+        message: "Featured Project actualizado.",
+      });
+    } catch (error) {
+      console.error(error);
+      showToast({
+        type: "error",
+        message: "No se pudo actualizar Featured Projects.",
+      });
     }
   };
 
@@ -461,6 +543,7 @@ export function useAdminDashboard() {
     duplicateProject,
     editingProject,
     exportLeads,
+    featuredPositions,
     handleGalleryImages,
     handleMainImage,
     handleProjectField,
@@ -507,6 +590,8 @@ export function useAdminDashboard() {
     toggleProjectSort,
     toggleProjectStatus,
     updateLeadStatus,
+    updateFeaturedPosition,
     leadsCount: leads.length,
+    projects,
   };
 }
