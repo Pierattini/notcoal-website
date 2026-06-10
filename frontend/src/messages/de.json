@@ -63,7 +63,7 @@
 
 "company": {
 "hero": {
-"badge": "About Us",
+"badge": "Company",
 "title": "Engineering and execution for utility-scale PV and BESS projects",
 "description": "We design, develop and execute high-performance renewable energy infrastructure across Europe."
 },
@@ -84,12 +84,12 @@
 },
 "mission": {
     "title": "MISSION",
-    "text": "Deliver practical renewable energy execution support across Europe."
+    "text": "We support the execution and delivery of utility-scale Solar PV and BESS projects across Europe through project management, technical advisory, EPC strategy and business development. By combining international EPC experience with commercial coordination and trusted market relationships, we help clients convert renewable opportunities into operational infrastructure. "
   },
 
   "vision": {
     "title": "VISION",
-    "text": "Become a trusted partner for utility-scale Solar PV and BESS projects."
+    "text": "To become one of Europe’s most trusted founder-led partners for utility-scale Solar PV and BESS execution, EPC strategy and strategic market development —  helping transform complex renewable opportunities into bankable, buildable and operational assets."
   },
   
 "values": {
@@ -435,8 +435,8 @@
 },
 "projects": {
   "hero": {
-    "badge": "Selected Experience",
-    "title": "Selected Experience Across European Markets"
+    "badge": "Projects",
+    "title": "Experience Across European Markets"
   },
 
   "overview": {
