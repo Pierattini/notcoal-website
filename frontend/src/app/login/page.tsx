@@ -5,7 +5,9 @@ import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./Login.module.css";
 
-const AUTH_API = "http://localhost:4000/auth";
+const AUTH_API =
+  process.env.NEXT_PUBLIC_AUTH_API_URL ||
+  "http://localhost:4000/auth";
 
 function LoginContent() {
   const router = useRouter();

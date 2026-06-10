@@ -432,7 +432,12 @@ attachments
     ]);
 
     try {
-      await fetch("http://localhost:4000/leads", {
+      const apiBaseUrl =
+        process.env.BACKEND_API_URL ||
+        process.env.NEXT_PUBLIC_API_URL ||
+        "http://localhost:4000";
+
+      await fetch(`${apiBaseUrl}/leads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

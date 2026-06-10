@@ -1,6 +1,10 @@
 import { LEADS_API } from "./constants";
 import { Lead } from "./types";
 
+const AUTH_API =
+  process.env.NEXT_PUBLIC_AUTH_API_URL ||
+  "http://localhost:4000/auth";
+
 export async function getLeads(): Promise<Lead[]> {
   const response = await fetch(LEADS_API);
 
@@ -27,7 +31,7 @@ export async function updateLeadStatus(leadId: string, status: string) {
 }
 
 export async function getCurrentUser() {
-  const response = await fetch("http://localhost:4000/auth/me", {
+  const response = await fetch(`${AUTH_API}/me`, {
     credentials: "include",
   });
 

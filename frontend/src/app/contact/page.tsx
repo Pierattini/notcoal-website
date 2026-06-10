@@ -68,8 +68,12 @@ const [countryName, setCountryName] =
   onSubmit={async (e) => {
     e.preventDefault();
 
+    const apiBaseUrl =
+      process.env.NEXT_PUBLIC_API_URL ||
+      "http://localhost:4000";
+
     await fetch(
-      "http://localhost:4000/leads",
+      `${apiBaseUrl}/leads`,
       {
         method: "POST",
         headers: {

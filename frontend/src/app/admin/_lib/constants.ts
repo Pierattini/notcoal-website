@@ -1,6 +1,10 @@
 import { ProjectForm } from "./types";
 
-export const LEADS_API = "http://localhost:4000/leads";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  "http://localhost:4000";
+
+export const LEADS_API = `${API_BASE_URL}/leads`;
 export const PAGE_SIZE = 8;
 
 export const LEAD_STATUSES = [
