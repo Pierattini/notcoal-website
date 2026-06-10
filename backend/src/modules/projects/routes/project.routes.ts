@@ -4,7 +4,8 @@ import {
   getFeatured,
   createNewProject,
   updateExistingProject,
-  deleteExistingProject
+  deleteExistingProject,
+  updateFeaturedPosition
 } from "../controllers/project.controller";
 
 const router = Router();
@@ -14,6 +15,11 @@ router.get("/", getAllProjects);
 router.get(
   "/featured",
   getFeatured
+);
+
+router.put(
+  "/featured/:position",
+  updateFeaturedPosition
 );
 
 router.post(

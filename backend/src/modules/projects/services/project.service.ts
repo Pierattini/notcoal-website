@@ -12,10 +12,54 @@ export const getFeaturedProjects = async () => {
   return prisma.project.findMany({
     where: {
       featured: true,
+      displayorder: {
+        in: [1, 2, 3],
+      },
     },
     orderBy: {
       displayorder: "asc",
     },
+  });
+};
+
+export const setFeaturedProjectPosition = async (
+  position: number,
+  projectId?: string | null
+) => {
+  return prisma.$transaction(async (tx) => {
+    await tx.project.updateMany({
+      where: {
+        displayorder: position,
+      },
+      data: {
+        featured: false,
+        displayorder: 0,
+      },
+    });
+
+    if (!projectId) {
+      return null;
+    }
+
+    await tx.project.updateMany({
+      where: {
+        id: projectId,
+      },
+      data: {
+        featured: false,
+        displayorder: 0,
+      },
+    });
+
+    return tx.project.update({
+      where: {
+        id: projectId,
+      },
+      data: {
+        featured: true,
+        displayorder: position,
+      },
+    });
   });
 };
 
