@@ -6,8 +6,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./Login.module.css";
 
 const AUTH_API =
-  process.env.NEXT_PUBLIC_AUTH_API_URL ||
-  "http://localhost:4000/auth";
+  process.env.NEXT_PUBLIC_AUTH_API_URL;
+
+if (!AUTH_API) {
+  throw new Error(
+    "NEXT_PUBLIC_AUTH_API_URL is not configured"
+  );
+}
 
 function LoginContent() {
   const router = useRouter();

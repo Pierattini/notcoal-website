@@ -69,8 +69,13 @@ const [countryName, setCountryName] =
     e.preventDefault();
 
     const apiBaseUrl =
-      process.env.NEXT_PUBLIC_API_URL ||
-      "http://localhost:4000";
+      process.env.NEXT_PUBLIC_API_URL;
+
+    if (!apiBaseUrl) {
+      throw new Error(
+        "NEXT_PUBLIC_API_URL is not configured"
+      );
+    }
 
     await fetch(
       `${apiBaseUrl}/leads`,

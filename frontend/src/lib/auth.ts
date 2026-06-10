@@ -1,6 +1,11 @@
 export const AUTH_API_URL =
-  process.env.NEXT_PUBLIC_AUTH_API_URL ||
-  "http://localhost:4000/auth";
+  process.env.NEXT_PUBLIC_AUTH_API_URL;
+
+if (!AUTH_API_URL) {
+  throw new Error(
+    "NEXT_PUBLIC_AUTH_API_URL is not configured"
+  );
+}
 
 export type AuthUser = {
   id: string;

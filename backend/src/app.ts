@@ -11,8 +11,25 @@ import authRoutes from "./modules/auth/auth.routes";
 
 const app = express();
 
+const allowedOrigins = [
+  "https://www.notcoal.eu",
+  "https://notcoal.eu",
+  "http://localhost:3000",
+];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+      return;
+    }
+
+    callback(
+      new Error(
+        `CORS blocked origin: ${origin}`
+      )
+    );
+  },
   credentials: true,
 }));
 

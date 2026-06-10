@@ -1,8 +1,13 @@
 import { ProjectForm } from "./types";
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  "http://localhost:4000";
+  process.env.NEXT_PUBLIC_API_URL;
+
+if (!API_BASE_URL) {
+  throw new Error(
+    "NEXT_PUBLIC_API_URL is not configured"
+  );
+}
 
 export const LEADS_API = `${API_BASE_URL}/leads`;
 export const PAGE_SIZE = 8;

@@ -433,9 +433,13 @@ attachments
 
     try {
       const apiBaseUrl =
-        process.env.BACKEND_API_URL ||
-        process.env.NEXT_PUBLIC_API_URL ||
-        "http://localhost:4000";
+        process.env.NEXT_PUBLIC_API_URL;
+
+      if (!apiBaseUrl) {
+        throw new Error(
+          "NEXT_PUBLIC_API_URL is not configured"
+        );
+      }
 
       await fetch(`${apiBaseUrl}/leads`, {
         method: "POST",
