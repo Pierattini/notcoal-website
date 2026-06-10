@@ -463,6 +463,35 @@
     flex-direction: column;
 
     text-align:center;
+    align-items: center;
+    padding: 34px clamp(22px, 7vw, 34px);
+    gap: 22px;
+    overflow: hidden;
+  }
+
+  .footerBrandSimple {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footerLogoHorizontal {
+    width: min(260px, 100%);
+    max-width: calc(100vw - 52px);
+  }
+
+  .footerMenuSimple,
+  .footerLegalSimple {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 12px 18px;
+  }
+
+  .footerSimple a {
+    padding: 4px 6px;
+    font-size: 15px;
+    line-height: 1.3;
   }
 
 }

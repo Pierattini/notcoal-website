@@ -78,17 +78,23 @@
 
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 .mobileMenu a svg {
-  color: var(--color-green);
+  color: #21b58f;
+  filter: drop-shadow(0 0 8px rgba(33,181,143,0.45));
 
   flex-shrink: 0;
 }
 
 .mobileMenu a:hover {
   color: var(--primary);
+}
+
+.mobileMenu a:hover svg {
+  color: #36d6aa;
+  filter: drop-shadow(0 0 10px rgba(54,214,170,0.65));
 }
 
 .mobileMenu::before {

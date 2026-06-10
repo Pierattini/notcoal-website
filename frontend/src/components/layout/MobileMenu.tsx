@@ -34,28 +34,27 @@ export default function MobileMenu({
       >
 
         <Link href="/" onClick={onClose}>
-          <Home size={18} />
+          <Home size={22} strokeWidth={2.5} />
           {t.navbar.home}
         </Link>
         <Link href="/company" onClick={onClose}>
-          <Building2 size={18} />
+          <Building2 size={22} strokeWidth={2.5} />
           {t.navbar.company}
         </Link>
         <Link href="/services" onClick={onClose}>
-          <Grid2x2 size={18} />
+          <Grid2x2 size={22} strokeWidth={2.5} />
           {t.navbar.services}
         </Link>
 
         <Link href="/projects" onClick={onClose}>
-          <BriefcaseBusiness size={18} />
+          <BriefcaseBusiness size={22} strokeWidth={2.5} />
           {t.navbar.projects}
         </Link>
-       {/* 
-    <Link href="/contact" onClick={onClose}>
-      <Mail size={18} />
-      {t.navbar.contact}
-    </Link>
-    */}
+
+        <Link href="/#contacto" onClick={onClose}>
+          <Mail size={22} strokeWidth={2.5} />
+          {t.navbar.contact}
+        </Link>
 
       </aside>
     </>
