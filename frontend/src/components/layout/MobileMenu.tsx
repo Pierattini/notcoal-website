@@ -20,7 +20,11 @@ export default function MobileMenu({
   open,
   onClose
 }: Props) {
-  const { t } = useLanguage();
+  const { locale, setLocale, t } = useLanguage();
+
+  const changeLanguage = (nextLocale: "en" | "es" | "de") => {
+    setLocale(nextLocale);
+  };
 
   return (
     <>
@@ -32,6 +36,35 @@ export default function MobileMenu({
       <aside
         className={`mobileMenu ${open ? "active" : ""}`}
       >
+
+        <div className="mobileMenuLanguages">
+          <button
+            type="button"
+            className={locale === "en" ? "activeLang" : ""}
+            onClick={() => changeLanguage("en")}
+            aria-pressed={locale === "en"}
+          >
+            EN
+          </button>
+
+          <button
+            type="button"
+            className={locale === "es" ? "activeLang" : ""}
+            onClick={() => changeLanguage("es")}
+            aria-pressed={locale === "es"}
+          >
+            ES
+          </button>
+
+          <button
+            type="button"
+            className={locale === "de" ? "activeLang" : ""}
+            onClick={() => changeLanguage("de")}
+            aria-pressed={locale === "de"}
+          >
+            DE
+          </button>
+        </div>
 
         <Link href="/" onClick={onClose}>
           <Home size={22} strokeWidth={2.5} />

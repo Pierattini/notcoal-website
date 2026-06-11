@@ -265,12 +265,16 @@
 }
 
 .navbarLogo {
-  width: clamp(118px, 36vw, 150px) !important;
+  width: clamp(220px, 58vw, 360px) !important;
   max-width: 100% !important;
 }
 
 .languageSwitcher {
-  flex-shrink: 0;
+  display: none;
+}
+
+.userAccess {
+  display: none;
 }
 
 .languageSwitcher button {
@@ -340,7 +344,7 @@
   }
 
   .navbarLogo {
-    width: clamp(104px, 32vw, 124px) !important;
+    width: clamp(210px, 72vw, 270px) !important;
     max-width: 100% !important;
   }
 

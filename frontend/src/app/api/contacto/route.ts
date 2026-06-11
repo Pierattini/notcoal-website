@@ -17,6 +17,9 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+const COMPANY_EMAIL_TO =
+  process.env.SMTP_TO || 'hi@notcoal.eu';
+
 const serviceLabels: Record<string, string> = {
   service01: '01 EPC Project Management',
   service02: '02 EPC Strategy and Partner Facilitation',
@@ -217,7 +220,7 @@ for (const [key, value] of formData.entries()) {
     // Email a la empresa
     const legacyEmailEmpresa = {
       from: process.env.SMTP_FROM,
-      to: process.env.SMTP_TO,
+      to: COMPANY_EMAIL_TO,
       subject: `Nueva Consulta de ${nombre} - The Not Coal Company`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -416,7 +419,7 @@ attachments
 
     const emailEmpresa = {
       from: process.env.SMTP_FROM,
-      to: process.env.SMTP_TO,
+      to: COMPANY_EMAIL_TO,
       subject: `New Contact Request from ${safeNombre} - The Not Coal Company`,
       html: premiumEmailHtml,
       attachments: [
