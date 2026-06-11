@@ -1,12 +1,6 @@
 export const AUTH_API_URL =
   process.env.NEXT_PUBLIC_AUTH_API_URL;
 
-if (!AUTH_API_URL) {
-  throw new Error(
-    "NEXT_PUBLIC_AUTH_API_URL is not configured"
-  );
-}
-
 export type AuthUser = {
   id: string;
   name?: string | null;
@@ -14,11 +8,23 @@ export type AuthUser = {
   role: "ADMIN" | "CLIENT";
 };
 
+function getAuthApiUrl() {
+  if (!AUTH_API_URL) {
+    throw new Error(
+      "NEXT_PUBLIC_AUTH_API_URL is not configured"
+    );
+  }
+
+  return AUTH_API_URL;
+}
+
 export async function loginUser(
   email: string,
   password: string
 ) {
-  const response = await fetch(`${AUTH_API_URL}/login`, {
+  const authApiUrl = getAuthApiUrl();
+
+  const response = await fetch(`${authApiUrl}/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +46,9 @@ export async function loginUser(
 }
 
 export async function getAuthUser() {
-  const response = await fetch(`${AUTH_API_URL}/me`, {
+  const authApiUrl = getAuthApiUrl();
+
+  const response = await fetch(`${authApiUrl}/me`, {
     credentials: "include",
   });
 

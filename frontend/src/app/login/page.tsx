@@ -8,12 +8,6 @@ import styles from "./Login.module.css";
 const AUTH_API =
   process.env.NEXT_PUBLIC_AUTH_API_URL;
 
-if (!AUTH_API) {
-  throw new Error(
-    "NEXT_PUBLIC_AUTH_API_URL is not configured"
-  );
-}
-
 function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -28,6 +22,12 @@ function LoginContent() {
     setLoading(true);
 
     try {
+      if (!AUTH_API) {
+        throw new Error(
+          "NEXT_PUBLIC_AUTH_API_URL is not configured"
+        );
+      }
+
       const response = await fetch(`${AUTH_API}/login`, {
         method: "POST",
         headers: {
