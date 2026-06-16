@@ -17,7 +17,175 @@
   "privacy": {
     "badge": "Pol\u00edtica de Privacidad",
     "title": "Pol\u00edtica de Privacidad",
-    "description": "Informaci\u00f3n sobre privacidad y protecci\u00f3n de datos para los usuarios del sitio web de The Not Coal Company."
+    "description": "Informaci\u00f3n sobre privacidad y protecci\u00f3n de datos para los usuarios del sitio web de The Not Coal Company.",
+    "document": {
+      "intro": [
+        "Consideramos que la privacidad de nuestros usuarios debe ser primordial. Por esta raz\u00f3n aplicamos una pol\u00edtica de transparencia en todos nuestros procesos, para que los usuarios est\u00e9n siempre informados y mantengan el control sobre sus datos personales.",
+        "A trav\u00e9s de este sitio web no se recaban datos de car\u00e1cter personal de los usuarios sin su conocimiento, ni se ceden a terceros fuera de los supuestos necesarios para prestar servicios, cumplir obligaciones legales o gestionar solicitudes realizadas por los propios usuarios."
+      ],
+      "controller": {
+        "title": "\u00bfQui\u00e9n es el responsable del tratamiento de sus datos?",
+        "text": "En cumplimiento del Reglamento (UE) 2016/679, Reglamento General de Protecci\u00f3n de Datos, y de la normativa aplicable en materia de protecci\u00f3n de datos personales, se informa de que la presente p\u00e1gina web es titularidad de:",
+        "entityLabel": "Entidad:",
+        "registryLabel": "Registry code:",
+        "vatLabel": "VAT number:",
+        "addressLabel": "Domicilio:",
+        "phoneLabel": "Tel\u00e9fono:",
+        "emailLabel": "Email:",
+        "after": "En adelante, el WEBSITE."
+      },
+      "sections": [
+        {
+          "title": "Marco normativo",
+          "paragraphs": [
+            "El WEBSITE garantiza el respeto de las garant\u00edas, normas y procedimientos previstos en el ordenamiento jur\u00eddico aplicable para proteger los derechos a la intimidad, privacidad y protecci\u00f3n de datos personales."
+          ],
+          "items": [
+            { "label": "", "text": "Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, relativo a la protecci\u00f3n de las personas f\u00edsicas en lo que respecta al tratamiento de datos personales y a la libre circulaci\u00f3n de estos datos." },
+            { "label": "", "text": "Normativa nacional aplicable en materia de protecci\u00f3n de datos y servicios de la sociedad de la informaci\u00f3n." },
+            { "label": "", "text": "Principios aplicables en el Espacio Econ\u00f3mico Europeo (EEA) y, cuando corresponda, en Suiza." }
+          ]
+        },
+        {
+          "title": "Mantenga el control sobre sus datos",
+          "paragraphs": [
+            "Los datos de car\u00e1cter personal que se pudieran recabar ser\u00e1n tratados de forma confidencial y quedar\u00e1n incorporados a la correspondiente actividad de tratamiento titularidad del WEBSITE.",
+            "La recopilaci\u00f3n y el uso de datos es esencial para poder ofrecer nuestros servicios. Sin embargo, solo solicitaremos informaci\u00f3n adecuada, pertinente y limitada a lo necesario para las finalidades descritas en esta pol\u00edtica."
+          ],
+          "items": []
+        },
+        {
+          "title": "Datos que podemos solicitar",
+          "paragraphs": [
+            "En funci\u00f3n del uso que realice del WEBSITE, podemos solicitar o recibir los siguientes datos:"
+          ],
+          "items": [
+            { "label": "Datos de contacto:", "text": "nombre, apellidos, email, tel\u00e9fono, empresa y pa\u00eds." },
+            { "label": "Datos profesionales:", "text": "empresa, cargo, proyecto, servicio solicitado y contenido de la consulta." },
+            { "label": "Datos de reuniones:", "text": "preferencia de fecha, hora y disponibilidad cuando el usuario solicite una reuni\u00f3n." },
+            { "label": "Archivos aportados voluntariamente:", "text": "documentaci\u00f3n t\u00e9cnica, im\u00e1genes, PDFs u otros archivos enviados a trav\u00e9s del formulario." },
+            { "label": "Datos tecnol\u00f3gicos:", "text": "direcci\u00f3n IP, tipo de dispositivo, navegador, sistema operativo, preferencias de idioma, p\u00e1ginas visitadas y datos derivados de cookies consentidas." }
+          ]
+        },
+        {
+          "title": "Finalidades del tratamiento",
+          "paragraphs": [
+            "Los datos personales pueden ser tratados con las siguientes finalidades:"
+          ],
+          "items": [
+            { "label": "", "text": "Contestar consultas enviadas a trav\u00e9s del formulario de contacto." },
+            { "label": "", "text": "Gestionar solicitudes de informaci\u00f3n sobre servicios de energ\u00eda renovable, Solar PV, BESS, EPC, consultor\u00eda o desarrollo estrat\u00e9gico." },
+            { "label": "", "text": "Organizar reuniones solicitadas por el usuario." },
+            { "label": "", "text": "Gestionar comunicaciones comerciales cuando exista consentimiento o inter\u00e9s leg\u00edtimo aplicable." },
+            { "label": "", "text": "Mejorar la experiencia de usuario del WEBSITE." },
+            { "label": "", "text": "Mantener la seguridad del WEBSITE, detectar actividad maliciosa y prevenir fraude." },
+            { "label": "", "text": "Cumplir obligaciones legales, administrativas o regulatorias." }
+          ]
+        },
+        {
+          "title": "Legitimaci\u00f3n para el tratamiento",
+          "paragraphs": [
+            "La base jur\u00eddica para el tratamiento de datos puede ser:"
+          ],
+          "items": [
+            { "label": "Consentimiento:", "text": "cuando el usuario facilita voluntariamente sus datos o acepta cookies opcionales." },
+            { "label": "Ejecuci\u00f3n de medidas precontractuales o contractuales:", "text": "cuando el tratamiento sea necesario para gestionar una solicitud, propuesta o relaci\u00f3n profesional." },
+            { "label": "Inter\u00e9s leg\u00edtimo:", "text": "para responder consultas empresariales, proteger la seguridad del sitio y mantener comunicaciones profesionales razonables." },
+            { "label": "Obligaci\u00f3n legal:", "text": "cuando sea necesario conservar o comunicar informaci\u00f3n por exigencia normativa." }
+          ]
+        },
+        {
+          "title": "Plazo de conservaci\u00f3n",
+          "paragraphs": [
+            "Conservaremos los datos personales durante el tiempo necesario para atender la finalidad para la que fueron recabados. En general, los datos asociados a consultas se conservar\u00e1n mientras sea necesario para gestionar la solicitud y, posteriormente, durante los plazos legales aplicables o para la defensa de posibles reclamaciones.",
+            "Los datos tratados con fines comerciales se conservar\u00e1n mientras el usuario no solicite su supresi\u00f3n u oposici\u00f3n. Los datos vinculados a cookies se conservar\u00e1n seg\u00fan la duraci\u00f3n indicada en la configuraci\u00f3n del navegador o en la pol\u00edtica de cookies."
+          ],
+          "items": []
+        },
+        {
+          "title": "Uso de la web por menores",
+          "paragraphs": [
+            "La navegaci\u00f3n en este WEBSITE por menores de edad exige que estos hayan obtenido previamente autorizaci\u00f3n de sus padres, tutores o representantes legales, quienes ser\u00e1n responsables del uso que los menores realicen del sitio."
+          ],
+          "items": []
+        },
+        {
+          "title": "Destinatarios y proveedores",
+          "paragraphs": [
+            "Podemos utilizar terceros proveedores para ayudarnos a prestar nuestros servicios, tales como hosting, mantenimiento web, herramientas de email, formularios, almacenamiento, anal\u00edtica consentida, seguridad o servicios profesionales. Dichos proveedores solo tendr\u00e1n acceso a la informaci\u00f3n necesaria para ejecutar sus tareas y deber\u00e1n tratarla conforme a instrucciones y obligaciones de confidencialidad.",
+            "TheNotCoalCompany O\u00dc no alquilar\u00e1 ni vender\u00e1 informaci\u00f3n personal, ni compartir\u00e1 datos con anunciantes o redes publicitarias sin consentimiento expl\u00edcito, salvo obligaci\u00f3n legal, requerimiento administrativo o procedimiento judicial."
+          ],
+          "items": []
+        },
+        {
+          "title": "Transferencias internacionales de datos",
+          "paragraphs": [
+            "No est\u00e1n previstas transferencias internacionales de datos fuera de las garant\u00edas legalmente aplicables. Si se utilizaran proveedores ubicados fuera del Espacio Econ\u00f3mico Europeo o Suiza, se procurar\u00e1 aplicar mecanismos adecuados conforme al RGPD, como cl\u00e1usulas contractuales tipo u otras garant\u00edas reconocidas."
+          ],
+          "items": []
+        },
+        {
+          "title": "Seguridad de los datos",
+          "paragraphs": [
+            "El WEBSITE aplica medidas t\u00e9cnicas y organizativas apropiadas para proporcionar un nivel de seguridad adecuado al riesgo, procurando garantizar la confidencialidad, integridad y disponibilidad de los datos personales.",
+            "Se utilizan mecanismos razonables de seguridad, mantenimiento t\u00e9cnico, actualizaci\u00f3n de software, protecci\u00f3n frente a actividad maliciosa y medidas orientadas a preservar la resiliencia de los sistemas."
+          ],
+          "items": []
+        },
+        {
+          "title": "Consejos de navegaci\u00f3n",
+          "paragraphs": [],
+          "items": [
+            { "label": "", "text": "Compruebe que accede al dominio correcto antes de introducir datos personales." },
+            { "label": "", "text": "No utilice enlaces recibidos por email, SMS o mensajer\u00eda si sospecha que puedan ser fraudulentos." },
+            { "label": "", "text": "Actualice su navegador y sistema operativo para mejorar su seguridad." },
+            { "label": "", "text": "Revise la configuraci\u00f3n de privacidad y cookies de su navegador." }
+          ]
+        }
+      ],
+      "rights": {
+        "title": "\u00bfQu\u00e9 derechos tiene usted con respecto a sus datos?",
+        "paragraphs": [
+          "Usted tiene derecho a conocer si el WEBSITE est\u00e1 tratando datos personales que le conciernen. Asimismo, puede solicitar el acceso, rectificaci\u00f3n, supresi\u00f3n, oposici\u00f3n, limitaci\u00f3n del tratamiento y portabilidad de sus datos, as\u00ed como retirar el consentimiento cuando el tratamiento se base en este.",
+          "Puede ejercer sus derechos contactando con TheNotCoalCompany O\u00dc a trav\u00e9s de hi@notcoal.eu, indicando como asunto Data Protection Rights o Derechos RGPD, y aportando informaci\u00f3n suficiente para verificar su identidad."
+        ]
+      },
+      "userObligations": {
+        "title": "Obligaciones del usuario",
+        "text": "El usuario se compromete a garantizar la veracidad de los datos que facilite y a comunicar cualquier modificaci\u00f3n. Cuando facilite datos de terceras personas, declara haber obtenido autorizaci\u00f3n suficiente y haber informado a dichas personas conforme a la normativa aplicable."
+      },
+      "commercial": {
+        "title": "Comunicaciones comerciales",
+        "textBeforeEmail": "Usted puede optar por no recibir comunicaciones comerciales solicit\u00e1ndolo por email a",
+        "textAfterEmail": "con el asunto No deseo recibir comunicaciones comerciales."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "textBeforeLink": "El WEBSITE puede utilizar cookies funcionales necesarias, cookies de idioma, cookies vinculadas a formularios de contacto y, si se implementan y usted lo consiente, cookies anal\u00edticas o de marketing. Puede consultar m\u00e1s informaci\u00f3n en nuestra"
+      },
+      "finalSections": [
+        {
+          "title": "Contenido de la web y enlaces",
+          "text": "Este WEBSITE puede contener enlaces a sitios web de terceros cuyas pol\u00edticas de privacidad son ajenas a TheNotCoalCompany O\u00dc. Al acceder a dichos sitios, el usuario deber\u00e1 revisar y decidir si acepta sus pol\u00edticas de privacidad y cookies."
+        },
+        {
+          "title": "Propiedad intelectual e industrial",
+          "text": "Los elementos que forman parte del WEBSITE, incluyendo textos, dise\u00f1o, estructura, c\u00f3digo, logotipos, marcas, im\u00e1genes y dem\u00e1s signos distintivos, son titularidad de TheNotCoalCompany O\u00dc o de sus colaboradores, salvo indicaci\u00f3n contraria, y est\u00e1n protegidos por derechos de propiedad intelectual e industrial."
+        },
+        {
+          "title": "Responsabilidad",
+          "text": "TheNotCoalCompany O\u00dc realiza esfuerzos razonables para mantener el WEBSITE actualizado, seguro y disponible, pero no garantiza la inexistencia absoluta de errores, interrupciones o incidencias t\u00e9cnicas. El acceso y uso del WEBSITE es responsabilidad del usuario."
+        },
+        {
+          "title": "Actualizaciones de esta pol\u00edtica",
+          "text": "Esta Pol\u00edtica de Privacidad podr\u00e1 actualizarse peri\u00f3dicamente. Resultar\u00e1n aplicables las condiciones publicadas en el momento de utilizaci\u00f3n del WEBSITE. Se recomienda revisar esta p\u00e1gina de forma peri\u00f3dica para mantenerse informado."
+        },
+        {
+          "title": "Legislaci\u00f3n aplicable",
+          "text": "Esta pol\u00edtica se interpretar\u00e1 conforme a la normativa de protecci\u00f3n de datos aplicable en la Uni\u00f3n Europea, incluyendo el RGPD, y dem\u00e1s normas que resulten aplicables a TheNotCoalCompany O\u00dc."
+        }
+      ]
+    }
   },
   "terms": {
     "badge": "T\u00e9rminos",

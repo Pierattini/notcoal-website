@@ -17,7 +17,175 @@
   "privacy": {
     "badge": "Datenschutzerkl\u00e4rung",
     "title": "Datenschutzerkl\u00e4rung",
-    "description": "Informationen zu Datenschutz und Datenverarbeitung f\u00fcr Nutzer der Website von The Not Coal Company."
+    "description": "Informationen zu Datenschutz und Datenverarbeitung f\u00fcr Nutzer der Website von The Not Coal Company.",
+    "document": {
+      "intro": [
+        "Wir betrachten die Privatsph\u00e4re unserer Nutzer als vorrangig. Deshalb wenden wir in allen Prozessen eine transparente Richtlinie an, damit Nutzer informiert bleiben und die Kontrolle \u00fcber ihre personenbezogenen Daten behalten.",
+        "\u00dcber diese Website werden keine personenbezogenen Daten ohne Kenntnis des Nutzers erhoben und nicht an Dritte weitergegeben, au\u00dfer wenn dies zur Erbringung von Dienstleistungen, zur Erf\u00fcllung gesetzlicher Pflichten oder zur Bearbeitung von Nutzeranfragen erforderlich ist."
+      ],
+      "controller": {
+        "title": "Wer ist f\u00fcr die Verarbeitung Ihrer Daten verantwortlich?",
+        "text": "Gem\u00e4\u00df der Verordnung (EU) 2016/679, der Datenschutz-Grundverordnung, und den geltenden Vorschriften zum Schutz personenbezogener Daten ist diese Website Eigentum von:",
+        "entityLabel": "Unternehmen:",
+        "registryLabel": "Registernummer:",
+        "vatLabel": "USt-IdNr.:",
+        "addressLabel": "Eingetragene Adresse:",
+        "phoneLabel": "Telefon:",
+        "emailLabel": "E-Mail:",
+        "after": "Nachfolgend die WEBSITE."
+      },
+      "sections": [
+        {
+          "title": "Rechtsrahmen",
+          "paragraphs": [
+            "Die WEBSITE beachtet die Garantien, Regeln und Verfahren des geltenden Rechts zum Schutz der Privatsph\u00e4re und personenbezogener Daten."
+          ],
+          "items": [
+            { "label": "", "text": "Verordnung (EU) 2016/679 des Europ\u00e4ischen Parlaments und des Rates zum Schutz nat\u00fcrlicher Personen bei der Verarbeitung personenbezogener Daten und zum freien Datenverkehr." },
+            { "label": "", "text": "Anwendbare nationale Vorschriften zum Datenschutz und zu Diensten der Informationsgesellschaft." },
+            { "label": "", "text": "Grunds\u00e4tze, die im Europ\u00e4ischen Wirtschaftsraum (EWR) und gegebenenfalls in der Schweiz gelten." }
+          ]
+        },
+        {
+          "title": "Behalten Sie die Kontrolle \u00fcber Ihre Daten",
+          "paragraphs": [
+            "Personenbezogene Daten, die erhoben werden k\u00f6nnen, werden vertraulich verarbeitet und der entsprechenden Verarbeitungst\u00e4tigkeit der WEBSITE zugeordnet.",
+            "Die Erhebung und Nutzung von Daten ist notwendig, um unsere Dienstleistungen anbieten zu k\u00f6nnen. Wir werden jedoch nur Informationen anfordern, die angemessen, relevant und auf das f\u00fcr die in dieser Richtlinie beschriebenen Zwecke notwendige Ma\u00df beschr\u00e4nkt sind."
+          ],
+          "items": []
+        },
+        {
+          "title": "Daten, die wir anfordern k\u00f6nnen",
+          "paragraphs": [
+            "Je nach Nutzung der WEBSITE k\u00f6nnen wir die folgenden Daten anfordern oder erhalten:"
+          ],
+          "items": [
+            { "label": "Kontaktdaten:", "text": "Name, Nachname, E-Mail, Telefonnummer, Unternehmen und Land." },
+            { "label": "Berufliche Daten:", "text": "Unternehmen, Rolle, Projekt, angefragte Dienstleistung und Inhalt der Anfrage." },
+            { "label": "Besprechungsdaten:", "text": "bevorzugtes Datum, Uhrzeit und Verf\u00fcgbarkeit, wenn der Nutzer eine Besprechung anfordert." },
+            { "label": "Freiwillig bereitgestellte Dateien:", "text": "technische Dokumentation, Bilder, PDFs oder andere \u00fcber das Formular gesendete Dateien." },
+            { "label": "Technische Daten:", "text": "IP-Adresse, Ger\u00e4tetyp, Browser, Betriebssystem, Spracheinstellungen, besuchte Seiten und Daten aus zugestimmten Cookies." }
+          ]
+        },
+        {
+          "title": "Zwecke der Verarbeitung",
+          "paragraphs": [
+            "Personenbezogene Daten k\u00f6nnen zu folgenden Zwecken verarbeitet werden:"
+          ],
+          "items": [
+            { "label": "", "text": "Beantwortung von Anfragen, die \u00fcber das Kontaktformular gesendet werden." },
+            { "label": "", "text": "Bearbeitung von Informationsanfragen zu Dienstleistungen im Bereich erneuerbare Energien, Solar PV, BESS, EPC, Beratung oder strategische Entwicklung." },
+            { "label": "", "text": "Organisation von Besprechungen, die vom Nutzer angefordert werden." },
+            { "label": "", "text": "Verwaltung kommerzieller Kommunikation, wenn eine Einwilligung oder ein anwendbares berechtigtes Interesse besteht." },
+            { "label": "", "text": "Verbesserung der Nutzererfahrung auf der WEBSITE." },
+            { "label": "", "text": "Aufrechterhaltung der Sicherheit der WEBSITE, Erkennung sch\u00e4dlicher Aktivit\u00e4ten und Verhinderung von Betrug." },
+            { "label": "", "text": "Erf\u00fcllung gesetzlicher, administrativer oder regulatorischer Pflichten." }
+          ]
+        },
+        {
+          "title": "Rechtsgrundlage der Verarbeitung",
+          "paragraphs": [
+            "Die Rechtsgrundlage f\u00fcr die Datenverarbeitung kann sein:"
+          ],
+          "items": [
+            { "label": "Einwilligung:", "text": "wenn der Nutzer freiwillig Daten bereitstellt oder optionale Cookies akzeptiert." },
+            { "label": "Vorvertragliche oder vertragliche Ma\u00dfnahmen:", "text": "wenn die Verarbeitung zur Bearbeitung einer Anfrage, eines Angebots oder einer beruflichen Beziehung erforderlich ist." },
+            { "label": "Berechtigtes Interesse:", "text": "zur Beantwortung gesch\u00e4ftlicher Anfragen, zum Schutz der Website-Sicherheit und zur Aufrechterhaltung angemessener beruflicher Kommunikation." },
+            { "label": "Gesetzliche Pflicht:", "text": "wenn Informationen aufgrund gesetzlicher Anforderungen aufbewahrt oder mitgeteilt werden m\u00fcssen." }
+          ]
+        },
+        {
+          "title": "Aufbewahrungsdauer",
+          "paragraphs": [
+            "Wir bewahren personenbezogene Daten so lange auf, wie es zur Erf\u00fcllung des Zwecks erforderlich ist, f\u00fcr den sie erhoben wurden. Im Allgemeinen werden Daten im Zusammenhang mit Anfragen so lange aufbewahrt, wie dies zur Bearbeitung der Anfrage erforderlich ist, und danach w\u00e4hrend anwendbarer gesetzlicher Fristen oder zur Verteidigung m\u00f6glicher Anspr\u00fcche.",
+            "Daten, die zu kommerziellen Zwecken verarbeitet werden, werden aufbewahrt, bis der Nutzer ihre L\u00f6schung verlangt oder Widerspruch einlegt. Cookiebezogene Daten werden gem\u00e4\u00df der in den Browsereinstellungen oder in der Cookie-Richtlinie angegebenen Dauer aufbewahrt."
+          ],
+          "items": []
+        },
+        {
+          "title": "Nutzung der Website durch Minderj\u00e4hrige",
+          "paragraphs": [
+            "Die Nutzung dieser WEBSITE durch Minderj\u00e4hrige setzt die vorherige Genehmigung ihrer Eltern, Vormunde oder gesetzlichen Vertreter voraus, die f\u00fcr die Nutzung der Website durch Minderj\u00e4hrige verantwortlich sind."
+          ],
+          "items": []
+        },
+        {
+          "title": "Empf\u00e4nger und Dienstleister",
+          "paragraphs": [
+            "Wir k\u00f6nnen Drittanbieter einsetzen, um unsere Dienstleistungen zu erbringen, etwa Hosting, Website-Wartung, E-Mail-Tools, Formulare, Speicherung, zugestimmte Analysen, Sicherheit oder professionelle Dienstleistungen. Diese Anbieter erhalten nur Zugriff auf die Informationen, die zur Ausf\u00fchrung ihrer Aufgaben erforderlich sind, und m\u00fcssen sie gem\u00e4\u00df Anweisungen und Vertraulichkeitspflichten verarbeiten.",
+            "TheNotCoalCompany O\u00dc vermietet oder verkauft keine personenbezogenen Informationen und teilt Daten nicht ohne ausdr\u00fcckliche Einwilligung mit Werbetreibenden oder Werbenetzwerken, au\u00dfer bei gesetzlicher Pflicht, beh\u00f6rdlicher Anforderung oder gerichtlichem Verfahren."
+          ],
+          "items": []
+        },
+        {
+          "title": "Internationale Daten\u00fcbermittlungen",
+          "paragraphs": [
+            "Internationale Daten\u00fcbermittlungen au\u00dferhalb der gesetzlich anwendbaren Garantien sind nicht vorgesehen. Wenn Anbieter au\u00dferhalb des Europ\u00e4ischen Wirtschaftsraums oder der Schweiz eingesetzt werden, werden geeignete Mechanismen gem\u00e4\u00df DSGVO angewendet, etwa Standardvertragsklauseln oder andere anerkannte Garantien."
+          ],
+          "items": []
+        },
+        {
+          "title": "Datensicherheit",
+          "paragraphs": [
+            "Die WEBSITE wendet geeignete technische und organisatorische Ma\u00dfnahmen an, um ein dem Risiko angemessenes Sicherheitsniveau zu gew\u00e4hrleisten und die Vertraulichkeit, Integrit\u00e4t und Verf\u00fcgbarkeit personenbezogener Daten zu sch\u00fctzen.",
+            "Es werden angemessene Sicherheitsmechanismen, technische Wartung, Software-Updates, Schutz vor sch\u00e4dlichen Aktivit\u00e4ten und Ma\u00dfnahmen zur Wahrung der Systemresilienz eingesetzt."
+          ],
+          "items": []
+        },
+        {
+          "title": "Hinweise zum sicheren Surfen",
+          "paragraphs": [],
+          "items": [
+            { "label": "", "text": "Pr\u00fcfen Sie, ob Sie die richtige Domain aufrufen, bevor Sie personenbezogene Daten eingeben." },
+            { "label": "", "text": "Verwenden Sie keine Links aus E-Mails, SMS oder Nachrichten, wenn Sie vermuten, dass sie betr\u00fcgerisch sein k\u00f6nnten." },
+            { "label": "", "text": "Aktualisieren Sie Ihren Browser und Ihr Betriebssystem, um die Sicherheit zu verbessern." },
+            { "label": "", "text": "\u00dcberpr\u00fcfen Sie die Datenschutz- und Cookie-Einstellungen Ihres Browsers." }
+          ]
+        }
+      ],
+      "rights": {
+        "title": "Welche Rechte haben Sie in Bezug auf Ihre Daten?",
+        "paragraphs": [
+          "Sie haben das Recht zu erfahren, ob die WEBSITE personenbezogene Daten verarbeitet, die Sie betreffen. Sie k\u00f6nnen au\u00dferdem Auskunft, Berichtigung, L\u00f6schung, Widerspruch, Einschr\u00e4nkung der Verarbeitung und Daten\u00fcbertragbarkeit verlangen sowie eine Einwilligung widerrufen, wenn die Verarbeitung auf Einwilligung beruht.",
+          "Sie k\u00f6nnen Ihre Rechte aus\u00fcben, indem Sie TheNotCoalCompany O\u00dc unter hi@notcoal.eu kontaktieren, im Betreff Data Protection Rights oder GDPR Rights angeben und ausreichende Informationen zur \u00dcberpr\u00fcfung Ihrer Identit\u00e4t bereitstellen."
+        ]
+      },
+      "userObligations": {
+        "title": "Pflichten des Nutzers",
+        "text": "Der Nutzer verpflichtet sich, die Richtigkeit der bereitgestellten Daten sicherzustellen und jede \u00c4nderung mitzuteilen. Wenn Daten Dritter bereitgestellt werden, erkl\u00e4rt der Nutzer, dass er eine ausreichende Genehmigung erhalten und diese Personen gem\u00e4\u00df den geltenden Vorschriften informiert hat."
+      },
+      "commercial": {
+        "title": "Kommerzielle Kommunikation",
+        "textBeforeEmail": "Sie k\u00f6nnen kommerzielle Kommunikation abbestellen, indem Sie dies per E-Mail an",
+        "textAfterEmail": "mit dem Betreff Ich m\u00f6chte keine kommerzielle Kommunikation erhalten anfordern."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "textBeforeLink": "Die WEBSITE kann notwendige funktionale Cookies, Sprach-Cookies, Cookies im Zusammenhang mit Kontaktformularen und, sofern implementiert und von Ihnen genehmigt, Analyse- oder Marketing-Cookies verwenden. Weitere Informationen finden Sie in unserer"
+      },
+      "finalSections": [
+        {
+          "title": "Website-Inhalte und Links",
+          "text": "Diese WEBSITE kann Links zu Websites Dritter enthalten, deren Datenschutzrichtlinien nicht von TheNotCoalCompany O\u00dc kontrolliert werden. Beim Zugriff auf diese Websites sollte der Nutzer deren Datenschutz- und Cookie-Richtlinien pr\u00fcfen und entscheiden, ob er sie akzeptiert."
+        },
+        {
+          "title": "Geistiges und gewerbliches Eigentum",
+          "text": "Die Elemente der WEBSITE, einschlie\u00dflich Texte, Design, Struktur, Code, Logos, Marken, Bilder und sonstiger Kennzeichen, sind Eigentum von TheNotCoalCompany O\u00dc oder ihren Partnern, sofern nicht anders angegeben, und durch geistige und gewerbliche Schutzrechte gesch\u00fctzt."
+        },
+        {
+          "title": "Haftung",
+          "text": "TheNotCoalCompany O\u00dc bem\u00fcht sich in angemessenem Umfang, die WEBSITE aktuell, sicher und verf\u00fcgbar zu halten, garantiert jedoch nicht die vollst\u00e4ndige Abwesenheit von Fehlern, Unterbrechungen oder technischen Vorf\u00e4llen. Der Zugriff auf und die Nutzung der WEBSITE erfolgen auf Verantwortung des Nutzers."
+        },
+        {
+          "title": "Aktualisierungen dieser Richtlinie",
+          "text": "Diese Datenschutzerkl\u00e4rung kann regelm\u00e4\u00dfig aktualisiert werden. Es gelten die Bedingungen, die zum Zeitpunkt der Nutzung der WEBSITE ver\u00f6ffentlicht sind. Wir empfehlen, diese Seite regelm\u00e4\u00dfig zu \u00fcberpr\u00fcfen, um informiert zu bleiben."
+        },
+        {
+          "title": "Anwendbares Recht",
+          "text": "Diese Richtlinie wird gem\u00e4\u00df den anwendbaren Datenschutzvorschriften der Europ\u00e4ischen Union, einschlie\u00dflich der DSGVO, sowie sonstigen f\u00fcr TheNotCoalCompany O\u00dc geltenden Vorschriften ausgelegt."
+        }
+      ]
+    }
   },
   "terms": {
     "badge": "Bedingungen",

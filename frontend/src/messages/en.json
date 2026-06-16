@@ -17,7 +17,175 @@
   "privacy": {
     "badge": "Privacy Policy",
     "title": "Privacy Policy",
-    "description": "Privacy and data protection information for users of The Not Coal Company website."
+    "description": "Privacy and data protection information for users of The Not Coal Company website.",
+    "document": {
+      "intro": [
+        "We believe that the privacy of our users must be a priority. For this reason, we apply a transparent policy across our processes so users remain informed and in control of their personal data.",
+        "Through this website, personal data is not collected without the user's knowledge, nor is it transferred to third parties except where necessary to provide services, comply with legal obligations or manage requests made by users."
+      ],
+      "controller": {
+        "title": "Who is responsible for processing your data?",
+        "text": "In accordance with Regulation (EU) 2016/679, the General Data Protection Regulation, and applicable personal data protection rules, this website is owned by:",
+        "entityLabel": "Entity:",
+        "registryLabel": "Registry code:",
+        "vatLabel": "VAT number:",
+        "addressLabel": "Registered address:",
+        "phoneLabel": "Phone:",
+        "emailLabel": "Email:",
+        "after": "Hereinafter, the WEBSITE."
+      },
+      "sections": [
+        {
+          "title": "Legal framework",
+          "paragraphs": [
+            "The WEBSITE respects the safeguards, rules and procedures established by applicable law to protect privacy, intimacy and personal data protection rights."
+          ],
+          "items": [
+            { "label": "", "text": "Regulation (EU) 2016/679 of the European Parliament and of the Council on the protection of natural persons with regard to the processing of personal data and on the free movement of such data." },
+            { "label": "", "text": "Applicable national rules on data protection and information society services." },
+            { "label": "", "text": "Principles applicable in the European Economic Area (EEA) and, where applicable, Switzerland." }
+          ]
+        },
+        {
+          "title": "Keep control of your data",
+          "paragraphs": [
+            "Any personal data that may be collected will be processed confidentially and included in the corresponding processing activity owned by the WEBSITE.",
+            "Data collection and use are essential to provide our services. However, we will only request information that is adequate, relevant and limited to what is necessary for the purposes described in this policy."
+          ],
+          "items": []
+        },
+        {
+          "title": "Data we may request",
+          "paragraphs": [
+            "Depending on how you use the WEBSITE, we may request or receive the following data:"
+          ],
+          "items": [
+            { "label": "Contact data:", "text": "name, surname, email, phone number, company and country." },
+            { "label": "Professional data:", "text": "company, role, project, requested service and enquiry content." },
+            { "label": "Meeting data:", "text": "preferred date, time and availability when the user requests a meeting." },
+            { "label": "Files voluntarily provided:", "text": "technical documentation, images, PDFs or other files submitted through the form." },
+            { "label": "Technology data:", "text": "IP address, device type, browser, operating system, language preferences, visited pages and data derived from consented cookies." }
+          ]
+        },
+        {
+          "title": "Purposes of processing",
+          "paragraphs": [
+            "Personal data may be processed for the following purposes:"
+          ],
+          "items": [
+            { "label": "", "text": "Responding to enquiries submitted through the contact form." },
+            { "label": "", "text": "Managing information requests about renewable energy services, Solar PV, BESS, EPC, consulting or strategic development." },
+            { "label": "", "text": "Organising meetings requested by the user." },
+            { "label": "", "text": "Managing commercial communications where consent or applicable legitimate interest exists." },
+            { "label": "", "text": "Improving the WEBSITE user experience." },
+            { "label": "", "text": "Maintaining WEBSITE security, detecting malicious activity and preventing fraud." },
+            { "label": "", "text": "Complying with legal, administrative or regulatory obligations." }
+          ]
+        },
+        {
+          "title": "Legal basis for processing",
+          "paragraphs": [
+            "The legal basis for data processing may be:"
+          ],
+          "items": [
+            { "label": "Consent:", "text": "when the user voluntarily provides data or accepts optional cookies." },
+            { "label": "Pre-contractual or contractual measures:", "text": "when processing is necessary to manage a request, proposal or professional relationship." },
+            { "label": "Legitimate interest:", "text": "to respond to business enquiries, protect website security and maintain reasonable professional communications." },
+            { "label": "Legal obligation:", "text": "when it is necessary to retain or communicate information due to a regulatory requirement." }
+          ]
+        },
+        {
+          "title": "Retention period",
+          "paragraphs": [
+            "We will keep personal data for the time necessary to fulfil the purpose for which it was collected. In general, data linked to enquiries will be retained while necessary to manage the request and, afterwards, during applicable legal periods or for the defence of possible claims.",
+            "Data processed for commercial purposes will be retained until the user requests deletion or objects. Data linked to cookies will be retained according to the duration indicated in browser settings or in the cookie policy."
+          ],
+          "items": []
+        },
+        {
+          "title": "Use of the website by minors",
+          "paragraphs": [
+            "Use of this WEBSITE by minors requires prior authorisation from their parents, guardians or legal representatives, who will be responsible for the minors' use of the site."
+          ],
+          "items": []
+        },
+        {
+          "title": "Recipients and providers",
+          "paragraphs": [
+            "We may use third-party providers to help us deliver our services, such as hosting, website maintenance, email tools, forms, storage, consented analytics, security or professional services. These providers will only access the information necessary to perform their tasks and must process it under instructions and confidentiality obligations.",
+            "TheNotCoalCompany OÜ will not rent or sell personal information, nor share data with advertisers or advertising networks without explicit consent, except under legal obligation, administrative request or judicial procedure."
+          ],
+          "items": []
+        },
+        {
+          "title": "International data transfers",
+          "paragraphs": [
+            "International data transfers outside legally applicable safeguards are not planned. If providers located outside the European Economic Area or Switzerland are used, appropriate mechanisms will be applied under the GDPR, such as standard contractual clauses or other recognised safeguards."
+          ],
+          "items": []
+        },
+        {
+          "title": "Data security",
+          "paragraphs": [
+            "The WEBSITE applies appropriate technical and organisational measures to provide a level of security suited to the risk, seeking to ensure the confidentiality, integrity and availability of personal data.",
+            "Reasonable security mechanisms, technical maintenance, software updates, protection against malicious activity and measures aimed at preserving system resilience are used."
+          ],
+          "items": []
+        },
+        {
+          "title": "Browsing advice",
+          "paragraphs": [],
+          "items": [
+            { "label": "", "text": "Check that you are accessing the correct domain before entering personal data." },
+            { "label": "", "text": "Do not use links received by email, SMS or messaging if you suspect they may be fraudulent." },
+            { "label": "", "text": "Keep your browser and operating system updated to improve security." },
+            { "label": "", "text": "Review your browser privacy and cookie settings." }
+          ]
+        }
+      ],
+      "rights": {
+        "title": "What rights do you have regarding your data?",
+        "paragraphs": [
+          "You have the right to know whether the WEBSITE is processing personal data concerning you. You may also request access, rectification, deletion, objection, restriction of processing and portability of your data, as well as withdraw consent where processing is based on consent.",
+          "You may exercise your rights by contacting TheNotCoalCompany OÜ at hi@notcoal.eu, indicating Data Protection Rights or GDPR Rights in the subject line and providing enough information to verify your identity."
+        ]
+      },
+      "userObligations": {
+        "title": "User obligations",
+        "text": "The user undertakes to ensure the accuracy of the data provided and to communicate any changes. When providing third-party data, the user declares that they have obtained sufficient authorisation and informed those persons under applicable rules."
+      },
+      "commercial": {
+        "title": "Commercial communications",
+        "textBeforeEmail": "You may opt out of receiving commercial communications by requesting it by email at",
+        "textAfterEmail": "with the subject line I do not wish to receive commercial communications."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "textBeforeLink": "The WEBSITE may use necessary functional cookies, language cookies, cookies linked to contact forms and, if implemented and consented to, analytics or marketing cookies. You can find more information in our"
+      },
+      "finalSections": [
+        {
+          "title": "Website content and links",
+          "text": "This WEBSITE may contain links to third-party websites whose privacy policies are not controlled by TheNotCoalCompany OÜ. When accessing those sites, the user should review and decide whether to accept their privacy and cookie policies."
+        },
+        {
+          "title": "Intellectual and industrial property",
+          "text": "The elements that form part of the WEBSITE, including texts, design, structure, code, logos, trademarks, images and other distinctive signs, are owned by TheNotCoalCompany OÜ or its collaborators, unless otherwise indicated, and are protected by intellectual and industrial property rights."
+        },
+        {
+          "title": "Liability",
+          "text": "TheNotCoalCompany OÜ makes reasonable efforts to keep the WEBSITE updated, secure and available, but does not guarantee the absolute absence of errors, interruptions or technical incidents. Access to and use of the WEBSITE is the user's responsibility."
+        },
+        {
+          "title": "Updates to this policy",
+          "text": "This Privacy Policy may be updated periodically. The terms published at the time of WEBSITE use will apply. We recommend reviewing this page periodically to stay informed."
+        },
+        {
+          "title": "Applicable law",
+          "text": "This policy will be interpreted in accordance with applicable data protection rules in the European Union, including the GDPR, and any other rules applicable to TheNotCoalCompany OÜ."
+        }
+      ]
+    }
   },
   "terms": {
     "badge": "Terms",
