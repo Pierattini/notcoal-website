@@ -66,9 +66,7 @@ export default function ProjectsPage() {
   const categories = [
   { key: "Todos", label: t.projects.filters.all },
   { key: "Solar PV", label: t.projects.filters.solar },
-  { key: "BESS", label: t.projects.filters.bess },
-  { key: "EPC", label: t.projects.filters.epc },
-  { key: "Consulting", label: t.projects.filters.consulting }
+  { key: "BESS", label: t.projects.filters.bess }
 ];
   const [activeCategory, setActiveCategory] =
     useState("Todos");

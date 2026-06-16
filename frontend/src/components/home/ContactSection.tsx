@@ -499,8 +499,8 @@ function ContactSectionContent() {
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 position: 'relative',
-                height: '84px',
-                minHeight: 'auto'
+                height: formData.archivos.length === 0 ? '84px' : 'auto',
+                minHeight: formData.archivos.length === 0 ? 'auto' : '84px'
               }}
               onDragOver={(e) => {
                 e.preventDefault();
@@ -531,15 +531,15 @@ function ContactSectionContent() {
                   position: 'absolute',
                   opacity: 0,
                   width: '100%',
-                  height: '100%',
+                  height: '84px',
                   cursor: 'pointer',
                   left: 0,
                   top: 0
                 }}
               />
               <div style={{
-                pointerEvents: 'none',
-                height: '100%',
+                pointerEvents: formData.archivos.length === 0 ? 'none' : 'auto',
+                height: formData.archivos.length === 0 ? '100%' : 'auto',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -560,20 +560,22 @@ function ContactSectionContent() {
                     <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 8px 0', fontSize: '13px' }}>
                       ✓ {formData.archivos.length} archivo(s)
                     </p>
-                    <div style={{ marginTop: '8px' }}>
+                    <div style={{ marginTop: '8px', width: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {Array.from(formData.archivos).map((file, idx) => (
                         <div
                           key={idx}
+                          className="uploadedFileCard"
                           style={{
-                            fontSize: '11px',
+                            fontSize: '12px',
                             color: '#cbd5e1',
-                            marginBottom: '4px',
-                            padding: '6px 10px',
+                            padding: '10px 12px',
                             background: 'rgba(245,243,239,0.05)',
-                            borderRadius: '6px',
+                            borderRadius: '8px',
                             display: 'flex',
                             justifyContent: 'space-between',
-                            alignItems: 'center'
+                            alignItems: 'center',
+                            gap: '12px',
+                            minWidth: 0
                           }}
                         >
                           <span>📄 {file.name}</span>
@@ -593,7 +595,8 @@ function ContactSectionContent() {
                               color: 'rgba(255, 99, 99, 1)',
                               cursor: 'pointer',
                               fontSize: '12px',
-                              padding: '0 4px'
+                              padding: '0 4px',
+                              flexShrink: 0
                             }}
                           >
                             ✕

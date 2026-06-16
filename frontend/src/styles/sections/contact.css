@@ -230,6 +230,18 @@
     0 0 0 4px rgba(29,82,72,0.28);
 }
 
+.uploadedFileCard > span:first-child {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uploadedFileCard > button {
+  flex-shrink: 0;
+}
+
 
 .premiumForm button {
 
