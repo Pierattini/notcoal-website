@@ -315,7 +315,7 @@
 .projectsHero {
   position: relative;
   min-height: 80vh;
-  padding: 120px 7% 100px;
+  padding: 170px 7% 130px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -429,7 +429,6 @@
   max-width: 1200px;
   position: relative;
   padding-bottom: 0;
-  padding-top: 50px;
   margin-bottom: 0;
 }
 
