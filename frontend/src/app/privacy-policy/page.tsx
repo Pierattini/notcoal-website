@@ -1,14 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function PrivacyPolicyPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="legalPage">
       <section className="legalHero">
         <div className="legalContainer">
-          <span className="sectionBadge">Privacy Policy</span>
-          <h1>Privacy Policy</h1>
+          <span className="sectionBadge">{t.legalPages.privacy.badge}</span>
+          <h1>{t.legalPages.privacy.title}</h1>
           <p>
-            Privacy and data protection information for users of The Not Coal Company website.
+            {t.legalPages.privacy.description}
           </p>
         </div>
       </section>
