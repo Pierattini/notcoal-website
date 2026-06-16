@@ -36,8 +36,7 @@ const companyInfo = {
   registryCode: '17503248',
   vatNumber: 'EE102984561',
   address: 'Tööstuse 75-71, Tallinn, Estonia 10416',
-  phone: '+34 611 354 698',
-  founder: 'Marisol Masella'
+  phone: '+34 611 354 698'
 };
 
 function escapeHtml(value: string) {
@@ -290,9 +289,9 @@ attachments
             <td align="center" style="padding: 34px 18px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 760px; overflow: hidden; border-radius: 28px; background: #10251f; box-shadow: 0 28px 80px rgba(16,37,31,0.2);">
                 <tr>
-                  <td style="padding: 42px 38px 36px; text-align: center; background: #10251f;">
+                  <td style="padding: 42px 38px 36px; text-align: center; background: #F5F3EF;">
                     ${emailLogoSrc ? `<img src="${emailLogoSrc}" width="260" alt="The Not Coal Company" style="display: block; margin: 0 auto 22px; max-width: 260px; height: auto;">` : ''}
-                    <h1 style="margin: 14px 0 0; color: #f5f3ef; font-size: 34px; line-height: 1.08; letter-spacing: 0.08em;">NEW CONTACT REQUEST</h1>
+                    <h1 style="margin: 14px 0 0; color: #333333; font-size: 34px; line-height: 1.08; letter-spacing: 0.08em;">NEW CONTACT REQUEST</h1>
                   </td>
                 </tr>
 
@@ -337,27 +336,13 @@ attachments
 
                     ${meetingSection}
 
-                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top: 24px; background: #10251f; border-radius: 18px;">
-                      <tr>
-                        <td style="padding: 30px;">
-                          <div style="color: #d7c6a1; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;">Founder & Director</div>
-                          <h2 style="margin: 10px 0 8px; color: #f5f3ef; font-size: 28px; line-height: 1.15;">Marisol Masella</h2>
-                          <p style="margin: 0 0 18px; color: rgba(245,243,239,0.78); font-size: 14px; line-height: 1.7;">
-                            10+ years &middot; 550+ MW delivered &middot; Solar PV &amp; BESS &middot; European markets
-                          </p>
-                          <div style="padding: 20px; border: 1px solid rgba(215,198,161,0.24); border-radius: 14px; background: rgba(245,243,239,0.06); color: #f5f3ef; font-size: 17px; line-height: 1.65; font-style: italic;">
-                            "Today's energy transition needs people who understand both the megawatts and the contracts — and are willing to own the outcome."
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
                   </td>
                 </tr>
 
                 <tr>
-                  <td style="padding: 32px 34px; background: #10251f; text-align: center;">
-                    <p style="margin: 0 0 8px; color: #f5f3ef; font-size: 16px; font-weight: 700;">${companyInfo.name}</p>
-                    <p style="margin: 0; color: rgba(245,243,239,0.72); font-size: 13px; line-height: 1.8;">
+                  <td style="padding: 32px 34px; background: #F5F3EF; text-align: center;">
+                    <p style="margin: 0 0 8px; color: #333333; font-size: 16px; font-weight: 700;">${companyInfo.name}</p>
+                    <p style="margin: 0; color: rgba(51,51,51,0.72); font-size: 13px; line-height: 1.8;">
                       Registry code: ${companyInfo.registryCode}<br>
                       VAT: ${companyInfo.vatNumber}<br>
                       ${companyInfo.address}<br>
