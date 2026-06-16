@@ -18,6 +18,10 @@
   max-width: 560px;
 }
 
+.companyLeft .sectionBadge {
+  color: var(--color-green);
+}
+
 .companyRight {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -25,7 +29,7 @@
 }
 
 .companySection h2 {
-  color: #020617;
+  color: var(--color-graphite);
   font-size: clamp(36px, 3.2vw, 54px);
   margin-bottom: 20px;
 }
