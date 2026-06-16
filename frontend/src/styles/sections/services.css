@@ -613,6 +613,10 @@
   margin-top: 8px !important;
 }
 @media (max-width: 768px) {
+  .servicesHero {
+    padding-top: 120px;
+  }
+
   .serviceRow,
   .serviceRow.reverse {
     grid-template-columns: 1fr;

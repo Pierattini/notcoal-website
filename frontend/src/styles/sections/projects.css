@@ -1404,9 +1404,9 @@ font-size: clamp(24px, 2.5vw, 34px);
 .projectsHero {
   min-height: auto;
   height: auto;
-  padding: 100px 7% 20px;
+  padding: 120px 7% 20px;
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
   .projectsHero h1 {
