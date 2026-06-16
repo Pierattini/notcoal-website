@@ -98,7 +98,7 @@
   color: #1f2937;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
 }
 .projectDetails {
   display: grid;
@@ -698,6 +698,7 @@
   font-size: 20px;
   margin-bottom: 34px;
   max-width: 680px;
+  text-align: justify;
 }
 
 .projectShowcaseInfo strong {
@@ -779,6 +780,7 @@
   color: var(--text-inverse);
   line-height: 1.5;
   font-size: 20px;
+  text-align: justify;
 }
 
 .projectsStatementImage {

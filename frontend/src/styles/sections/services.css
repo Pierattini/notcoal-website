@@ -245,6 +245,7 @@
 
   color: var(--text-inverse);
   opacity: 1;
+  text-align: justify;
 }
 
 .serviceVisual {
@@ -405,6 +406,7 @@
   margin: 0;
   color: var(--text-inverse);
   line-height: 1.4;
+  text-align: justify;
 }
 
 .serviceStep.open .serviceStepContent,
@@ -541,6 +543,7 @@
   color: var(--text-inverse);
   line-height: 1.5;
   font-size: 20px;
+  text-align: justify;
 }
 
 .coverImage {

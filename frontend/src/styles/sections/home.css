@@ -25,7 +25,7 @@
 }
 
 .companySection h2 {
-  color: var(--color-graphite);
+  color: #020617;
   font-size: clamp(36px, 3.2vw, 54px);
   margin-bottom: 20px;
 }
@@ -112,6 +112,7 @@
   color: var(--text-inverse);
   margin-bottom: 24px;
   max-width: 720px;
+  text-align: justify;
 }
 
 .projectsSection {
@@ -236,6 +237,7 @@ main .hero h1 {
   line-height: 1.5;
 
   color: var(--text-inverse);
+  text-align: justify;
 }
 
 .overviewImage {

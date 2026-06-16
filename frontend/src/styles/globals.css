@@ -548,6 +548,10 @@ img {
   line-height: 1.75;
 }
 
+.legalDocument p {
+  text-align: justify;
+}
+
 .legalDocument a {
   color: var(--color-green);
   font-weight: 700;

@@ -236,6 +236,7 @@ h2/* ======================================
   color: var(--text-inverse);
   line-height: 1.5;
   font-size: 18px;
+  text-align: justify;
 }
 
 .missionGrid {
@@ -394,6 +395,7 @@ h2/* ======================================
   color: var(--text-inverse);
   margin-bottom: 28px;
   max-width: 720px;
+  text-align: justify;
 }
 
 /* ======================================
@@ -600,6 +602,7 @@ h2/* ======================================
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 24px;
+  text-align: justify;
 }
 
 /* ======================================
