@@ -613,6 +613,13 @@
   margin-top: 8px !important;
 }
 @media (max-width: 768px) {
+  .companyHero,
+  .servicesHero,
+  .projectsHero {
+    padding-top: 120px;
+    text-align: center;
+  }
+
   .servicesHero {
     padding-top: 120px;
   }
