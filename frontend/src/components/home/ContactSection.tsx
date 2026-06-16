@@ -578,11 +578,14 @@ function ContactSectionContent() {
                             minWidth: 0
                           }}
                         >
-                          <span>
-                            📄 {file.name}
-                            <small>
-                              {(file.size / 1024).toFixed(1)} KB
-                            </small>
+                          <span className="uploadedFileInfo">
+                            <span className="uploadedFileIcon" aria-hidden="true">📄</span>
+                            <span className="uploadedFileMeta">
+                              <strong>{file.name}</strong>
+                              <small>
+                                {(file.size / 1024).toFixed(1)} KB
+                              </small>
+                            </span>
                           </span>
                           <button
                             type="button"

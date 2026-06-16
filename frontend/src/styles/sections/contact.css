@@ -234,8 +234,32 @@
     0 0 0 4px rgba(29,82,72,0.28);
 }
 
-.uploadedFileCard > span:first-child {
-  flex: 1;
+.uploadedFileCard > .uploadedFileInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: calc(100% - 32px);
+  color: rgba(245,243,239,0.96);
+}
+
+.uploadedFileIcon {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.uploadedFileMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.uploadedFileMeta strong {
+  display: block;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -244,15 +268,29 @@
   font-weight: 600;
 }
 
-.uploadedFileCard > span:first-child small {
-  margin-left: 8px;
+.uploadedFileMeta small {
+  flex: 0 0 auto;
   color: rgba(245,243,239,0.62);
   font-size: 11px;
   font-weight: 500;
 }
 
-.uploadedFileCard > button {
+.premiumForm .uploadedFileCard > button {
   flex-shrink: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  line-height: 1;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+
+.premiumForm .uploadedFileCard > button:hover,
+.premiumForm .uploadedFileCard > button:focus-visible {
+  transform: none;
+  filter: none;
+  box-shadow: none;
 }
 
 
