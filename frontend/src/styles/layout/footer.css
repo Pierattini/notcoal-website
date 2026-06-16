@@ -447,9 +447,8 @@
   transition: 0.25s ease;
 }
 
-.footerMenuSimple a,
 .footerLegalSimple a {
-  font-size: 14px;
+  font-size: 7px;
 }
 
 .footerSimple a:hover {
@@ -500,7 +499,7 @@
   }
 
   .footerLegalSimple a {
-    font-size: 13px;
+    font-size: 7.5px;
   }
 
 }
