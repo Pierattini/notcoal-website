@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
           <h2>Cookies</h2>
           <p>
             El WEBSITE puede utilizar cookies funcionales necesarias, cookies de idioma, cookies vinculadas a formularios de contacto y, si se implementan y usted lo consiente, cookies analíticas o de marketing. Puede consultar más información en nuestra{" "}
-            <Link href="/cookies-policy">Cookies Policy</Link>.
+            <Link href="/cookies-policy">{t.legalLinks.cookiesPolicy}</Link>.
           </p>
 
           <h2>Contenido de la web y enlaces</h2>
@@ -184,7 +184,7 @@ export default function PrivacyPolicyPage() {
 
           <h2>Actualizaciones de esta política</h2>
           <p>
-            Esta Privacy Policy podrá actualizarse periódicamente. Resultarán aplicables las condiciones publicadas en el momento de utilización del WEBSITE. Se recomienda revisar esta página de forma periódica para mantenerse informado.
+            Esta {t.legalLinks.privacyPolicy} podrá actualizarse periódicamente. Resultarán aplicables las condiciones publicadas en el momento de utilización del WEBSITE. Se recomienda revisar esta página de forma periódica para mantenerse informado.
           </p>
 
           <h2>Legislación aplicable</h2>

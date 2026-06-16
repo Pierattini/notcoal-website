@@ -1,14 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CookiesPolicyPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="legalPage">
       <section className="legalHero">
         <div className="legalContainer">
-          <span className="sectionBadge">Cookies Policy</span>
-          <h1>Cookies Policy</h1>
+          <span className="sectionBadge">{t.legalPages.cookies.badge}</span>
+          <h1>{t.legalPages.cookies.title}</h1>
           <p>
-            This Cookie Policy applies to visitors and legal permanent residents of the European Economic Area and Switzerland.
+            {t.legalPages.cookies.description}
           </p>
         </div>
       </section>
@@ -125,7 +130,7 @@ export default function CookiesPolicyPage() {
 
           <p>
             For more information about the processing of personal data, please read our{" "}
-            <Link href="/privacy-policy">Privacy Policy</Link>.
+            <Link href="/privacy-policy">{t.legalLinks.privacyPolicy}</Link>.
           </p>
         </div>
       </section>

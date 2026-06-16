@@ -13,6 +13,30 @@
   "cookiesPolicy": "Política de Cookies"
 },
 
+"legalPages": {
+  "privacy": {
+    "badge": "Pol\u00edtica de Privacidad",
+    "title": "Pol\u00edtica de Privacidad",
+    "description": "Informaci\u00f3n sobre privacidad y protecci\u00f3n de datos para los usuarios del sitio web de The Not Coal Company."
+  },
+  "terms": {
+    "badge": "T\u00e9rminos",
+    "title": "T\u00e9rminos y Condiciones",
+    "description": "Lee las condiciones de uso de nuestros servicios y la normativa que rige la relaci\u00f3n entre el usuario y The Not Coal Company.",
+    "useTitle": "Condiciones de uso",
+    "useText": "El uso del sitio implica la aceptaci\u00f3n de estas condiciones. El contenido se proporciona con fines informativos y comerciales, sin que ello implique una relaci\u00f3n contractual autom\u00e1tica.",
+    "accessTitle": "Acceso y uso del sitio",
+    "accessText": "El usuario se compromete a no utilizar recursos del sitio para actividades il\u00edcitas, y a respetar la propiedad intelectual del contenido publicado.",
+    "changesTitle": "Modificaciones",
+    "changesText": "The Not Coal Company se reserva el derecho a modificar estas condiciones y el contenido del sitio en cualquier momento. Las actualizaciones se aplicar\u00e1n desde su publicaci\u00f3n."
+  },
+  "cookies": {
+    "badge": "Pol\u00edtica de Cookies",
+    "title": "Pol\u00edtica de Cookies",
+    "description": "Esta Pol\u00edtica de Cookies se aplica a visitantes y residentes legales permanentes del Espacio Econ\u00f3mico Europeo y Suiza."
+  }
+},
+
 "home": {
 "hero": {
 "badge": "Growth in Energy",

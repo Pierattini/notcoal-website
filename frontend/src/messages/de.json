@@ -13,6 +13,30 @@
   "cookiesPolicy": "Cookie-Richtlinie"
 },
 
+"legalPages": {
+  "privacy": {
+    "badge": "Datenschutzerkl\u00e4rung",
+    "title": "Datenschutzerkl\u00e4rung",
+    "description": "Informationen zu Datenschutz und Datenverarbeitung f\u00fcr Nutzer der Website von The Not Coal Company."
+  },
+  "terms": {
+    "badge": "Bedingungen",
+    "title": "Allgemeine Gesch\u00e4ftsbedingungen",
+    "description": "Lesen Sie die Nutzungsbedingungen unserer Dienstleistungen und die Regeln f\u00fcr die Beziehung zwischen dem Nutzer und The Not Coal Company.",
+    "useTitle": "Nutzungsbedingungen",
+    "useText": "Die Nutzung der Website setzt die Annahme dieser Bedingungen voraus. Die Inhalte werden zu Informations- und Gesch\u00e4ftszwecken bereitgestellt und begr\u00fcnden nicht automatisch ein Vertragsverh\u00e4ltnis.",
+    "accessTitle": "Zugang und Nutzung der Website",
+    "accessText": "Der Nutzer verpflichtet sich, die Ressourcen der Website nicht f\u00fcr rechtswidrige Aktivit\u00e4ten zu verwenden und das geistige Eigentum der ver\u00f6ffentlichten Inhalte zu respektieren.",
+    "changesTitle": "\u00c4nderungen",
+    "changesText": "The Not Coal Company beh\u00e4lt sich das Recht vor, diese Bedingungen und die Inhalte der Website jederzeit zu \u00e4ndern. Aktualisierungen gelten ab ihrer Ver\u00f6ffentlichung."
+  },
+  "cookies": {
+    "badge": "Cookie-Richtlinie",
+    "title": "Cookie-Richtlinie",
+    "description": "Diese Cookie-Richtlinie gilt f\u00fcr Besucher und rechtm\u00e4\u00dfige st\u00e4ndige Einwohner des Europ\u00e4ischen Wirtschaftsraums und der Schweiz."
+  }
+},
+
 "home": {
 "hero": {
 "badge": "Growth in Energy",

@@ -13,6 +13,30 @@
   "cookiesPolicy": "Cookies Policy"
 },
 
+"legalPages": {
+  "privacy": {
+    "badge": "Privacy Policy",
+    "title": "Privacy Policy",
+    "description": "Privacy and data protection information for users of The Not Coal Company website."
+  },
+  "terms": {
+    "badge": "Terms",
+    "title": "Terms and Conditions",
+    "description": "Read the terms of use for our services and the rules governing the relationship between the user and The Not Coal Company.",
+    "useTitle": "Terms of use",
+    "useText": "Use of the website implies acceptance of these terms. The content is provided for informational and commercial purposes and does not automatically create a contractual relationship.",
+    "accessTitle": "Access and use of the website",
+    "accessText": "The user agrees not to use website resources for unlawful activities and to respect the intellectual property of the published content.",
+    "changesTitle": "Changes",
+    "changesText": "The Not Coal Company reserves the right to modify these terms and the website content at any time. Updates will apply from the moment they are published."
+  },
+  "cookies": {
+    "badge": "Cookies Policy",
+    "title": "Cookies Policy",
+    "description": "This Cookie Policy applies to visitors and legal permanent residents of the European Economic Area and Switzerland."
+  }
+},
+
 "home": {
 "hero": {
 "badge": "Growth in Energy",
