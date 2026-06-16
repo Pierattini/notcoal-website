@@ -620,10 +620,6 @@
     text-align: center;
   }
 
-  .servicesHero {
-    padding-top: 120px;
-  }
-
   .serviceRow,
   .serviceRow.reverse {
     grid-template-columns: 1fr;
