@@ -1,10 +1,22 @@
 "use client";
 
+import type { TouchEvent } from "react";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
 import HeroBadge from "@/components/ui/HeroBadge";
+
+const SERVICE_IDS = [
+  "service01",
+  "service02",
+  "service03",
+  "service04",
+  "service05",
+  "service06",
+  "service07"
+];
+
 function AccordionItem({
   index,
   title,
@@ -75,6 +87,7 @@ function AccordionItem({
 export default function ServicesPage() {
 
   const { t } = useLanguage();
+  const touchStartX = useRef<number | null>(null);
   const service01Items = t.services.service01.items;
   const service02Items = t.services.service02.items;
   const service03Items = t.services.service03.items;
@@ -82,6 +95,61 @@ export default function ServicesPage() {
   const service05Items = t.services.service05.items;
   const service06Items = t.services.service06.items;
   const service07Items = t.services.service07.items;
+  const handleServicesTouchStart = (
+    event: TouchEvent<HTMLElement>
+  ) => {
+    if (window.innerWidth > 768) {
+      return;
+    }
+
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleServicesTouchEnd = (
+    event: TouchEvent<HTMLElement>
+  ) => {
+    if (window.innerWidth > 768 || touchStartX.current === null) {
+      return;
+    }
+
+    const touchEndX = event.changedTouches[0]?.clientX;
+
+    if (touchEndX === undefined) {
+      touchStartX.current = null;
+      return;
+    }
+
+    const deltaX = touchStartX.current - touchEndX;
+    touchStartX.current = null;
+
+    if (Math.abs(deltaX) < 50) {
+      return;
+    }
+
+    const currentIndex = SERVICE_IDS.reduce((closestIndex, serviceId, index) => {
+      const currentElement = document.getElementById(serviceId);
+      const closestElement = document.getElementById(SERVICE_IDS[closestIndex]);
+
+      if (!currentElement || !closestElement) {
+        return closestIndex;
+      }
+
+      return Math.abs(currentElement.getBoundingClientRect().top) <
+        Math.abs(closestElement.getBoundingClientRect().top)
+        ? index
+        : closestIndex;
+    }, 0);
+
+    const nextIndex =
+      deltaX > 0
+        ? Math.min(currentIndex + 1, SERVICE_IDS.length - 1)
+        : Math.max(currentIndex - 1, 0);
+
+    document
+      .getElementById(SERVICE_IDS[nextIndex])
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <main className="servicesPage">
 
@@ -126,7 +194,11 @@ export default function ServicesPage() {
 
 
 {/* BLOQUE 1 */}
-<section className="servicesShowcase">
+<section
+  className="servicesShowcase"
+  onTouchStart={handleServicesTouchStart}
+  onTouchEnd={handleServicesTouchEnd}
+>
 
 {/* SERVICE 01 */}
 
@@ -155,7 +227,7 @@ export default function ServicesPage() {
   href="/?service=service01#contacto"
   className="primaryBtn"
 >
-  {t.services.service01.button}
+  {t.services.commonButton}
 </Link>
   </div>
 
@@ -198,7 +270,7 @@ export default function ServicesPage() {
   href="/?service=service02#contacto"
   className="primaryBtn"
 >
-  {t.services.service02.button}
+  {t.services.commonButton}
 </Link>
 </div>
   <div className="serviceVisual">
@@ -239,7 +311,7 @@ export default function ServicesPage() {
  href="/?service=service03#contacto"
   className="primaryBtn"
 >
-  {t.services.service03.button}
+  {t.services.commonButton}
 </Link>
   </div>
 
@@ -282,7 +354,7 @@ export default function ServicesPage() {
   href="/?service=service04#contacto"
   className="primaryBtn"
 >
-  {t.services.service04.button}
+  {t.services.commonButton}
 </Link>
   </div>
 
@@ -324,7 +396,7 @@ export default function ServicesPage() {
   href="/?service=service05#contacto"
   className="primaryBtn"
 >
-  {t.services.service05.button}
+  {t.services.commonButton}
 </Link>
   </div>
 
@@ -366,7 +438,7 @@ export default function ServicesPage() {
   href="/?service=service06#contacto"
   className="primaryBtn"
 >
-  {t.services.service06.button}
+  {t.services.commonButton}
 </Link>
   </div>
 
@@ -408,7 +480,7 @@ export default function ServicesPage() {
   href="/?service=service07#contacto"
   className="primaryBtn"
 >
-  {t.services.service07.button}
+  {t.services.commonButton}
 </Link>
   </div>
 
