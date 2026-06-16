@@ -499,6 +499,10 @@
     line-height: 1.3;
   }
 
+  .footerLegalSimple a {
+    font-size: 13px;
+  }
+
 }
 @media (max-width: 768px) {
 

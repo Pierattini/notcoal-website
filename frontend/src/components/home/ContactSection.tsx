@@ -545,7 +545,6 @@ function ContactSectionContent() {
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <div style={{ fontSize: '24px', marginBottom: '6px', lineHeight: 1 }}>📎</div>
                 {formData.archivos.length === 0 ? (
                   <>
                     <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 6px 0', fontSize: '13px' }}>
@@ -567,9 +566,10 @@ function ContactSectionContent() {
                           className="uploadedFileCard"
                           style={{
                             fontSize: '12px',
-                            color: '#cbd5e1',
+                            color: 'rgba(245,243,239,0.94)',
                             padding: '10px 12px',
-                            background: 'rgba(245,243,239,0.05)',
+                            background: 'rgba(245,243,239,0.10)',
+                            border: '1px solid rgba(245,243,239,0.14)',
                             borderRadius: '8px',
                             display: 'flex',
                             justifyContent: 'space-between',
@@ -578,7 +578,12 @@ function ContactSectionContent() {
                             minWidth: 0
                           }}
                         >
-                          <span>📄 {file.name}</span>
+                          <span>
+                            📄 {file.name}
+                            <small>
+                              {(file.size / 1024).toFixed(1)} KB
+                            </small>
+                          </span>
                           <button
                             type="button"
                             onClick={(e) => {
@@ -672,26 +677,26 @@ function ContactSectionContent() {
               type="button"
               className="successModalClose"
               onClick={() => setShowSuccessModal(false)}
-              aria-label="Cerrar modal"
+              aria-label={t.contact.successModal.closeLabel}
             >
               ×
             </button>
 
             <h3 id="successModalTitle">
-              Consulta enviada correctamente
+              {t.contact.successModal.title}
             </h3>
 
             <p>
-              Gracias por contactarnos. Hemos recibido tu consulta y nos pondremos en contacto contigo lo antes posible.
+              {t.contact.successModal.description}
             </p>
 
             <div className="successModalActions">
               <a href="/projects">
-                Ver Proyectos
+                {t.contact.successModal.projectsLink}
               </a>
 
               <a href="/services">
-                Ver Servicios
+                {t.contact.successModal.servicesLink}
               </a>
             </div>
           </div>

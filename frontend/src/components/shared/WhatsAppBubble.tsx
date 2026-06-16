@@ -4,7 +4,7 @@ export default function WhatsAppBubble() {
 
   return (
     <a
-      href="https://wa.me/34600000000"
+      href="https://wa.me/34900123456"
       target="_blank"
       className="whatsappBubble"
     >

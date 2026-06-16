@@ -18,6 +18,10 @@
   margin-bottom: 45px;
 }
 
+.contactHeader .heroBadge {
+  transform: translateY(-10px);
+}
+
 .contactHeader h2 {
 
   font-size: clamp(36px, 3.2vw, 54px);
@@ -236,6 +240,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: rgba(245,243,239,0.96);
+  font-weight: 600;
+}
+
+.uploadedFileCard > span:first-child small {
+  margin-left: 8px;
+  color: rgba(245,243,239,0.62);
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .uploadedFileCard > button {
