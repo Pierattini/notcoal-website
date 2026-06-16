@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 type CookiePreferences = {
   functional: true;
@@ -36,6 +37,7 @@ const saveConsentDecision = (
 };
 
 export default function CookieConsent() {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
   const [view, setView] = useState<ConsentView>("summary");
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
@@ -181,8 +183,8 @@ export default function CookieConsent() {
         )}
 
         <div className="cookieConsentLinks">
-          <Link href="/cookies-policy">Cookies Policy</Link>
-          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/cookies-policy">{t.legalLinks.cookiesPolicy}</Link>
+          <Link href="/privacy-policy">{t.legalLinks.privacyPolicy}</Link>
         </div>
       </div>
     </div>

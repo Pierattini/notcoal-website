@@ -1,6 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="footerSimple">
 
@@ -26,9 +32,9 @@ export default function Footer() {
       </div>
 
       <div className="footerLegalSimple">
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/legal/terminos-condiciones">Terms</a>
-        <a href="/cookies-policy">Cookies Policy</a>
+        <a href="/privacy-policy">{t.legalLinks.privacyPolicy}</a>
+        <a href="/legal/terminos-condiciones">{t.legalLinks.terms}</a>
+        <a href="/cookies-policy">{t.legalLinks.cookiesPolicy}</a>
       </div>
 
     </footer>

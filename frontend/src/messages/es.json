@@ -7,6 +7,12 @@
 "contact": "Contact"
 },
 
+"legalLinks": {
+  "privacyPolicy": "Política de Privacidad",
+  "terms": "Términos",
+  "cookiesPolicy": "Política de Cookies"
+},
+
 "home": {
 "hero": {
 "badge": "Growth in Energy",
