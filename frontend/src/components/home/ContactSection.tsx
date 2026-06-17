@@ -377,19 +377,20 @@ function ContactSectionContent() {
 
             <div className="inputGroup">
               <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Teléfono</label>
-              <PhoneInput
-                className="phoneInputControl"
-                name="telefono"
-                defaultCountry="ES"
-                international
-                countryCallingCodeEditable={false}
-                placeholder="+34 600 000 000"
-                value={formData.telefono}
-                onChange={handlePhoneChange}
-                onCountryChange={handlePhoneCountryChange}
-                aria-invalid={formData.telefono ? !isValidPhoneNumber(formData.telefono) : undefined}
-                required
-              />
+              <div className="phoneInputShell">
+                <PhoneInput
+                  className="phoneInputControl"
+                  name="telefono"
+                  defaultCountry="ES"
+                  placeholder="600 000 000"
+                  value={formData.telefono}
+                  onChange={handlePhoneChange}
+                  onCountryChange={handlePhoneCountryChange}
+                  aria-invalid={formData.telefono ? !isValidPhoneNumber(formData.telefono) : undefined}
+                  required
+                />
+                <span className="phoneDialCode">{getCountryDialCode(phoneCountry)}</span>
+              </div>
               <input
                 type="hidden"
                 name="country_name"

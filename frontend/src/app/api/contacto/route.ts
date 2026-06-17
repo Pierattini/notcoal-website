@@ -365,9 +365,9 @@ attachments
             <td align="center" style="padding: 34px 18px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 640px; border-radius: 24px; overflow: hidden; background: #ffffff;">
                 <tr>
-                  <td style="padding: 36px 30px; text-align: center; background: #10251f;">
+                  <td style="padding: 36px 30px; text-align: center; background: #F5F3EF;">
                     ${emailLogoSrc ? `<img src="${emailLogoSrc}" width="230" alt="The Not Coal Company" style="display: block; margin: 0 auto 18px; max-width: 230px; height: auto;">` : ''}
-                    <h1 style="margin: 0; color: #f5f3ef; font-size: 28px;">Consulta enviada correctamente</h1>
+                    <h1 style="margin: 0; color: #333333; font-size: 28px;">Consulta enviada correctamente</h1>
                   </td>
                 </tr>
                 <tr>

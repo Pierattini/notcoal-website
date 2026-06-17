@@ -234,37 +234,43 @@
     0 0 0 4px rgba(29,82,72,0.28);
 }
 
-.phoneInputControl {
+.phoneInputShell {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
-  background: rgba(245,243,239,0.04);
-  border: 1px solid rgba(245,243,239,0.08);
-  border-radius: 18px;
-  padding: 14px 16px;
-  color: white;
-  font-size: 18px;
-  line-height: 1.6;
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
-.phoneInputControl:focus-within {
-  border-color: rgba(29,82,72,0.6);
-  background: rgba(245,243,239,0.06);
-  box-shadow:
-    0 0 0 4px rgba(29,82,72,0.12);
+.phoneInputControl {
+  display: contents;
 }
 
 .phoneInputControl .PhoneInputCountry {
   display: flex;
   align-items: center;
   gap: 6px;
+  align-self: stretch;
+  order: 1;
   margin: 0;
+  padding: 14px 12px;
+  min-width: 54px;
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 18px;
+  background: rgba(245,243,239,0.04);
   position: relative;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.phoneInputShell:focus-within .PhoneInputCountry,
+.phoneInputShell:focus-within .phoneDialCode,
+.phoneInputShell:focus-within .PhoneInputInput {
+  border-color: rgba(29,82,72,0.6);
+  background: rgba(245,243,239,0.06);
+  box-shadow:
+    0 0 0 4px rgba(29,82,72,0.12);
 }
 
 .phoneInputControl .PhoneInputCountrySelect {
@@ -276,11 +282,24 @@
   cursor: pointer;
   border: 0;
   background: transparent;
+  color: var(--color-cream);
+  font-family: inherit;
+}
+
+.phoneInputControl .PhoneInputCountrySelect option {
+  background: var(--color-graphite);
+  color: var(--color-cream);
+}
+
+.phoneInputControl .PhoneInputCountrySelect option:checked {
+  background: var(--color-green);
+  color: var(--color-cream);
 }
 
 .phoneInputControl .PhoneInputCountryIcon {
   width: 24px;
   height: 18px;
+  display: block;
 }
 
 .phoneInputControl .PhoneInputCountrySelectArrow {
@@ -288,17 +307,41 @@
   opacity: 1;
 }
 
+.phoneDialCode {
+  order: 2;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 14px 14px;
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 18px;
+  background: rgba(245,243,239,0.04);
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  white-space: nowrap;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
 .phoneInputControl .PhoneInputInput {
+  order: 3;
   flex: 1;
   min-width: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  padding: 14px 16px;
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 18px;
+  background: rgba(245,243,239,0.04);
   color: white;
   font-size: 18px;
   line-height: 1.6;
   box-shadow: none;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .phoneInputControl .PhoneInputInput:focus,
