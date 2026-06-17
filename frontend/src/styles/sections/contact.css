@@ -236,23 +236,14 @@
 
 .phoneInputShell {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   align-items: stretch;
-  gap: 8px;
+  gap: 0;
   width: 100%;
 }
 
 .phoneInputControl {
-  display: flex;
-  align-items: stretch;
-  order: 1;
-  border: 1px solid rgba(245,243,239,0.08);
-  border-radius: 18px;
-  background: rgba(245,243,239,0.04);
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+  display: contents;
 }
 
 .phoneInputControl .PhoneInputCountry {
@@ -260,13 +251,23 @@
   align-items: center;
   gap: 6px;
   align-self: stretch;
+  order: 1;
   margin: 0;
   padding: 14px 10px 14px 12px;
   min-width: 54px;
+  border: 1px solid rgba(245,243,239,0.08);
+  border-right: 0;
+  border-radius: 18px 0 0 18px;
+  background: rgba(245,243,239,0.04);
   position: relative;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.phoneInputShell:focus-within .phoneInputControl,
+.phoneInputShell:focus-within .PhoneInputCountry,
+.phoneInputShell:focus-within .phoneDialCode,
 .phoneInputShell:focus-within .PhoneInputInput {
   border-color: rgba(29,82,72,0.6);
   background: rgba(245,243,239,0.06);
@@ -313,17 +314,26 @@
   align-self: stretch;
   display: flex;
   align-items: center;
-  padding: 14px 12px 14px 0;
+  padding: 14px 14px 14px 0;
+  border: 1px solid rgba(245,243,239,0.08);
+  border-left: 0;
+  border-radius: 0 18px 18px 0;
+  background: rgba(245,243,239,0.04);
   color: white;
   font-size: 18px;
   line-height: 1.6;
   white-space: nowrap;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .phoneInputControl .PhoneInputInput {
-  order: 2;
+  order: 3;
   flex: 1;
   min-width: 0;
+  margin-left: 8px;
   padding: 14px 16px;
   border: 1px solid rgba(245,243,239,0.08);
   border-radius: 18px;
