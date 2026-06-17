@@ -234,6 +234,71 @@
     0 0 0 4px rgba(29,82,72,0.28);
 }
 
+.phoneInputControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: rgba(245,243,239,0.04);
+  border: 1px solid rgba(245,243,239,0.08);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.phoneInputControl:focus-within {
+  border-color: rgba(29,82,72,0.6);
+  background: rgba(245,243,239,0.06);
+  box-shadow:
+    0 0 0 4px rgba(29,82,72,0.12);
+}
+
+.phoneInputControl .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.phoneInputControl .PhoneInputCountrySelect {
+  cursor: pointer;
+}
+
+.phoneInputControl .PhoneInputCountryIcon {
+  width: 24px;
+  height: 18px;
+}
+
+.phoneInputControl .PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  box-shadow: none;
+}
+
+.phoneInputControl .PhoneInputInput:focus,
+.phoneInputControl .PhoneInputInput:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.phoneInputControl .PhoneInputInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
 .uploadedFileCard > .uploadedFileInfo {
   display: flex;
   align-items: center;

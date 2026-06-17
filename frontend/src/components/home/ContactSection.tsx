@@ -1,38 +1,28 @@
 'use client';
 
 import { useState } from 'react';
+import PhoneInput, {
+  type Country,
+  getCountryCallingCode,
+  isValidPhoneNumber
+} from 'react-phone-number-input';
 import { useLanguage } from "@/context/LanguageContext";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import HeroBadge from "@/components/ui/HeroBadge";
 
-const countryByPhoneCode: Record<string, string> = {
-  "+34": "Spain",
-  "+44": "United Kingdom",
-  "+49": "Germany",
-  "+39": "Italy",
-  "+33": "France",
-  "+56": "Chile",
-  "+52": "Mexico"
-};
-
 const meetingSlots = ["17:00", "18:00", "19:00", "20:00"];
 
-function detectCountryFromPhone(phone: string) {
-  const normalizedPhone = phone.replace(/\s+/g, "");
-  const matchingCode = Object.keys(countryByPhoneCode)
-    .sort((a, b) => b.length - a.length)
-    .find((code) => normalizedPhone.startsWith(code));
+function getCountryDisplayName(country?: Country) {
+  if (!country) {
+    return "";
+  }
 
-  return matchingCode ? countryByPhoneCode[matchingCode] : "";
+  return new Intl.DisplayNames(["en"], { type: "region" }).of(country) || country;
 }
 
-function detectCountryCodeFromPhone(phone: string) {
-  const normalizedPhone = phone.replace(/\s+/g, "");
-
-  return Object.keys(countryByPhoneCode)
-    .sort((a, b) => b.length - a.length)
-    .find((code) => normalizedPhone.startsWith(code)) || "";
+function getCountryDialCode(country?: Country) {
+  return country ? `+${getCountryCallingCode(country)}` : "";
 }
 
 function isAllowedMeetingDate(dateValue: string) {
@@ -85,6 +75,7 @@ function ContactSectionContent() {
   const [mensajeExito, setMensajeExito] = useState('');
   const [mensajeError, setMensajeError] = useState('');
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [phoneCountry, setPhoneCountry] = useState<Country>("ES");
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -93,13 +84,25 @@ function ContactSectionContent() {
 
     setFormData(prev => ({
       ...prev,
-      [name]: value,
-      ...(name === "telefono"
-        ? { country_name: detectCountryFromPhone(value) }
-        : {}),
-      ...(name === "telefono"
-        ? { country_code: detectCountryCodeFromPhone(value) }
-        : {})
+      [name]: value
+    }));
+  };
+
+  const handlePhoneChange = (value?: string) => {
+    setFormData(prev => ({
+      ...prev,
+      telefono: value || "",
+      country_name: getCountryDisplayName(phoneCountry),
+      country_code: getCountryDialCode(phoneCountry)
+    }));
+  };
+
+  const handlePhoneCountryChange = (country?: Country) => {
+    setPhoneCountry(country || "ES");
+    setFormData(prev => ({
+      ...prev,
+      country_name: getCountryDisplayName(country),
+      country_code: getCountryDialCode(country)
     }));
   };
   
@@ -204,6 +207,7 @@ function ContactSectionContent() {
           country_name: '',
           country_code: ''
         });
+        setPhoneCountry("ES");
 
         setTimeout(() => setMensajeExito(''), 6000);
       } else {
@@ -373,12 +377,17 @@ function ContactSectionContent() {
 
             <div className="inputGroup">
               <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Teléfono</label>
-              <input
-                type="text"
+              <PhoneInput
+                className="phoneInputControl"
                 name="telefono"
+                defaultCountry="ES"
+                international
+                countryCallingCodeEditable={false}
                 placeholder="+34 600 000 000"
                 value={formData.telefono}
-                onChange={handleInputChange}
+                onChange={handlePhoneChange}
+                onCountryChange={handlePhoneCountryChange}
+                aria-invalid={formData.telefono ? !isValidPhoneNumber(formData.telefono) : undefined}
                 required
               />
               <input
