@@ -476,10 +476,12 @@
 }
 
 .contactMiniBadge {
+  display: block;
   color: #3ecf8e;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 3px;
+  text-align: left;
 }
 
 .whyChooseList {

@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const siteUrl = "https://www.notcoal.eu";
 const siteName = "The Not Coal Company";
 const siteDescription = "Renewable energy, Solar PV and BESS consulting.";
-const brandImage = "/logos/logo-square.png";
+const brandImage = "/android-chrome-512x512.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
