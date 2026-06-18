@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const siteUrl = "https://www.notcoal.eu";
 const siteName = "The Not Coal Company";
 const siteDescription = "Renewable energy, Solar PV and BESS consulting.";
-const brandImage = "/logo-square.png";
+const brandImage = "/logos/logo-square.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,10 +31,41 @@ export const metadata: Metadata = {
   description: siteDescription,
   applicationName: siteName,
   icons: {
-    icon: brandImage,
-    shortcut: brandImage,
-    apple: brandImage,
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: brandImage,
+        type: "image/png",
+      },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+      {
+        url: "/apple-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     url: siteUrl,
