@@ -590,3 +590,19 @@ img {
     font-size: 16px;
   }
 }
+
+@media (max-width: 768px) {
+  p,
+  .description,
+  .text,
+  .content,
+  .service-description,
+  .section-description {
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    text-align-last: auto !important;
+    hyphens: manual !important;
+    white-space: normal !important;
+  }
+}
