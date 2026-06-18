@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 const siteUrl = "https://www.notcoal.eu";
 const siteName = "The Not Coal Company";
 const siteDescription = "Renewable energy, Solar PV and BESS consulting.";
-const brandImage = "/android-chrome-512x512.png";
+const brandImage = "/notcoal-icon-512.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   applicationName: siteName,
+  appleWebApp: {
+    capable: true,
+    title: siteName,
+  },
   icons: {
     icon: [
       {
@@ -37,12 +41,12 @@ export const metadata: Metadata = {
         sizes: "any",
       },
       {
-        url: "/favicon-32x32.png",
+        url: "/notcoal-favicon-32.png",
         sizes: "32x32",
         type: "image/png",
       },
       {
-        url: "/favicon-16x16.png",
+        url: "/notcoal-favicon-16.png",
         sizes: "16x16",
         type: "image/png",
       },
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: [
       {
-        url: "/apple-touch-icon.png",
+        url: "/notcoal-apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
       },
