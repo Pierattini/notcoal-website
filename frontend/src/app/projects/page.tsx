@@ -11,7 +11,6 @@ import {
   FaGlobeEurope,
   FaHandshake,
   FaClipboardList,
-  FaBuilding,
   FaTruck,
   FaTasks,
   FaCheckCircle
@@ -316,13 +315,6 @@ export default function ProjectsPage() {
     <FaHandshake className="detailIcon" />
     <div className="detailLabel">
       {activeProject?.company || "-"}
-    </div>
-  </div>
-
-  <div className="projectDetailItem">
-    <FaBuilding className="detailIcon" />
-    <div className="detailLabel">
-      {activeProject?.clienttype || activeProject?.clientType || "x"}
     </div>
   </div>
 
