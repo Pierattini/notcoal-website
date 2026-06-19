@@ -138,7 +138,7 @@ export default function CompanyPage() {
       src="/company/fundadora.jpeg"
       alt="Founder"
       fill
-      className="coverImage"
+      className="coverImage founderPortraitImage"
     />
 
   </div>

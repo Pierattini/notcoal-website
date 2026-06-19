@@ -650,6 +650,7 @@ h2/* ======================================
   overflow: hidden;
   border-radius: 0;
   height: 680px;
+  background: #f4f3f0;
 }
 .coverImage {
   object-fit: cover;
@@ -664,8 +665,15 @@ h2/* ======================================
     transform .7s ease;
 }
 
+.premiumLeft .founderPortraitImage {
+  box-sizing: border-box;
+  object-fit: contain;
+  object-position: center bottom;
+  padding: 0 8%;
+}
+
 .premiumLeft:hover img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .premiumRight small {
