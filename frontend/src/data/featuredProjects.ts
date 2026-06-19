@@ -1,5 +1,5 @@
 export const featuredProjects = [
-  "Germany Solar Hub",
-  "Iberia Energy Park",
-  "Poland Storage Platform"
+  "Sweden Solar Project",
+  "Austria Solar Project",
+  "Germany Solar Project"
 ];

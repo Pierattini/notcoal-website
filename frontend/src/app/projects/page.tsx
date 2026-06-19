@@ -1,14 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
 import HeroBadge from "@/components/ui/HeroBadge";
 import { projects as fallbackProjects } from "@/data/projects";
-import {
-  getFeaturedProjects,
-  getProjects,
-} from "@/services/project.service";
 import {
   FaBolt,
   FaMapMarkedAlt,
@@ -60,9 +56,9 @@ function getProjectDescription(project?: Project) {
 
 export default function ProjectsPage() {
   const { t } = useLanguage();
-  const [allProjects, setAllProjects] = useState<Project[]>([]);
-  const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
-  const [loadingProjects, setLoadingProjects] = useState(true);
+  const [allProjects] = useState<Project[]>(fallbackProjects.Todos);
+  const [featuredProjects] = useState<Project[]>(fallbackProjects.Todos);
+  const [loadingProjects] = useState(false);
   const categories = [
   { key: "Todos", label: t.projects.filters.all },
   { key: "Solar PV", label: t.projects.filters.solar },
@@ -72,27 +68,6 @@ export default function ProjectsPage() {
     useState("Todos");
   const [activeProjectIndex, setActiveProjectIndex] =
   useState<number | null>(0);
-  useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const [projectsData, featuredData] = await Promise.all([
-          getProjects(),
-          getFeaturedProjects(),
-        ]);
-
-        setAllProjects(Array.isArray(projectsData) ? projectsData : []);
-        setFeaturedProjects(Array.isArray(featuredData) ? featuredData : []);
-      } catch (error) {
-        console.error(error);
-        setAllProjects([]);
-        setFeaturedProjects([]);
-      } finally {
-        setLoadingProjects(false);
-      }
-    };
-
-    loadProjects();
-  }, []);
 
   const activeProjects = useMemo(() => {
     if (allProjects.length === 0) {
