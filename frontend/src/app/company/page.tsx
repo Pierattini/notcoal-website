@@ -135,7 +135,7 @@ export default function CompanyPage() {
   <div className="premiumLeft">
 
     <Image
-      src="/company/fundadora.jpg"
+      src="/company/fundadora.jpeg"
       alt="Founder"
       fill
       className="coverImage"
