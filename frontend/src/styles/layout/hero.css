@@ -35,7 +35,7 @@
       transparent 30%
     ),
 
-    url("/banner.jpg");
+    url("/banner.jpeg");
 
   background-size: cover;
   background-position: center;

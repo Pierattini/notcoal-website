@@ -490,7 +490,7 @@ img {
       rgba(51, 51, 51, 0.78),
       rgba(29, 82, 72, 0.82)
     ),
-    url("/banner.jpg");
+    url("/banner.jpeg");
   background-size: cover;
   background-position: center;
   color: white;

@@ -233,7 +233,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service01"
       fill
       className="serviceImg"
@@ -275,7 +275,7 @@ export default function ServicesPage() {
 </div>
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service02"
       fill
       className="serviceImg"
@@ -317,7 +317,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service03"
       fill
       className="serviceImg"
@@ -360,7 +360,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service04"
       fill
       className="serviceImg"
@@ -402,7 +402,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service05"
       fill
       className="serviceImg"
@@ -444,7 +444,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service06"
       fill
       className="serviceImg"
@@ -486,7 +486,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.jpg"
+      src="/banner.jpeg"
       alt="service07"
       fill
       className="serviceImg"
