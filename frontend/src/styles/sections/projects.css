@@ -184,9 +184,6 @@
 .projectDetailItem {
   text-align: center;
 }
-.projectDetailItem:nth-child(9) {
-  display: none;
-}
 .detailIcon {
   font-size: 28px;
   color: #15b38a;
