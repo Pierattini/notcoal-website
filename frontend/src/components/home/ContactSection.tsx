@@ -338,7 +338,7 @@ function ContactSectionContent() {
             borderRadius: '8px',
             padding: '12px 16px',
             marginBottom: '24px',
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--text-secondary)'
           }}>
             <span style={{ color: 'var(--color-green)', fontWeight: 600 }}>*</span> {formText.requiredNotice}
@@ -552,16 +552,16 @@ function ContactSectionContent() {
               }}>
                 {formData.archivos.length === 0 ? (
                   <>
-                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 6px 0', fontSize: '13px' }}>
+                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 6px 0', fontSize: '14px' }}>
                       {formText.fileDropText}
                     </p>
-                    <small style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>
+                    <small style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>
                       {formText.fileHint}
                     </small>
                   </>
                 ) : (
                   <>
-                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 8px 0', fontSize: '13px' }}>
+                    <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 8px 0', fontSize: '14px' }}>
                       {formData.archivos.length} {formText.fileCountSuffix}
                     </p>
                     <div style={{ marginTop: '8px', width: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -570,7 +570,7 @@ function ContactSectionContent() {
                           key={idx}
                           className="uploadedFileCard"
                           style={{
-                            fontSize: '12px',
+                            fontSize: '14px',
                             color: 'rgba(245,243,239,0.94)',
                             padding: '10px 12px',
                             background: 'rgba(245,243,239,0.10)',
@@ -629,7 +629,7 @@ function ContactSectionContent() {
     alignItems: 'flex-start',
     gap: '10px',
     color: '#cbd5e1',
-    fontSize: '13px'
+    fontSize: '14px'
   }}
 >
   <input
