@@ -255,15 +255,9 @@ function ContactSectionContent() {
       {t.contact.whyChooseUsTitle}
     </span>
 
-    <ul className="whyChooseList">
-      {t.contact.whyChooseUsItems.map(
-        (item: string, index: number) => (
-          <li key={index}>
-            {item}
-          </li>
-        )
-      )}
-    </ul>
+    <p className="whyChooseText">
+      {t.contact.whyChooseUsItems.join(" ")}
+    </p>
 
     <div className="contactDivider"></div>
 

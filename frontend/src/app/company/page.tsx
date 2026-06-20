@@ -44,7 +44,7 @@ export default function CompanyPage() {
   <div className="companyIntroImage">
 
     <Image
-      src="/company/company.jpg"
+      src="/company/Company_1.1.png"
       alt="Founder"
       fill
       className="coverImage"

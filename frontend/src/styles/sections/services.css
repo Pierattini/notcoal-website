@@ -603,6 +603,36 @@
 .servicesFinalCta .primaryBtn {
   min-width: 260px;
 }
+
+.servicesFinalCtaWithImage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  padding: 0;
+  text-align: left;
+}
+
+.servicesFinalCtaVisual {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.servicesFinalCtaContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 8%;
+}
+
+.servicesFinalCtaWithImage h2,
+.servicesFinalCtaWithImage p {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
 .serviceStepContentInner p {
   margin: 0 !important;
   padding: 0 !important;
@@ -628,6 +658,18 @@
     padding-right: 0 !important;
     width: 100%;
     overflow: hidden;
+  }
+
+  .servicesFinalCtaWithImage {
+    grid-template-columns: 1fr;
+  }
+
+  .servicesFinalCtaVisual {
+    min-height: 320px;
+  }
+
+  .servicesFinalCtaContent {
+    padding: 60px 7% 90px;
   }
   .serviceVisual {
     height: 340px;

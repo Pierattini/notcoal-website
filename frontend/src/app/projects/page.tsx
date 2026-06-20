@@ -325,9 +325,9 @@ export default function ProjectsPage() {
   <div className="projectDetailItem">
     <FaClipboardList className="detailIcon" />
     <div className="detailLabel">
-      <strong>
+      <span className="projectDetailMainLabel">
         {activeProject?.projectphase || activeProject?.projectPhase || "-"}
-      </strong>
+      </span>
       {(activeProject?.deliverymodel || activeProject?.deliveryModel) && (
         <span className="projectDetailSubLabel">
           {activeProject?.deliverymodel || activeProject?.deliveryModel}

@@ -173,7 +173,7 @@ export default function ServicesPage() {
 
   <div className="servicesIntroImage">
     <Image
-      src="/company/mapa.png"
+      src="/home/Home y Service_1.2.png"
       alt="European Markets"
       fill
       className="coverImage"
@@ -233,7 +233,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/home/Home y Service_1.2.png"
+      src="/services/Services_1.1.png"
       alt="service01"
       fill
       className="serviceImg"
@@ -275,7 +275,7 @@ export default function ServicesPage() {
 </div>
   <div className="serviceVisual">
     <Image
-      src="/banner.png"
+      src="/services/Imagen_3.2.png"
       alt="service02"
       fill
       className="serviceImg"
@@ -317,7 +317,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.png"
+      src="/services/Imagen 3.3.jpg"
       alt="service03"
       fill
       className="serviceImg"
@@ -360,7 +360,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.png"
+      src="/services/Imagen_3.4.jpg"
       alt="service04"
       fill
       className="serviceImg"
@@ -402,7 +402,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.png"
+      src="/services/Services 3.5.png"
       alt="service05"
       fill
       className="serviceImg"
@@ -444,7 +444,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.png"
+      src="/services/Services 3.6.png"
       alt="service06"
       fill
       className="serviceImg"
@@ -486,7 +486,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/banner.png"
+      src="/services/Services 3.7.png"
       alt="service07"
       fill
       className="serviceImg"
@@ -497,7 +497,18 @@ export default function ServicesPage() {
 
 {/* SERVICE 08 CTA */}
 
-<section className="servicesFinalCta">
+<section id="service08" className="servicesFinalCta servicesFinalCtaWithImage">
+
+  <div className="servicesFinalCtaVisual">
+    <Image
+      src="/services/Imagen 3.8.jpg"
+      alt="service08"
+      fill
+      className="serviceImg"
+    />
+  </div>
+
+  <div className="servicesFinalCtaContent">
 
 <span className="miniTag">08</span>
 
@@ -511,6 +522,7 @@ export default function ServicesPage() {
   >
     {t.services.cta.button}
   </Link>
+  </div>
 </section>
 </section>
     </main>
