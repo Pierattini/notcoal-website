@@ -317,7 +317,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/services/imagen-3-3.png"
+      src="/services/imagen-3-3.jpg"
       alt="service03"
       fill
       className="serviceImg"
@@ -360,7 +360,7 @@ export default function ServicesPage() {
 
   <div className="serviceVisual">
     <Image
-      src="/services/imagen-3-4.png"
+      src="/services/imagen-3-4.jpg"
       alt="service04"
       fill
       className="serviceImg"
@@ -501,7 +501,7 @@ export default function ServicesPage() {
 
   <div className="servicesFinalCtaVisual">
     <Image
-      src="/services/imagen-3-8.png"
+      src="/services/imagen-3-8.jpg"
       alt="service08"
       fill
       className="serviceImg"
