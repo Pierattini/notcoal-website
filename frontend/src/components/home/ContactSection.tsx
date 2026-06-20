@@ -36,6 +36,7 @@ function isAllowedMeetingDate(dateValue: string) {
 
 function ContactSectionContent() {
   const { t } = useLanguage();
+  const formText = t.contact.form;
   const searchParams = useSearchParams();
 
   const selectedService =
@@ -134,7 +135,7 @@ function ContactSectionContent() {
     const { value } = e.target;
 
     if (!isAllowedMeetingDate(value)) {
-      e.target.setCustomValidity("Please select Monday, Tuesday, Wednesday or Thursday.");
+      e.target.setCustomValidity(formText.meetingDateError);
       e.target.reportValidity();
       return;
     }
@@ -190,7 +191,7 @@ function ContactSectionContent() {
 
       if (response.ok) {
         setShowSuccessModal(true);
-        setMensajeExito('✓ ¡Consulta enviada exitosamente! Recibirás confirmación en tu email en los próximos minutos.');
+        setMensajeExito(formText.successMessage);
         setMensajeError('');
         setFormData({
           nombre: '',
@@ -212,12 +213,12 @@ function ContactSectionContent() {
         setTimeout(() => setMensajeExito(''), 6000);
       } else {
         const errorData = await response.json();
-        setMensajeError(`❌ ${errorData.error || 'Error al enviar la consulta. Por favor intenta de nuevo.'}`);
+        setMensajeError(errorData.error || formText.submitError);
         setTimeout(() => setMensajeError(''), 5000);
       }
     } catch (error) {
       console.error('Error:', error);
-      setMensajeError('❌ Error de conexión. Verifica tu conexión a internet e intenta de nuevo.');
+      setMensajeError(formText.connectionError);
       setTimeout(() => setMensajeError(''), 5000);
     } finally {
       setEnviando(false);
@@ -346,17 +347,17 @@ function ContactSectionContent() {
             fontSize: '13px',
             color: 'var(--text-secondary)'
           }}>
-            <span style={{ color: 'var(--color-green)', fontWeight: 600 }}>*</span> Campos obligatorios
+            <span style={{ color: 'var(--color-green)', fontWeight: 600 }}>*</span> {formText.requiredNotice}
           </div>
 
           <div className="formGrid">
 
             <div className="inputGroup">
-              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Nombre completo</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>{formText.fullNameLabel}</label>
               <input
                 type="text"
                 name="nombre"
-                placeholder="Tu nombre"
+                placeholder={formText.fullNamePlaceholder}
                 value={formData.nombre}
                 onChange={handleInputChange}
                 required
@@ -364,11 +365,11 @@ function ContactSectionContent() {
             </div>
 
             <div className="inputGroup">
-              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Email</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>{formText.emailLabel}</label>
               <input
                 type="email"
                 name="email"
-                placeholder="tu@email.com"
+                placeholder={formText.emailPlaceholder}
                 value={formData.email}
                 onChange={handleInputChange}
                 required
@@ -376,13 +377,13 @@ function ContactSectionContent() {
             </div>
 
             <div className="inputGroup">
-              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Teléfono</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>{formText.phoneLabel}</label>
               <div className="phoneInputShell">
                 <PhoneInput
                   className="phoneInputControl"
                   name="telefono"
                   defaultCountry="ES"
-                  placeholder="600 000 000"
+                  placeholder={formText.phonePlaceholder}
                   value={formData.telefono}
                   onChange={handlePhoneChange}
                   onCountryChange={handlePhoneCountryChange}
@@ -404,11 +405,11 @@ function ContactSectionContent() {
             </div>
 
             <div className="inputGroup">
-              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Empresa</label>
+              <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>{formText.companyLabel}</label>
               <input
                 type="text"
                 name="empresa"
-                placeholder="Nombre de tu empresa"
+                placeholder={formText.companyPlaceholder}
                 value={formData.empresa}
                 onChange={handleInputChange}
                 required
@@ -424,7 +425,7 @@ function ContactSectionContent() {
     }}>
       *
     </span>
-    Service Required
+    {formText.serviceLabel}
   </label>
 
   <select
@@ -450,13 +451,13 @@ function ContactSectionContent() {
                 checked={formData.wantsMeeting}
                 onChange={handleMeetingCheckboxChange}
               />
-              <span>Request a Meeting</span>
+              <span>{formText.meetingLabel}</span>
             </label>
 
             {formData.wantsMeeting && (
               <div className="meetingFields">
                 <div className="inputGroup">
-                  <label>Preferred Meeting Date</label>
+                  <label>{formText.meetingDateLabel}</label>
                   <input
                     type="date"
                     name="meetingDate"
@@ -467,7 +468,7 @@ function ContactSectionContent() {
                 </div>
 
                 <div className="inputGroup">
-                  <label>Preferred Meeting Time</label>
+                  <label>{formText.meetingTimeLabel}</label>
                   <select
                     name="meetingTime"
                     className="serviceSelect"
@@ -475,7 +476,7 @@ function ContactSectionContent() {
                     onChange={handleInputChange}
                     required={formData.wantsMeeting}
                   >
-                    <option value="">Select a time slot</option>
+                    <option value="">{formText.meetingTimePlaceholder}</option>
                     {meetingSlots.map((slot) => (
                       <option key={slot} value={slot}>
                         {slot}
@@ -487,10 +488,10 @@ function ContactSectionContent() {
             )}
           </div>
           <div className="inputGroup">
-            <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>Mensaje</label>
+            <label><span style={{ color: 'rgba(255, 99, 99, 1)', marginRight: '4px' }}>*</span>{formText.messageLabel}</label>
             <textarea
               name="mensaje"
-              placeholder="Cuéntanos sobre tu proyecto..."
+              placeholder={formText.messagePlaceholder}
               value={formData.mensaje}
               onChange={handleInputChange}
               required
@@ -498,7 +499,7 @@ function ContactSectionContent() {
           </div>
 
           <div className="inputGroup">
-            <label>Archivos e Imágenes (Opcional)</label>
+            <label>{formText.filesLabel}</label>
             <div
               style={{
                 border: '2px dashed rgba(29,82,72,0.5)',
@@ -558,16 +559,16 @@ function ContactSectionContent() {
                 {formData.archivos.length === 0 ? (
                   <>
                     <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 6px 0', fontSize: '13px' }}>
-                      Arrastra archivos aquí o haz clic
+                      {formText.fileDropText}
                     </p>
                     <small style={{ color: 'var(--text-secondary)', fontSize: '12px' }}>
-                      Imágenes, PDF, Word, Excel
+                      {formText.fileHint}
                     </small>
                   </>
                 ) : (
                   <>
                     <p style={{ color: 'var(--color-green)', fontWeight: 600, margin: '0 0 8px 0', fontSize: '13px' }}>
-                      ✓ {formData.archivos.length} archivo(s)
+                      {formData.archivos.length} {formText.fileCountSuffix}
                     </p>
                     <div style={{ marginTop: '8px', width: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {Array.from(formData.archivos).map((file, idx) => (
@@ -617,7 +618,7 @@ function ContactSectionContent() {
                               flexShrink: 0
                             }}
                           >
-                            ✕
+                            x
                           </button>
                         </div>
                       ))}
@@ -648,7 +649,7 @@ function ContactSectionContent() {
   />
 
   <span>
-    He leído y acepto la{" "}
+    {formText.privacyBefore}{" "}
     <a
       href="/politica-privacidad"
       target="_blank"
@@ -657,9 +658,9 @@ function ContactSectionContent() {
         textDecoration: 'underline'
       }}
     >
-      Política de Privacidad
+      {formText.privacyLink}
     </a>{" "}
-    y el tratamiento de mis datos personales.
+    {formText.privacyAfter}
   </span>
 </div>
           <button 
@@ -671,7 +672,7 @@ function ContactSectionContent() {
               cursor: enviando ? 'not-allowed' : 'pointer'
             }}
           >
-            {enviando ? 'Enviando...' : 'Enviar Consulta →'}
+            {enviando ? formText.submitting : formText.submit}
           </button>
 
         </form>
@@ -692,7 +693,7 @@ function ContactSectionContent() {
               onClick={() => setShowSuccessModal(false)}
               aria-label={t.contact.successModal.closeLabel}
             >
-              ×
+              x
             </button>
 
             <h3 id="successModalTitle">

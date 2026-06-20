@@ -495,9 +495,11 @@
 
 .whyChooseList li {
   color: var(--text-secondary);
-  line-height: 1.2;
+  line-height: 1.35;
   font-size: 16px;
-  text-align: justify;
+  text-align: left;
+  word-spacing: normal;
+  letter-spacing: 0;
   margin: 0;
 }
 .contactDivider {

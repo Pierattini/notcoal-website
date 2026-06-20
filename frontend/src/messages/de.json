@@ -380,6 +380,38 @@
     "servicesLink": "Services ansehen"
   },
 
+  "form": {
+    "requiredNotice": "Pflichtfelder",
+    "fullNameLabel": "Vollständiger Name",
+    "fullNamePlaceholder": "Ihr Name",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "sie@email.com",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "600 000 000",
+    "companyLabel": "Unternehmen",
+    "companyPlaceholder": "Name Ihres Unternehmens",
+    "serviceLabel": "Benötigter Service",
+    "meetingLabel": "Meeting anfragen",
+    "meetingDateLabel": "Bevorzugtes Meeting-Datum",
+    "meetingTimeLabel": "Bevorzugte Meeting-Zeit",
+    "meetingTimePlaceholder": "Zeitfenster auswählen",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt...",
+    "filesLabel": "Dateien und Bilder (Optional)",
+    "fileDropText": "Dateien hierher ziehen oder klicken",
+    "fileHint": "Bilder, PDF, Word, Excel",
+    "fileCountSuffix": "Datei(en)",
+    "privacyBefore": "Ich habe die",
+    "privacyLink": "Datenschutzerklärung",
+    "privacyAfter": "gelesen und akzeptiere die Verarbeitung meiner personenbezogenen Daten.",
+    "submit": "Anfrage senden ->",
+    "submitting": "Wird gesendet...",
+    "successMessage": "Anfrage erfolgreich gesendet. Sie erhalten in den nächsten Minuten eine Bestätigung per E-Mail.",
+    "submitError": "Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.",
+    "connectionError": "Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+    "meetingDateError": "Bitte wählen Sie Montag, Dienstag, Mittwoch oder Donnerstag aus."
+  },
+
 "services": {
   "service01": "01 EPC Project Management",
   "service02": "02 EPC Strategy and Partner Facilitation",
@@ -637,7 +669,7 @@
 
   "cta": {
     "title": "Not sure which service applies to your situation?",
-    "description": "Describe your situation. We will identify the right support structure.",
+    "description": "Describe your project. We will identify the right support structure.",
     "button": "Start the Conversation"
   }
 },

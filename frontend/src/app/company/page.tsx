@@ -1,11 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import HeroBadge from "@/components/ui/HeroBadge";
 
 export default function CompanyPage() {
   const { t } = useLanguage();
+  const [expandedMissionBoxes, setExpandedMissionBoxes] = useState({
+    mission: false,
+    vision: false
+  });
+
+  const toggleMissionBox = (key: "mission" | "vision") => {
+    setExpandedMissionBoxes((prev) => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
 
   return (
     <main className="companyPage">
@@ -107,23 +119,43 @@ export default function CompanyPage() {
 
 <section className="missionVision">
 
-  <div className="missionBox">
+  <div className={`missionBox ${expandedMissionBoxes.mission ? "isExpanded" : ""}`}>
 
     <small>{t.company.mission.title}</small>
 
-    <h3>
+    <h3 className="missionBoxText">
       {t.company.mission.text}
     </h3>
 
+    <button
+      type="button"
+      className="missionBoxToggle"
+      onClick={() => toggleMissionBox("mission")}
+      aria-expanded={expandedMissionBoxes.mission}
+      aria-label={expandedMissionBoxes.mission ? "Close mission text" : "Open mission text"}
+    >
+      {expandedMissionBoxes.mission ? "-" : "+"}
+    </button>
+
   </div>
 
-  <div className="missionBox">
+  <div className={`missionBox ${expandedMissionBoxes.vision ? "isExpanded" : ""}`}>
 
     <small>{t.company.vision.title}</small>
 
-    <h3>
+    <h3 className="missionBoxText">
       {t.company.vision.text}
     </h3>
+
+    <button
+      type="button"
+      className="missionBoxToggle"
+      onClick={() => toggleMissionBox("vision")}
+      aria-expanded={expandedMissionBoxes.vision}
+      aria-label={expandedMissionBoxes.vision ? "Close vision text" : "Open vision text"}
+    >
+      {expandedMissionBoxes.vision ? "-" : "+"}
+    </button>
 
   </div>
 

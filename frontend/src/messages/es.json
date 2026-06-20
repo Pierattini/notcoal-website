@@ -380,6 +380,38 @@
     "servicesLink": "Ver Servicios"
   },
 
+  "form": {
+    "requiredNotice": "Campos obligatorios",
+    "fullNameLabel": "Nombre completo",
+    "fullNamePlaceholder": "Tu nombre",
+    "emailLabel": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "600 000 000",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Nombre de tu empresa",
+    "serviceLabel": "Servicio requerido",
+    "meetingLabel": "Solicitar una reunión",
+    "meetingDateLabel": "Fecha preferida para la reunión",
+    "meetingTimeLabel": "Hora preferida para la reunión",
+    "meetingTimePlaceholder": "Selecciona un horario",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+    "filesLabel": "Archivos e imágenes (Opcional)",
+    "fileDropText": "Arrastra archivos aquí o haz clic",
+    "fileHint": "Imágenes, PDF, Word, Excel",
+    "fileCountSuffix": "archivo(s)",
+    "privacyBefore": "He leído y acepto la",
+    "privacyLink": "Política de Privacidad",
+    "privacyAfter": "y el tratamiento de mis datos personales.",
+    "submit": "Enviar consulta ->",
+    "submitting": "Enviando...",
+    "successMessage": "Consulta enviada correctamente. Recibirás confirmación en tu email en los próximos minutos.",
+    "submitError": "Error al enviar la consulta. Por favor intenta de nuevo.",
+    "connectionError": "Error de conexión. Verifica tu conexión a internet e intenta de nuevo.",
+    "meetingDateError": "Por favor selecciona lunes, martes, miércoles o jueves."
+  },
+
 "services": {
   "service01": "01 EPC Project Management",
   "service02": "02 EPC Strategy and Partner Facilitation",
@@ -637,7 +669,7 @@
 
   "cta": {
     "title": "Not sure which service applies to your situation?",
-    "description": "Describe your situation. We will identify the right support structure.",
+    "description": "Describe your project. We will identify the right support structure.",
     "button": "Start the Conversation"
   }
 },

@@ -2,7 +2,7 @@ const currentProjects = [
   {
     id: "sweden-solar-project",
     category: "Solar PV",
-    title: "Sweden Solar Project",
+    title: "Solar PV Project - Sweden",
     description:
       "Utility-scale Solar PV project delivered under a Light EPC contract model.",
     power: "93 MW",
@@ -10,7 +10,6 @@ const currentProjects = [
     country: "Sweden",
     company: "BWP & Sunhelp",
     projectPhase: "EPC",
-    clientType: "x",
     deliveryModel: "Light EPC",
     scopeOfSupport: "Project management",
     status: "Project Completed",
@@ -21,7 +20,7 @@ const currentProjects = [
   {
     id: "austria-solar-project",
     category: "Solar PV",
-    title: "Austria Solar Project",
+    title: "Solar PV Project - Austria",
     description:
       "Utility-scale Solar PV project completed under a construction contract model.",
     power: "71 MW",
@@ -29,7 +28,6 @@ const currentProjects = [
     country: "Austria",
     company: "BWP & Sunhelp",
     projectPhase: "EPC",
-    clientType: "x",
     deliveryModel: "Construction",
     scopeOfSupport: "Project management",
     status: "Project Completed",
@@ -40,7 +38,7 @@ const currentProjects = [
   {
     id: "germany-solar-project",
     category: "Solar PV",
-    title: "Germany Solar Project",
+    title: "Solar PV Project - Germany",
     description:
       "Utility-scale Solar PV project completed under a construction contract model.",
     power: "26 MW",
@@ -48,7 +46,6 @@ const currentProjects = [
     country: "Germany",
     company: "BWP & Sunhelp",
     projectPhase: "EPC",
-    clientType: "x",
     deliveryModel: "Construction",
     scopeOfSupport: "Project management",
     status: "Project Completed",

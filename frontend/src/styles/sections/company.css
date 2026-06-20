@@ -540,17 +540,59 @@ h2/* ======================================
 .missionBox small {
   display: block;
   margin-bottom: 18px;
-  color: var(--color-green);
-  font-size: clamp(18px, 1.35vw, 23px);
+  color: var(--color-graphite);
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 0;
 }
 
 .missionBox h3 {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--text-inverse);
+  font-size: 18px;
+  line-height: 1.5;
+  color: #1d5248;
   font-weight: 500;
+}
+
+.missionBoxText {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.missionBox.isExpanded .missionBoxText {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.missionBoxToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-top: 24px;
+  border: 1px solid rgba(29, 82, 72, 0.18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-green);
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 500;
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease;
+}
+
+.missionBoxToggle:hover {
+  transform: translateY(-2px);
+  border-color: rgba(29, 82, 72, 0.35);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* ======================================

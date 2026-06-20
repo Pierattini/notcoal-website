@@ -380,6 +380,38 @@
     "servicesLink": "View Services"
   },
 
+  "form": {
+    "requiredNotice": "Required fields",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "600 000 000",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company name",
+    "serviceLabel": "Service Required",
+    "meetingLabel": "Request a Meeting",
+    "meetingDateLabel": "Preferred Meeting Date",
+    "meetingTimeLabel": "Preferred Meeting Time",
+    "meetingTimePlaceholder": "Select a time slot",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "filesLabel": "Files and Images (Optional)",
+    "fileDropText": "Drag files here or click",
+    "fileHint": "Images, PDF, Word, Excel",
+    "fileCountSuffix": "file(s)",
+    "privacyBefore": "I have read and accept the",
+    "privacyLink": "Privacy Policy",
+    "privacyAfter": "and the processing of my personal data.",
+    "submit": "Send Request ->",
+    "submitting": "Sending...",
+    "successMessage": "Request sent successfully. You will receive confirmation by email in the next few minutes.",
+    "submitError": "Error sending the request. Please try again.",
+    "connectionError": "Connection error. Check your internet connection and try again.",
+    "meetingDateError": "Please select Monday, Tuesday, Wednesday or Thursday."
+  },
+
 "services": {
   "service01": "01 EPC Project Management",
   "service02": "02 EPC Strategy and Partner Facilitation",
@@ -637,7 +669,7 @@
 
   "cta": {
     "title": "Not sure which service applies to your situation?",
-    "description": "Describe your situation. We will identify the right support structure.",
+    "description": "Describe your project. We will identify the right support structure.",
     "button": "Start the Conversation"
   }
 },

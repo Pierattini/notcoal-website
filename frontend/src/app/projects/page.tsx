@@ -11,8 +11,6 @@ import {
   FaGlobeEurope,
   FaHandshake,
   FaClipboardList,
-  FaTruck,
-  FaTasks,
   FaCheckCircle
 } from "react-icons/fa";
 
@@ -191,7 +189,12 @@ export default function ProjectsPage() {
 
       <section className="projectsFilters">
 
-        {categories.map((category) => (
+        <h2 className="projectsFiltersTitle">
+          Selected Reference Projects
+        </h2>
+
+        <div className="projectsFiltersControls">
+          {categories.map((category) => (
 
           <button
             key={category.key}
@@ -208,7 +211,8 @@ export default function ProjectsPage() {
             {category.label}
           </button>
 
-        ))}
+          ))}
+        </div>
 
       </section>
 
@@ -321,21 +325,14 @@ export default function ProjectsPage() {
   <div className="projectDetailItem">
     <FaClipboardList className="detailIcon" />
     <div className="detailLabel">
-      {activeProject?.projectphase || activeProject?.projectPhase || "-"}
-    </div>
-  </div>
-
-  <div className="projectDetailItem">
-    <FaTruck className="detailIcon" />
-    <div className="detailLabel">
-      {activeProject?.deliverymodel || activeProject?.deliveryModel || "-"}
-    </div>
-  </div>
-
-  <div className="projectDetailItem">
-    <FaTasks className="detailIcon" />
-    <div className="detailLabel">
-      {activeProject?.scopeofsupport || activeProject?.scopeOfSupport || "-"}
+      <strong>
+        {activeProject?.projectphase || activeProject?.projectPhase || "-"}
+      </strong>
+      {(activeProject?.deliverymodel || activeProject?.deliveryModel) && (
+        <span className="projectDetailSubLabel">
+          {activeProject?.deliverymodel || activeProject?.deliveryModel}
+        </span>
+      )}
     </div>
   </div>
 
