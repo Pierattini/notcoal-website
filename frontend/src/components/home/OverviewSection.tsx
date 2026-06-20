@@ -29,7 +29,7 @@ export default function OverviewSection() {
         <div className="overviewImage">
 
           <Image
-  src="/banner.jpg"
+  src="/home/Home y Service_1.2.png"
   alt="The Not Coal Company"
   fill
   className="overviewImg"

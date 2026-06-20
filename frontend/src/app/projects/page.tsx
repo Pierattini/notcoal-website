@@ -48,7 +48,7 @@ function getCountryName(country?: string) {
 }
 
 function getProjectImage(project?: Project) {
-  return project?.imageUrl || project?.image || "/banner.jpeg";
+  return project?.imageUrl || project?.image || "/banner.png";
 }
 
 function getProjectDescription(project?: Project) {
