@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
       <div className="companySingleSection">
         <div className="companySingleImage">
           <Image
-  src="/company/mapa.png"
+  src="/home/cambio.png"
   alt="The Not Coal Company"
   fill
   className="companyImage"
