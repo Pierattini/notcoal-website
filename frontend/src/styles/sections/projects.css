@@ -347,42 +347,35 @@
 /* HERO */
 .projectsHero {
   position: relative;
-  min-height: 80vh;
   padding: 170px 7% 130px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
   background:
     linear-gradient(
-      180deg,
-      rgba(51,51,51,0.88),
-      rgba(51,51,51,0.45)
+      rgba(51,51,51,0.72),
+      rgba(51,51,51,0.82)
     ),
     url("/banner.png");
   background-size: cover;
   background-position: center;
-  background-blend-mode: overlay;
+  color: white;
 }
 
 .projectsHero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 14%, rgba(245,243,239,0.08), transparent 28%);
-  opacity: 0.35;
-  pointer-events: none;
+  display: none;
 }
 
 /* ONDA */
 .projectsHero::after {
   content: "";
   position: absolute;
-  left: -2%;
-  bottom: -2px;
-  width: 104%;
-  height: 260px;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 180px;
   background: var(--color-cream);
   clip-path: polygon(
     0% 72%,
@@ -477,7 +470,6 @@
   position: relative;
   z-index: 4;
   max-width: 1200px;
-  position: relative;
   padding-bottom: 0;
   margin-bottom: 0;
 }
@@ -500,6 +492,11 @@
 }
 
 .projectsMetrics div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 46px 38px;
   background: linear-gradient(180deg, rgba(245,243,239,0.96), rgba(245,243,239,0.90));
   border-radius: 28px;
@@ -1426,8 +1423,7 @@ font-size: clamp(24px, 2.5vw, 34px);
   }
 
   .projectsHero {
-    min-height: 72vh;
-    padding: 180px 7% 80px;
+    padding: 120px 7% 80px;
   }
 
   .projectsHero h1 {
@@ -1470,10 +1466,8 @@ font-size: clamp(24px, 2.5vw, 34px);
 
 @media (max-width: 768px) {
 .projectsHero {
-  min-height: auto;
-  height: auto;
-  padding: 120px 7% 20px;
-  display: block;
+  padding: 120px 7% 80px;
+  display: flex;
   text-align: center;
 }
 
@@ -1535,7 +1529,7 @@ font-size: clamp(24px, 2.5vw, 34px);
   }
 
 .projectsHero::after {
-  height: 55px;
+  height: 60px;
   bottom: -1px;
 }
 
