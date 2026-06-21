@@ -4,7 +4,7 @@ const currentProjects = [
     category: "Solar PV",
     title: "Solar PV Project - Sweden",
     description:
-      "Utility-scale Solar PV project completed under a light EPC contract model. SWEDEN Light EPC activities and works were performed by Bright Watt Partners & Sunhelp.",
+      "Utility-scale Solar PV project completed under a light EPC contract model. Light EPC activities and works were performed by Bright Watt Partners & Sunhelp.",
     power: "93 MW",
     area: "115 ha",
     country: "Sweden",

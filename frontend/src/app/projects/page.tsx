@@ -318,7 +318,13 @@ export default function ProjectsPage() {
   <div className="projectDetailItem">
     <FaHandshake className="detailIcon" />
     <div className="detailLabel">
-      {activeProject?.company || "-"}
+      <Image
+        src="/logos/brightwattpartners_logo.png"
+        alt={activeProject?.company || "BrightWatt Partners"}
+        width={110}
+        height={42}
+        className="projectPartnerLogo"
+      />
     </div>
   </div>
 
@@ -536,7 +542,13 @@ export default function ProjectsPage() {
 
   <div className="featuredProjectItem">
     <FaHandshake className="featuredIcon" />
-    <strong>{project.company || "-"}</strong>
+    <Image
+      src="/logos/brightwattpartners_logo.png"
+      alt={project.company || "BrightWatt Partners"}
+      width={96}
+      height={36}
+      className="featuredProjectPartnerLogo"
+    />
   </div>
 
 </div>

@@ -700,14 +700,10 @@
 
   "collaboration": {
   "badge": "Current Collaborations",
-  "title": "BrightWatt Partners",
+  "title": "Established expertise in key European markets and a growing regional network.",
   "partner": "Active Business Development Collaboration",
-  "description1": "Focused on qualified lead generation for EPC and BOP opportunities across EU markets.",
-  "description2": "Scope covers Solar PV and BESS at utility scale.",
-  "description3": "Project Portfolio Template",
-  "description4": "Technology: Utility-scale Solar PV / Standalone BESS / Hybrid Solar + BESS"
-},
-
+  "description1": "The Not Coal Company operates across the European Union, with its strongest expertise in Germany, Scandinavia, and the Netherlands. Leveraging deep market knowledge and strong industry relationships, we continue to expand our presence across Europe."
+  },
   "featured": {
     "title": "Featured Projects"
   },
@@ -739,5 +735,4 @@
   }
 }
 }
-
 }
