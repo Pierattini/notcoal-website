@@ -401,19 +401,6 @@ export default function ProjectsPage() {
 <p>
   {t.projects.collaboration.description1}
 </p>
-
-<p>
-  {t.projects.collaboration.description2}
-</p>
-
-<p>
-  {t.projects.collaboration.description3}
-</p>
-
-<p>
-  {t.projects.collaboration.description4}
-</p>
-
   </div>
 
   <div className="projectsStatementImage">
