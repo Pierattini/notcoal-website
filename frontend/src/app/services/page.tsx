@@ -77,7 +77,7 @@ function AccordionItem({
       >
         <div className="serviceStepContentInner">
           <p>{longDesc}</p>
-          <p style={{marginTop:12}}>Contenido adicional de prueba: descripción detallada, pasos, ejemplos de entregables y notas técnicas. Esto es solo provisoria para verificar la animación y el layout.</p>
+          <p style={{marginTop:12}}></p>
         </div>
       </div>
     </div>
