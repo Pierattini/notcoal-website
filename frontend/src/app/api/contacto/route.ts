@@ -36,7 +36,7 @@ const companyInfo = {
   registryCode: '17503248',
   vatNumber: 'EE102984561',
   address: 'Tööstuse 75-71, Tallinn, Estonia 10416',
-  phone: '+34 611 354 698'
+  phone: '+49 611 354 698'
 };
 
 function escapeHtml(value: string) {
@@ -205,7 +205,7 @@ for (const [key, value] of formData.entries()) {
             
             <div style="background: var(--color-cream); padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p style="margin: 8px 0; color: var(--color-graphite);"><strong>📧 Email:</strong> hi@notcoal.eu</p>
-              <p style="margin: 8px 0; color: var(--color-graphite);"><strong>📱 Teléfono:</strong> +34 900 123 456</p>
+              <p style="margin: 8px 0; color: var(--color-graphite);"><strong>📱 Teléfono:</strong> +49 900 123 456</p>
             </div>
             
             <p style="color: var(--text-secondary); font-size: 12px; margin-top: 30px;">

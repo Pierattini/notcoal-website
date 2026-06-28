@@ -124,7 +124,7 @@ export default function CookiesPolicyPage() {
             <p><strong>Registry code:</strong> 17503248</p>
             <p><strong>VAT number:</strong> EE 102984561</p>
             <p><strong>Registered address:</strong> Tööstuse 75-71, Tallinn, Estonia, 10416</p>
-            <p><strong>Phone:</strong> <a href="tel:+34611354698">+34 611 354 698</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+49611354698">+49 611 354 698</a></p>
             <p><strong>Email:</strong> <a href="mailto:hi@notcoal.eu">hi@notcoal.eu</a></p>
           </div>
 

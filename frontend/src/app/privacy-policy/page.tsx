@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p>
               <strong>{document.controller.phoneLabel}</strong>{" "}
-              <a href="tel:+34611354698">+34 611 354 698</a>
+              <a href="tel:+49611354698">+49 611 354 698</a>
             </p>
             <p>
               <strong>{document.controller.emailLabel}</strong>{" "}

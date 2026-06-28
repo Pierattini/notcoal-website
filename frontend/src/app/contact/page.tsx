@@ -53,7 +53,7 @@ const [countryName, setCountryName] =
 
           <div className="contactInfoCard">
             <strong>Teléfono</strong>
-            <span>+34 600 000 000</span>
+            <span>+49 600 000 000</span>
           </div>
 
           <div className="contactInfoCard">
